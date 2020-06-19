@@ -16,8 +16,8 @@
         </div>
         <div class="list__author">
             <div class="list__author-logo">
-                <img ng-if="article.metaInfo.author.photoUrl" src="{% raw %}{{ article.metaInfo.author.photoUrl }}{% endraw %}" title="" style="max-height: 100%; border-radius: 100%;" class="lazyload" />
-                <img ng-if="!article.metaInfo.author.photoUrl" src="/themes/assets/logo-mobile.svg" title="" style="max-height: 100%; no-repeat scroll 0 0" class="lazyload" />
+                <img ng-if="article.metaInfo.author.photoUrl" data-src="{% raw %}{{ article.metaInfo.author.photoUrl }}{% endraw %}" title="" style="max-height: 100%; border-radius: 100%;" class="lazyload" />
+                <img ng-if="!article.metaInfo.author.photoUrl" data-src="/themes/assets/logo-mobile.svg" title="" style="max-height: 100%; no-repeat scroll 0 0" class="lazyload" />
             </div>
             <div class="list__author-text">
                 <div class="list__author-name" ng-bind="article.metaInfo.author.firstName ? (article.metaInfo.author.firstName + ' ' + article.metaInfo.author.lastName) : article.metaInfo.author || article.author || 'VirtoCommerce'"></div>
