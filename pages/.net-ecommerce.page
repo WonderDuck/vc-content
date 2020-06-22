@@ -5,7 +5,12 @@
         "permalink": "net-ecommerce-platform",
         "header": "Microsoft .NET e-Commerce platform",
         "description": "Virto Commerce - ASP.NET Microsoft E-commerce Platform for B2B & B2C solutions.",
-        "id": 1
+        "id": 1,
+        "markup_webpage_title": "dot net e comerц",
+        "markup_webpage_description": "dot net e comerц descr",
+        "markup_webpage_image": null,
+        "markup_webpage_date_created": null,
+        "name": null
     },
     {
         "id": 1,
