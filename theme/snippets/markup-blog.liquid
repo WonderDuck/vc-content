@@ -27,12 +27,25 @@
     },
     "datePublished": "{{ page_settings.date }}",
     "dateModified": "{{ page_settings.date }}",
+
+    {% if page_settings.author %}
     "author": {
         "@type": "Person",
         "name": "{{ page_settings.author.firstName }} {{ page_settings.author.lastName }}",
         "jobTitle": "{{ page_settings.author.jobTitle }}",
         "url": "{{ page_settings.author.linkedinLink }}"
     },
+    {% else %}
+    "author": {
+        "@type": "Organization",
+        "name": "{{ settings.markup_corporation_name }}",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ settings.markup_website_default_image }}",
+            "width": 150,
+            "height": 56
+        }
+    {% endif %}
     "publisher": {
         "@type": "Organization",
         "name": "{{ settings.markup_corporation_name }}",
