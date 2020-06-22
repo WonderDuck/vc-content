@@ -28,7 +28,7 @@
     "datePublished": "{{ page_settings.date }}",
     "dateModified": "{{ page_settings.date }}",
 
-    {% if page_settings.author %}
+    {% if page_settings.author.firstName %}
     "author": {
         "@type": "Person",
         "name": "{{ page_settings.author.firstName }} {{ page_settings.author.lastName }}",
