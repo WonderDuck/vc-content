@@ -7985,13 +7985,8 @@ code {
     font-size: 1.125rem;
 }
 
-.block .list-items,
-  .block .list-cards {
-    margin-bottom: -2.5rem;
-}
-
 .block .list-items .list__t,
-    .block .list-cards .list__t {
+  .block .list-cards .list__t {
     font-size: 1.25rem;
     font-weight: 900;
     line-height: 1.625rem;
@@ -7999,7 +7994,7 @@ code {
 }
 
 .block .list-items .list__descr,
-    .block .list-cards .list__descr {
+  .block .list-cards .list__descr {
     font-size: 1rem;
     line-height: 1.5rem;
 }
@@ -9543,7 +9538,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .blog .list--posts .list__author-logo {
-    background: url("/themes/assets/logo.svg") no-repeat scroll 0 0;
     height: 3rem;
     flex: 0 0 3rem;
     margin-right: 0.625rem;

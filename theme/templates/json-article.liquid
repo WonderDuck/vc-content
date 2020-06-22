@@ -1,5 +1,6 @@
-<div class="blog" itemtype="http://schema.org/Article" itemscope>
+<div class="blog">
     <div class="container">
+        {% include 'breadcrumb' %}
         <a class="blog__t-ico" href="{{ '/blog' | absolute_url }}">
             <svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -27,8 +28,9 @@
         <!-- Blog main -->
         <div class="blog-main">
             <div class="blog-content">
-                <div class="blog-hero" style="background-image: url({% if article.image_url != '' %}{{ article.image_url }}{% else %}blue-abstract-background.jpg{% endif %});"></div>
+                <div class="blog-hero lazyload" style="background-image: url({% if article.image_url != '' %}{{ article.image_url }}{% else %}blue-abstract-background.jpg{% endif %});"></div>
                 {% include 'json-blocks' page: article -%}
+                {% include 'article-author' article_author: page_settings.author -%}
                 <div class="blog__meta">
                     <div class="list list--tags list--tags-small">
                         {% for tag in article.tags %}

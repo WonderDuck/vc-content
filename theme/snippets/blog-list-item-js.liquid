@@ -1,5 +1,5 @@
 <div class="list__item" ng-repeat="article in articles">
-    <a class="list__bg" href="{% raw %}{{ article.url }}{% endraw %}" ng-style="{ 'background-image': 'url(' + article.imageUrl + ')' }"></a>
+    <a class="list__bg lazyload" href="{% raw %}{{ article.url }}{% endraw %}" data-bg="{% raw %}{{ article.imageUrl }}{% endraw %}"></a>
     <div class="list__info">
         <div class="list__t">
             <a href="{% raw %}{{article.url}}{% endraw %}" ng-bind="article.title"></a>
@@ -15,9 +15,12 @@
             <a class="list__item" ng-if="article.category" ng-click="setCurrentCategory(article.category)" ng-bind="'blogs.categories.' + article.category | translate"></a>
         </div>
         <div class="list__author">
-            <div class="list__author-logo"></div>
+            <div class="list__author-logo">
+                <img ng-if="article.metaInfo.author.photoUrl" data-src="{% raw %}{{ article.metaInfo.author.photoUrl }}{% endraw %}" title="" style="max-height: 100%; border-radius: 100%;" class="lazyload" />
+                <img ng-if="!article.metaInfo.author.photoUrl" data-src="/themes/assets/logo-mobile.svg" title="" style="max-height: 100%; no-repeat scroll 0 0" class="lazyload" />
+            </div>
             <div class="list__author-text">
-                <div class="list__author-name" ng-bind="article.author || 'VirtoCommerce'"></div>
+                <div class="list__author-name" ng-bind="article.metaInfo.author.firstName ? (article.metaInfo.author.firstName + ' ' + article.metaInfo.author.lastName) : article.metaInfo.author || article.author || 'VirtoCommerce'"></div>
             </div>
         </div>
     </div>

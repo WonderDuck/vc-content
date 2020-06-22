@@ -104,11 +104,7 @@
 
     {% include 'markup-corporation' %}
     {% include 'markup-website' %}
-    {% if article %}
-        {% include 'markup-blog' %}
-    {% else %}
-        {% include 'markup-webpage' %}
-    {% endif %}
+    {% include 'markup-webpage' %}
     <!-- html5.js for IE less than 9 -->
     <!--[if lt IE 9]>
         <script src="/js/ie.js"></script>
@@ -142,5 +138,6 @@
     {{ 'js/main.js?v=' | append main_js_version | asset_url | script_tag }}
     {{ 'js/ipdata.js?v=1.01' | asset_url | script_tag }}
     {{ 'segment-form-handler.js' | asset_url | script_tag }}
+    <script src="{{ 'lazysizes.min.js?v=1.0.1' | asset_url }}"></script>
 </body>
 </html>

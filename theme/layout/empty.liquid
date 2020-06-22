@@ -32,19 +32,29 @@
     </script>
     {% include 'markup-corporation' %}
     {% include 'markup-website' %}
-    {% include 'markup-webpage' %}
+    {% if article %}
+        {% include 'markup-blog' %}
+    {% else %}
+        {% include 'markup-webpage' %}
+    {% endif %}
     {% include 'markup-opengraph' %}
 </head>
 <body>
     <div id="layout">
         <div class="layout-canvas">
+            <div class="swipe">
+                {% include 'main-menu-mobile' %}
+            </div>
+            {% include 'getting-started' %}
             <article class="main" role="main">
                 {{ content_for_layout }}
             </article>
-            <footer style="height: 5rem; background: #eee;"></footer>
+            {% include 'footer' %}
         </div>
     </div>
     {{ 'jquery-3.5.0.min.js' | asset_url | script_tag }}
     {{ 'jquery.fancybox.min.js' | asset_url | script_tag }}
+    {{ 'js/app.js' | asset_url | script_tag }}
+    {{ 'js/main.js?v=' | append main_js_version | asset_url | script_tag }}
 </body>
 </html>
