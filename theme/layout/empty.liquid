@@ -56,5 +56,6 @@
     {{ 'jquery.fancybox.min.js' | asset_url | script_tag }}
     {{ 'js/app.js' | asset_url | script_tag }}
     {{ 'js/main.js?v=' | append main_js_version | asset_url | script_tag }}
+    <script src="{{ 'lazysizes.min.js?v=1.0.1' | asset_url }}"></script>
 </body>
 </html>
