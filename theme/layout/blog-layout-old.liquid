@@ -97,6 +97,7 @@
     {{ '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' | stylesheet_tag }}
     {{ 'style.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
 
+    {% include 'segment' %}
     {{ content_for_header }}
 
     <base href="{{ '/' | absolute_url }}" />
@@ -136,6 +137,7 @@
     </div>
     {{ 'js/main.js?v=' | append main_js_version | asset_url | script_tag }}
     {{ 'js/ipdata.js?v=1.01' | asset_url | script_tag }}
+    {{ 'segment-form-handler.js' | asset_url | script_tag }}
     <script src="{{ 'lazysizes.min.js?v=1.0.1' | asset_url }}"></script>
 </body>
 </html>
