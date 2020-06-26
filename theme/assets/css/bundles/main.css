@@ -3,6 +3,7 @@
     font-style: normal;
     font-weight: 300;
     src: local("Circular Std Book"), url("../../fonts/CircularStd-Book.woff") format("woff"), url("../../fonts/CircularStd-Book.otf");
+    font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   font-style: normal;
   font-weight: bold;
   src: local("Circular Std Bold"), url("../../fonts/CircularStd-Bold.woff") format("woff"), url("../../fonts/CircularStd-Bold.otf");
+  font-display: swap;
 }
 
 @font-face {
@@ -17,6 +19,7 @@
   font-style: normal;
   font-weight: 900;
   src: local("Circular Std Black"), url("../../fonts/CircularStd-Black.woff") format("woff"), url("../../fonts/CircularStd-Black.otf");
+  font-display: swap;
 }
 
 /*!
