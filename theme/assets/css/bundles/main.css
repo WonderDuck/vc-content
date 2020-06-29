@@ -8777,6 +8777,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .glossary {
+    padding: 3.125rem 0;
     display: flex;
     height: 100%;
     flex-wrap: wrap;
@@ -8820,7 +8821,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .glossary .nav__link {
     border: none;
-    font-size: .875rem;
+    font-size: 0.875rem;
 }
 
 .glossary .nav__link:hover {
@@ -8833,10 +8834,10 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .glossary .nav__icon {
     display: none;
-    height: .8125rem;
-    margin-right: .625rem;
-    margin-top: .125rem;
-    width: .4375rem;
+    height: 0.8125rem;
+    margin-right: 0.625rem;
+    margin-top: 0.125rem;
+    width: 0.4375rem;
 }
 
 .glossary .path {
@@ -8879,7 +8880,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .glossary__content .text {
     color: #72778e;
-    font-size: .875rem;
+    font-size: 0.875rem;
     margin: 1rem 0;
 }
 
@@ -8892,12 +8893,12 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .glossary__content .actions .btn {
-    margin-right: .625rem;
+    margin-right: 0.625rem;
 }
 
 .glossary__content .glosary-article {
     margin-bottom: 3.125rem;
-    font-size: .875rem;
+    font-size: 0.875rem;
 }
 
 .glossary__content .glosary .glosary-article .glosary-pic {
@@ -8955,7 +8956,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .glossary__content .glosary-nav .btn {
-    margin: 0 .625rem;
+    margin: 0 0.625rem;
     justify-content: center;
     width: 12.5rem;
 }
@@ -8965,7 +8966,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
     width: 100%;
     padding: 1.25rem;
     text-align: center;
-    margin: .9375rem 0;
+    margin: 0.9375rem 0;
 }
 
 .glossary__content #order-wise-inner {
@@ -8975,12 +8976,12 @@ input.ng-touched.ng-invalid, .input-validation-error {
     top: 50%;
     transform: translate(-50%);
     background-color: #eee;
-    padding: .625rem;
+    padding: 0.625rem;
 }
 
 .glossary__content #order-wise-text {
     float: right;
-    padding: .625rem;
+    padding: 0.625rem;
     margin-top: 7%;
 }
 

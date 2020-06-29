@@ -58,6 +58,11 @@
             <!-- TODO: getting started is main menu, must be renamed -->
             {% include 'getting-started' %}
             <article class="main" role="main">
+                {% if template == 'page' %}
+                <div class="container" style="padding: 3.125rem 0;">
+                    {% include 'breadcrumb' %}
+                </div>
+                {% endif %}
                 {{ content_for_layout }}
             </article>
             {% include 'footer' %}

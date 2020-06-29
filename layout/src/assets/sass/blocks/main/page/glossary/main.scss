@@ -1,100 +1,83 @@
-.glossary
-{
+.glossary {
+    padding: 3.125rem 0;
     display: flex;
     height: 100%;
     flex-wrap: wrap;
 
-    &__sidebar
-    {
+    &__sidebar {
         flex: 1 0 100%;
         padding: 1.25rem 1.875rem;
         max-width: 100%;
     }
 
-    &__content
-    {
+    &__content {
         flex: 1 0 0;
         min-width: 23.75rem;
     }
 
-    .nav__item
-    {
+    .nav__item {
         display: block;
         height: auto;
 
-        & ~ .nav__item
-        {
+        & ~ .nav__item {
             margin-top: 1.25rem;
         }
 
-		> .nav__link.selected
-		{
-			color: $orange;
+        > .nav__link.selected {
+            color: $orange;
 
-			.nav__icon
-			{
-				transform: rotate(90deg);
-			}
+            .nav__icon {
+                transform: rotate(90deg);
+            }
 
-			.path
-			{
-				fill: $orange;
-			}
-		}
+            .path {
+                fill: $orange;
+            }
+        }
 
-        &--dropdown
-        {
-            .nav__icon
-            {
+        &--dropdown {
+            .nav__icon {
                 display: inline-block;
             }
         }
     }
 
-    .nav__link
-    {
+    .nav__link {
         border: none;
-        font-size: .875rem;
+        font-size: 0.875rem;
 
-        &:hover
-        {
+        &:hover {
             color: $orange;
 
-            .path
-            {
+            .path {
                 fill: $orange;
             }
         }
     }
 
-    .nav__icon
-    {
+    .nav__icon {
         display: none;
-        height: .8125rem;
-        margin-right: .625rem;
-        margin-top: .125rem;
-        width: .4375rem;
+        height: 0.8125rem;
+        margin-right: 0.625rem;
+        margin-top: 0.125rem;
+        width: 0.4375rem;
     }
 
-    .path
-    {
+    .path {
         fill: $black;
     }
 
-    .nav--sub
-    {
+    .nav--sub {
         padding: 0;
         margin-left: 1.25rem;
         margin-top: 1.25rem;
     }
 
-    &__sidebar
-    {
+    &__sidebar {
         background: $gray-100;
     }
 
-    &__content
-    {
+    &__content {
         padding: 1.875rem 0 1.875rem 1.875rem;
 
         // .glossary__t
@@ -108,8 +91,7 @@
         // }
 
         .glosary-t,
-        .glosary-sub-t
-        {
+        .glosary-sub-t {
             background: #eee;
             font-size: 1.25rem;
             font-weight: 700;
@@ -118,66 +100,55 @@
             text-transform: uppercase;
         }
 
-        .glosary-sub-t
-        {
+        .glosary-sub-t {
             font-size: 1.125rem;
         }
 
-        img
-        {
+        img {
             display: block;
             margin: 1rem 0;
             max-width: 100%;
         }
 
-        .text
-        {
+        .text {
             color: $gray-600;
-            font-size: .875rem;
+            font-size: 0.875rem;
             margin: 1rem 0;
         }
 
-        .business-cnt
-        {
+        .business-cnt {
             overflow: hidden;
         }
 
-        .actions
-        {
+        .actions {
             display: flex;
 
-            .btn
-            {
-                margin-right: .625rem;
+            .btn {
+                margin-right: 0.625rem;
             }
         }
 
-        .glosary-article
-        {
+        .glosary-article {
             margin-bottom: 3.125rem;
-			font-size: .875rem;
+            font-size: 0.875rem;
         }
 
-        .glosary .glosary-article .glosary-pic
-        {
+        .glosary .glosary-article .glosary-pic {
             float: left;
             margin: 0 1.875rem 1.25rem 0;
             max-width: 16.25rem;
             width: 100%;
         }
 
-        .glosary .glosary-videos
-        {
+        .glosary .glosary-videos {
             display: flex;
             margin: 1.25rem 0;
 
-            &.center
-            {
+            &.center {
                 justify-content: center;
             }
 
-            .list-item
-            {
+            .list-item {
                 box-sizing: border-box;
                 padding: 0 1.25rem;
                 width: 100%;
@@ -187,15 +158,13 @@
                 }
             }
 
-            .video
-            {
+            .video {
                 margin: 0 0 1rem;
                 padding-bottom: 56.25%;
                 position: relative;
             }
 
-            iframe
-            {
+            iframe {
                 height: 100%;
                 left: 0;
                 position: absolute;
@@ -203,82 +172,71 @@
                 width: 100%;
             }
 
-            .btn
-            {
+            .btn {
                 justify-content: center;
                 width: 100%;
             }
         }
 
-        .glosary-nav
-        {
+        .glosary-nav {
             background: #eee;
             display: flex;
             justify-content: center;
             padding: 1.25rem 0;
 
-            .btn
-            {
-                margin: 0 .625rem;
+            .btn {
+                margin: 0 0.625rem;
                 justify-content: center;
                 width: 12.5rem;
             }
         }
 
-        #order-wise
-        {
+        #order-wise {
             float: left;
             width: 100%;
             padding: 1.25rem;
             text-align: center;
-            margin: .9375rem 0;
+            margin: 0.9375rem 0;
         }
 
-        #order-wise-inner
-        {
+        #order-wise-inner {
             float: left;
             position: relative;
             left: 50%;
             top: 50%;
             transform: translate(-50%);
             background-color: #eee;
-            padding: .625rem;
+            padding: 0.625rem;
         }
 
-        #order-wise-text
-        {
+        #order-wise-text {
             float: right;
-            padding: .625rem;
+            padding: 0.625rem;
             margin-top: 7%;
         }
 
-        #order-wise-text .text
-        {
+        #order-wise-text .text {
             width: 400px;
         }
 
-        #order-wise-title
-        {
+        #order-wise-title {
             font-weight: 700;
             font-size: 22px;
         }
     }
 
     @include media-breakpoint-down(md) {
-        &__sidebar
-        {
+        &__sidebar {
             display: none;
         }
 
-        &__content
-        {
+        &__content {
             padding: 1.25rem 0;
         }
     }
 
     @include media-breakpoint-up(lg) {
-        &__sidebar
-        {
+        &__sidebar {
             flex: 0 0 23.75rem;
             max-width: 23.75rem;
         }
