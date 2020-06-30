@@ -24,7 +24,9 @@
                     <div class="list__descr">
                         <p>{{ article_author.biography }}</p>
                         <p>&nbsp;</p>
+                        {% if article_author.linkedinLink %}
                         <p><a href="{{ article_author.linkedinLink }}" target="_blank">LinkedIn profile</a></p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
