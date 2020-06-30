@@ -9,16 +9,21 @@
                 <div class="col-md-6">
                     <div class="block__space"></div>
 
-                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
+                    {% if block.title != '' %}
+                        {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                    {% endif %}
+                    
+                    {% include 'headings' headings: block.headings %}
+                    <div class="block__space"></div>
 
                     {% if block.note != '' %}
-                        <div class="block__note">{{block.note}}</div>
+                        {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
                     {% endif %}
                 </div>
             {% endif %}
             
             <div class="col-md-6">
-                <div class="block__descr">{{block.subtitle}}</div>
+                {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
                 {% if block.firstButton != '' and block.firstButton.urlText != '' %}
                     <div class="block__space"></div>
                     <div class="block__actions">
@@ -30,15 +35,20 @@
                 {% endif %}
             </div>
 
-             {% if block.horizontalAlignment == 'right' %}
-                 <div class="col-md-6">
-                     <div class="block__space"></div>
+            {% if block.horizontalAlignment == 'right' %}
+                <div class="col-md-6">
+                    <div class="block__space"></div>
 
-                     {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
+                    {% if block.title != '' %}
+                        {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                    {% endif %}
+                    
+                    {% include 'headings' headings: block.headings %}
+                    <div class="block__space"></div>
 
-                     {% if block.note != '' %}
-                        <div class="block__note">{{block.note}}</div>
-                     {% endif %}
+                    {% if block.note != '' %}
+                        {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
+                    {% endif %}
                  </div>
              {% endif %}
          </div>

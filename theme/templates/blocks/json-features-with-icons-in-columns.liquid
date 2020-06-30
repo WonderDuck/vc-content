@@ -7,10 +7,13 @@
         {% if block.title != '' %}
             <div class="row">
                 <div class="block__text {{block.textAreaWidth}}">
-                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
+                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+
+                    {% include 'headings' headings: block.headings %}
+
                     {% if block.subtitle != '' and block.subtitlePosition == 'upper' %}
                         <div class="block__space"></div>
-                        <div class="block__descr">{{block.subtitle}}</div>
+                        {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
                     {% endif %}
                 </div>
             </div>
@@ -39,7 +42,7 @@
                                 <div class="list__t">{{column.title}}</div>
                             {% endif %}
                             {% if column.subtitle != '' %}
-                                <div class="list__descr">{{column.subtitle}}</div>
+                                {% include 'seo-text' tag: column.subtitleSeoTag, text: column.subtitle, class: 'list__descr' %}
                             {% endif %}
                             {% if column.button != '' and column.button.urlText != '' %}
                                 <div class="block__space"></div>
@@ -55,7 +58,7 @@
         {% if block.subtitle != '' and block.subtitlePosition == 'lower' %}
             <div class="block__text {{block.textAreaWidth}}">
                 <div class="block__space"></div>
-                <div class="block__descr">{{block.subtitle}}</div>
+                {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
             </div>
         {% endif %}
     </div>

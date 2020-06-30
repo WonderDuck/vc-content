@@ -7336,6 +7336,30 @@ code {
     margin-bottom: 0;
 }
 
+.block h2.block__t {
+    font-size: 1.75rem;
+}
+
+.block h3.block__t {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.block h4.block__t {
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.block h5.block__t {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.block h6.block__t {
+    font-size: .75rem;
+    line-height: 1.5rem;
+}
+
 .block__descr {
     font-size: 1.125rem;
     font-weight: normal;

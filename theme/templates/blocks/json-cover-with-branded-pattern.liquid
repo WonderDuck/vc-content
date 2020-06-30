@@ -6,7 +6,8 @@
             <div class="row">
                 {% if block.title != '' %}
                     <div class="{{block.textAreaWidth}}">
-                         {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
+                        {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                        {% include 'headings' headings: block.headings %}
                     </div>
                 {% endif %}
             </div>
@@ -19,7 +20,7 @@
 
                 <div class="col-lg-6 {{block.verticalAlignment}}">
                     {% if block.subtitle != '' %}
-                        <div class="block__descr">{{block.subtitle}}</div>
+                        {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
                     {% endif %}
                     {% if block.firstButton != '' and block.firstButton.urlText != '' %}
                         <div class="block__space block__space--size-lg"></div>
@@ -29,7 +30,7 @@
                         {% endif %}
                     {% endif %}
                     <div class="author-info">
-                        <div class="block__descr">{{block.note}}</div>
+                        {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__descr' %}
                     </div>
                 </div>
 
