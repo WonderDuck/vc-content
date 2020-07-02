@@ -1,0 +1,76 @@
+<!-- GlossaryArticle -->
+{% assign web_page_blocks = page.content | parse_json %}
+{%- assign article_body = '' -%}
+{%- for item in web_page_blocks -%}
+    {%- if item.type != 'settings' -%}
+        {%- assign article_body = article_body | append item.title -%}
+        {%- assign article_body = article_body | append item.subtitle -%}
+        {%- assign article_body = article_body | append item.note -%}
+        {%- assign article_body = article_body | append item.paragraph -%}
+    {%- endif -%}
+{%- endfor -%}
+
+<script type="application/ld+json">
+{{ page_settings }}
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage":{
+        "@type":"WebPage",
+        "@id":"{{ canonical_url }}"
+    },
+    {% if page_settings.markup_webpage_title %}
+        "headline": "{{- page_settings.markup_webpage_title -}}",
+    {% elsif page_title != '' %}
+        "headline": "{{- page_title -}}",
+    {% else %}
+        "headline": "ASP.NET ecommerce platform - Virto Commerce",
+    {% endif %}
+    "image": {
+        "@type": "ImageObject",
+        "url": "{{ page_image_url | absolute_url }}",
+        "width": 600,
+        "height": 400
+    },
+    "datePublished": "{{ page_settings.markup_webpage_date_created }}",
+    "dateModified": "{{ page_settings.markup_webpage_date_created }}",
+
+    {% if page_settings.author.firstName %}
+    "author": {
+        "@type": "Person",
+        "name": "{{ page_settings.author.firstName }} {{ page_settings.author.lastName }}",
+        "jobTitle": "{{ page_settings.author.jobTitle }}",
+        "url": "{{ page_settings.author.linkedinLink }}"
+    },
+    {% else %}
+    "author": {
+        "@type": "Organization",
+        "name": "{{ settings.markup_corporation_name }}",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ settings.markup_website_default_image }}",
+            "width": 150,
+            "height": 56
+        }
+    },
+    {% endif %}
+    "publisher": {
+        "@type": "Organization",
+        "name": "{{ settings.markup_corporation_name }}",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ settings.markup_website_default_image }}",
+            "width": 150,
+            "height": 56
+        }
+    },
+    {% if page_settings.markup_webpage_description %}
+        "description": "{{- page_settings.markup_webpage_description | escape -}}",
+    {% elsif page_description != '' %}
+        "description": "{{- page_description | escape -}}",
+    {% else %}
+        "description": "VirtoCommerce is the enterprise-level Microsoft .NET ecommerce platform for complex ecommerce. Virto Commerce is a flexible B2B ecommerce solution based on Microsoft.NET that offers powerful tools for enterprise business users.",
+    {% endif %}
+    "articleBody": "{{ article_body | strip_html }}"
+}
+</script>
