@@ -1,10 +1,16 @@
 {% unless page.content and page.content contains "<div" %}
 <!-- WebPage -->
 {% assign web_page_blocks = page.content | parse_json %}
+{%- assign article_body = '' -%}
 
 {% for item in web_page_blocks -%}
     {% if item.type == 'settings' %}
         {% assign page_settings = item -%}
+    {% else %}
+        {%- assign article_body = article_body | append item.title -%}
+        {%- assign article_body = article_body | append item.subtitle -%}
+        {%- assign article_body = article_body | append item.note -%}
+        {%- assign article_body = article_body | append item.paragraph -%}
     {% endif %}
 {% endfor -%}
 
@@ -56,6 +62,7 @@
             "url": "{{- settings.markup_corporation_url -}}" 
         }
     },
+    "text": "{{ article_body | strip_html }}",
     "image": {
         "@type": "ImageObject",
         {% if page_settings.markup_webpage_image %}
