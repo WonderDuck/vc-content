@@ -1,0 +1,18 @@
+<div id="{{ block.__id }}" class="block {{block.topPadding}} {{block.bottomPadding}} {% if block.containerAlignment == 'center' %} block--align-center {% endif %} {% include 'background-settings' %}>
+    <div class="block__inner container">
+        <div class="row">
+            {% if block.textAreaWidth == 'ten' %}
+                {% assign textAreaWidth = 'col-lg-10 offset-lg-1' %}
+            {% elsif block.textAreaWidth == 'eight' %}
+                {% assign textAreaWidth = 'col-lg-8 offset-lg-2' %}
+            {% elsif block.textAreaWidth == 'six' %}
+                {% assign textAreaWidth = 'col-lg-6 offset-lg-3' %}
+            {% else %}
+                {% assign textAreaWidth = 'col-lg offset-lg' %}
+            {% endif %}
+            <div class="block__text {{textAreaWidth}}">
+                {% include 'headings' headings: block.headings %}
+            </div>
+        </div>
+    </div>
+</div>

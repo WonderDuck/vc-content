@@ -18,13 +18,16 @@
                     <div class="col-lg">
                         <div class="block__text">
                             {% if block.title != '' %}
-                                {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
-                                <div class="block__space"></div>
+                                {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
                             {% endif %}
+                            
+                            {% include 'headings' headings: block.headings %}
+                            <div class="block__space"></div>
+
                             {% if block.subtitle != '' %}
-                                <div class="block__descr">{{block.subtitle}}</div>
-                                <div class="block__space"></div>
+                                {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
                             {% endif %}
+
                             {% if block.formFields.size > 0 %}
                                 <form class="form" {% if block.formId != '' %}id="{{block.formId}}" data-segment-name="{{block.formId}}"{% endif %}
                                     {% if block.formName != '' %}name="{{block.formName}}"{% endif %}
@@ -110,7 +113,7 @@
                                     {% endfor %}
                                     {% include 'user-location-form-inputs' %}
                                     {% if block.note != '' %}
-                                        <div class="block__note2">{{block.note}}</div>
+                                        {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note2' %}
                                     {% endif %}
                                 </form>
                             {% endif %}

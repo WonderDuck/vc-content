@@ -83,6 +83,7 @@
                         {% include 'glossary-left-menu' %}
                         <div class="glossary__content">
                             {{ content_for_layout }}
+                            {% include 'article-author' article_author: page_settings.author -%}
                             {% include 'disqus' %}
                         </div>
                     </div>

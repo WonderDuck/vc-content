@@ -16,10 +16,11 @@
              <div class="col-lg">
                 {% if block.referenceStyle == 'directSpeech' %}
                     {% if block.title != '' %}
-                        <div class="block__t">
-                            {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
-                        </div>
+                        {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
                     {% endif %}
+                    
+                    {% include 'headings' headings: block.headings %}
+
                     <div class="author">
                         <div class="author__t">{{block.authorOrCompany}}</div>
                     </div>

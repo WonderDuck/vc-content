@@ -5,11 +5,15 @@
         <div class="block__inner container">
             <div class="row justify-content-center">
                 <div class="{{block.textAreaWidth}}">
-                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
+                    {% if block.title != '' %}
+                        {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                    {% endif %}
+                    
+                    {% include 'headings' headings: block.headings %}
 
                     {% if block.subtitle != '' %}
                         <div class="block__space"></div>
-                        <div class="block__descr {{block.textAreaWidth}}">{{block.subtitle}}</div>
+                        {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr {{block.textAreaWidth}}' %}
                         <div class="block__space block__space--size-lg"></div>
                     {% else %}
                         <div class="block__space block__space--size-lg"></div>
@@ -104,7 +108,7 @@
                 </form>
             {% endif %}
             {% if block.note != '' %}
-                <div class="block__note2">{{block.note}}</div>
+                {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note2' %}
             {% endif %}
         </div>
     </div>

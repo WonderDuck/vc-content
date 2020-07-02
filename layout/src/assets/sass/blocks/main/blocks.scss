@@ -191,6 +191,35 @@
         @extend %font-headings;
     }
 
+    h2#{&}__t
+    {
+        font-size: 1.75rem;
+    }
+
+    h3#{&}__t
+    {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    h4#{&}__t
+    {
+        font-size: 1.25rem;
+        line-height: 2rem;
+    }
+
+    h5#{&}__t
+    {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    h6#{&}__t
+    {
+        font-size: .75rem;
+        line-height: 1.5rem;
+    }
+
     &__descr
     {
         font-size: 1.125rem;

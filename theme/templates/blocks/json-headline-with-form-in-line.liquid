@@ -7,11 +7,14 @@
                 <div class="{{block.textAreaWidth}}">
                     <div class="block__text">
                         {% if block.title != '' %}
-                            <h2 class="block__t">{{block.title}}</h2>
-                            <div class="block__space"></div>
+                            <h2 class="block__t">{{block.title | remove: '<p>' | remove: '</p>'}}</h2>
                         {% endif %}
+                        
+                        {% include 'headings' headings: block.headings %}
+                        <div class="block__space"></div>
+
                         {% if block.subtitle != '' %}
-                            <div class="block__descr">{{block.subtitle}}</div>
+                            {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
                             <div class="block__space"></div>
                         {% endif %}
                     </div>
@@ -55,7 +58,9 @@
                     {% include 'user-location-form-inputs' %}
                 </form>
             {% endif %}
-            <div class="block__note2">{{block.note}}</div>
+            {% if block.note != '' %}
+                {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note2' %}
+            {% endif %}
         </div>
     </div>
 </div>
