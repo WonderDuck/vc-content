@@ -4352,6 +4352,144 @@
       }
     ]
   },
+  "headings-collection": {
+    "id": "headings-collection",
+    "name": "Headings collection",
+    "icon": "image-text",
+    "displayField": "title",
+    "category": "Headlines and Forms",
+	"includeShared": [
+		"headings"
+	],
+    "settings": [
+		{
+			"id": "headings",
+			"default": [
+				{
+					"title": "Headings collection",
+					"seoTag": "none"
+				}
+			]
+		},
+		{
+			"id": "containerAlignment",
+			"label": "Container alignment",
+			"type": "select",
+			"default": "center",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				}
+			],
+			"tab": "Content"
+		},
+		{
+			"id": "textAreaWidth",
+			"label": "Text area width",
+			"type": "select",
+			"default": "full",
+			"options": [
+			  {
+				"value": "full",
+				"label": "Full width"
+			  },
+			  {
+				"value": "ten",
+				"label": "10 cols"
+			  },
+			  {
+				"value": "eight",
+				"label": "8 cols"
+			  },
+			  {
+				"value": "six",
+				"label": "6 cols"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Main block settings"
+		  },
+		  {
+			"id": "topPadding",
+			"label": "Top padding",
+			"type": "select",
+			"default": "block--padding-top-large",
+			"options": [
+			  {
+				"value": "block--padding-top-none",
+				"label": "None"
+			  },
+			  {
+				"value": "block--padding-top-half",
+				"label": "Small"
+			  },
+			  {
+				"value": "block--padding-top-large",
+				"label": "Medium"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Paddings"
+		  },
+		  {
+			"id": "bottomPadding",
+			"label": "Bottom padding",
+			"type": "select",
+			"default": "block--padding-bottom-large",
+			"options": [
+			  {
+				"value": "block--padding-bottom-none",
+				"label": "None"
+			  },
+			  {
+				"value": "block--padding-bottom-half",
+				"label": "Small"
+			  },
+			  {
+				"value": "block--padding-bottom-large",
+				"label": "Medium"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Paddings"
+		  },
+		  {
+			"id": "backgroundColor",
+			"label": "Colour",
+			"type": "select",
+			"default": "block--bg-white",
+			"options": [
+			  {
+				"value": "block--bg-white",
+				"label": "White"
+			  },
+			  {
+				"value": "block--bg-light",
+				"label": "Gray"
+			  },
+			  {
+				"value": "block--bg-orange",
+				"label": "Orange"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Background"
+		  },
+		  {
+			"id": "backgroundColorHex",
+			"label": "Colour HEX",
+			"type": "color",
+			"default": "",
+			"tab": "Settings",
+			"group": "Background"
+		  }
+	]
+  },
   "text-in-paragraphs-or-in-columns": {
     "id": "text-in-paragraphs-or-in-columns",
     "name": "Text in paragraph or in columns",
