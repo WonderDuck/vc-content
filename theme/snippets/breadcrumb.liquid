@@ -95,35 +95,21 @@
     <div class="list__item">{{ article.title }}</div>
 
   {% elsif template contains 'page' %}
-    {% if page.url contains 'glossary' %}
-      {% if page.url contains 'glossary/' %}
-        <div class="list__item">
-          <a href="{{ 'glossary' | absolute_url }}" class="list__link">Glossary</a>
-        </div>
-        <div class="list__item">{{ page.title }}</div>
-      {% else %}
-        <div class="list__item">Glossary</div>
-      {% endif %}
-    {% else %}
-
-        {%- assign menu_tabs = linklists['main-menu'] -%}
-        {%- for tab in menu_tabs.links -%}
-          <!--blocks-->
-          {%- assign tab_blocks = linklists[tab.url].links -%}
-          {%- for current_block in tab_blocks -%}
-            {%- assign current_links = linklists[current_block.url] -%}
-            {% if current_links.links contains page.url %}
-              <div class="list__item">
-                <a href="{{ tab.url | absolute_url }}" class="list__link">{{ tab.title }}</a>
-              </div>
-              {% break %}
-            {% endif %}
-          {%- endfor -%}
-        {%- endfor -%}
-        
-      <div class="list__item">{{ page.title }}</div>
-    {% endif %}
-
+    {%- assign menu_tabs = linklists['main-menu'] -%}
+    {%- for tab in menu_tabs.links -%}
+      <!--blocks-->
+      {%- assign tab_blocks = linklists[tab.url].links -%}
+      {%- for current_block in tab_blocks -%}
+        {%- assign current_links = linklists[current_block.url] -%}
+        {% if current_links.links contains page.title %}
+          <div class="list__item">
+            <a href="{{ tab.url | absolute_url }}" class="list__link">{{ tab.title }}</a>
+          </div>
+        {% endif %}
+      {%- endfor -%}
+    {%- endfor -%}
+      
+    <div class="list__item">{{ page.title }}</div>
   {% else %}
 
    <div class="list__item">{{ page_title }}</div>
