@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="preconnect" href="https://p.adsymptotic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/" crossorigin />
     {% include 'google-tag-manager-head' %}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -52,15 +53,15 @@
     <link rel="preload" href="{{ 'jquery.validate.unobtrusive.min.js' | asset_url }}" as="script">
     <link rel="preload" href="{{ 'jquery.fancybox.min.js' | asset_url }}" as="script">
 
-    <link rel="preload" href="{{ '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js' }}" as="script">
-    <link rel="preload" href="{{ '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js' }}" as="script">
-    <link rel="preload" href="{{ '//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js' }}" as="script">
-    <link rel="preload" href="{{ '//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-cookies.js' }}" as="script">
-    <link rel="preload" href="{{ '//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js' }}" as="script">
-    <link rel="preload" href="{{ '//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js' }}" as="script">
-    <link rel="preload" href="{{ '//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.7/angular-sanitize.min.js' }}" as="script">
-    <link rel="preload" href="{{ '//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.12.1/angular-translate.min.js' }}" as="script">
-    <link rel="preload" href="{{ '//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.12.1/angular-translate-loader-url/angular-translate-loader-url.min.js' }}" as="script">
+    <link rel="preload" href="{{ '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js' }}" as="script" crossorigin>
+    <link rel="preload" href="{{ '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js' }}" as="script" crossorigin>
+    <link rel="preload" href="{{ '//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js' }}" as="script" crossorigin>
+    <link rel="preload" href="{{ '//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-cookies.js' }}" as="script" crossorigin>
+    <link rel="preload" href="{{ '//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js' }}" as="script" crossorigin>
+    <link rel="preload" href="{{ '//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js' }}" as="script" crossorigin>
+    <link rel="preload" href="{{ '//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.7/angular-sanitize.min.js' }}" as="script" crossorigin>
+    <link rel="preload" href="{{ '//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.12.1/angular-translate.min.js' }}" as="script" crossorigin>
+    <link rel="preload" href="{{ '//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.12.1/angular-translate-loader-url/angular-translate-loader-url.min.js' }}" as="script" crossorigin>
 </head>
 <body>
     {% include 'google-tag-manager-body' %}
