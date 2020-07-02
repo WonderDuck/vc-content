@@ -43,8 +43,10 @@
     {% include 'autopilot' %}
     {% include 'markup-corporation' %}
     {% include 'markup-website' %}
-    {% include 'markup-opengraph' %}    
+    {% include 'markup-opengraph' %}
+    {% if page_settings %}
     {% include 'markup-article' %}
+    {% endif %}
 </head>
 <body ng-controller="mainController">
     {% include 'google-tag-manager-body' %}
@@ -73,14 +75,16 @@
             </div>
 
             <article class="main" role="main">
-                <div class="glossary container">
-                    <div style="width:100%; min-width:100%;">
-                        {% include 'breadcrumb' %}
-                    </div>
-                    {% include 'glossary-left-menu' %}
-                    <div class="glossary__content">
-                        {{ content_for_layout }}
-                        {% include 'disqus' %}
+                <div class="container">
+                    <div class="glossary">
+                        <div style="width:100%; min-width:100%;">
+                            {% include 'breadcrumb' %}
+                        </div>
+                        {% include 'glossary-left-menu' %}
+                        <div class="glossary__content">
+                            {{ content_for_layout }}
+                            {% include 'disqus' %}
+                        </div>
                     </div>
                 </div>
             </article>

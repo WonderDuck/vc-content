@@ -8777,7 +8777,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .glossary {
-    padding: 3.125rem 0;
     display: flex;
     height: 100%;
     flex-wrap: wrap;
@@ -9031,7 +9030,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
     background: #f8f8f8;
     box-sizing: border-box;
     height: 100%;
-    padding: 3.125rem 0;
+    padding: 0.75rem 0 3.125rem 0;
 }
 
 .blog__heading {
@@ -9090,7 +9089,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .blog .blog__date {
     margin-left: 4.375rem;
-    margin-right: .35rem;
+    margin-right: 0.35rem;
 }
 
 @media (min-width: 768px) {
@@ -10551,7 +10550,7 @@ textarea {
 }
 
 .list--columns .list__descr--small {
-    font-size: .875rem;
+    font-size: 0.875rem;
 }
 
 .list--columns .list__descr--medium {
@@ -10583,7 +10582,7 @@ textarea {
 
 .list--columns .list__map::after {
     background: #eee;
-    content: ' ';
+    content: " ";
     display: block;
     height: 12.5rem;
     position: relative;
@@ -10593,7 +10592,7 @@ textarea {
 .list--columns ul li,
 .list--columns ol li {
     display: block;
-    font-size: .875rem;
+    font-size: 0.875rem;
     line-height: 1.4;
     min-height: 0;
     padding: 0;
@@ -10601,7 +10600,7 @@ textarea {
 
 .list--columns ul li ~ li,
   .list--columns ol li ~ li {
-    margin-top: .625rem;
+    margin-top: 0.625rem;
 }
 
 .list--columns ul a,
@@ -10647,7 +10646,7 @@ textarea {
         background: url("../../images/redesign/icons/slider-arrow.svg") no-repeat;
         cursor: pointer;
         height: 3.125rem;
-        margin: 0 .875rem;
+        margin: 0 0.875rem;
         width: 3.125rem;
     }
 
@@ -10667,7 +10666,7 @@ textarea {
 .list--cards .list__inner {
     align-items: flex-start;
     border: 1px solid #cfd2e6;
-    border-radius: .625rem;
+    border-radius: 0.625rem;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -10676,7 +10675,7 @@ textarea {
 }
 
 .list--cards .list__img {
-    border-radius: .625rem .625rem 0 0;
+    border-radius: 0.625rem 0.625rem 0 0;
     flex: 0 0 11rem;
     height: 11rem;
     margin: -1px -1.875rem 1.25rem;
@@ -10692,7 +10691,7 @@ textarea {
 }
 
 .list--cards .list__pic {
-    border-radius: .625rem .625rem 0 0;
+    border-radius: 0.625rem 0.625rem 0 0;
     display: block;
     margin: 0;
     width: 100%;
@@ -10714,7 +10713,7 @@ textarea {
 
 .list--cards .list__descr {
     color: #b3b7d0;
-    font-size: .875rem;
+    font-size: 0.875rem;
     margin-bottom: 1.25rem;
 }
 
@@ -10723,11 +10722,11 @@ textarea {
     font-weight: normal;
     font-size: 16px;
     line-height: 24px;
-    color: #0C1015;
+    color: #0c1015;
 }
 
 .list--cards .list__descr .portrait-content {
-    color: #0C1015;
+    color: #0c1015;
     font-family: Helvetica;
     font-style: normal;
     font-weight: normal;
@@ -10742,31 +10741,39 @@ textarea {
 }
 
 .list--breadcrumb {
+    padding: 0.75rem 0;
     align-items: center;
     display: flex;
-    margin-bottom: 2.5rem;
 }
 
 .list--breadcrumb .list__item {
     color: #ff9a05;
-    font-size: .875rem;
+    font-size: 0.875rem;
 }
 
 .list--breadcrumb .list__item ~ .list__item {
-    margin-left: .9375rem;
-    padding-left: .9375rem;
+    margin-left: 0.9375rem;
+    padding-left: 0.9375rem;
     position: relative;
 }
 
 .list--breadcrumb .list__item ~ .list__item::before {
     background: url("../../images/redesign/icons/arrow-chevron.svg") no-repeat scroll 0 0;
-    content: ' ';
+    content: " ";
     display: block;
-    height: .8125rem;
+    height: 0.8125rem;
     left: 0;
     position: absolute;
-    top: .125rem;
-    width: .4375rem;
+    top: 0.125rem;
+    width: 0.4375rem;
+}
+
+@media (max-width: 575.98px) {
+    .list--breadcrumb .list__item ~ .list__item {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 }
 
 .list--breadcrumb .list__link {
@@ -10775,12 +10782,6 @@ textarea {
 
 .list--breadcrumb .list__link:hover {
     color: #ff9a05;
-}
-
-@media (max-width: 575.98px) {
-    .list--breadcrumb {
-        display: none;
-    }
 }
 
 .list--text .list__sidebar {
@@ -10816,8 +10817,8 @@ textarea {
     width: 44px;
     border-radius: 50%;
     display: inline-block;
-    border: 3px solid #FF9A05;
-    color: #FF9A05;
+    border: 3px solid #ff9a05;
+    color: #ff9a05;
     padding: 0.5rem 0.5rem 0.5rem 0.85rem;
     margin-bottom: 1rem;
 }
@@ -10844,7 +10845,7 @@ textarea {
 
 .list--text.list--horizontal .list__sidebar-inner {
     display: flex;
-    margin: 0 -.9375rem;
+    margin: 0 -0.9375rem;
 }
 
 @media (max-width: 1199.98px) {
@@ -10860,12 +10861,12 @@ textarea {
 }
 
 .list--text.list--horizontal .list__sidebar .list__item {
-    padding: 0 .9375rem;
+    padding: 0 0.9375rem;
 }
 
 @media (max-width: 1199.98px) {
     .list--text.list--horizontal .list__sidebar .list__item {
-        padding: 0 .9375rem .9375rem;
+        padding: 0 0.9375rem 0.9375rem;
     }
 }
 
@@ -10957,7 +10958,7 @@ textarea {
 .list--text .message .message-container .text {
     font-style: normal;
     font-weight: normal;
-    font-size: .875rem;
+    font-size: 0.875rem;
     line-height: 1.25rem;
 }
 
@@ -10977,7 +10978,7 @@ textarea {
     box-sizing: border-box;
     color: inherit;
     display: flex;
-    font-size: .875rem;
+    font-size: 0.875rem;
     font-weight: normal;
     justify-content: center;
     height: 2.5rem;
@@ -11021,7 +11022,7 @@ textarea {
 
 .list--pics .list__item::after {
     background: #eee;
-    content: ' ';
+    content: " ";
     display: block;
     height: 100%;
     left: 0;
@@ -11060,7 +11061,7 @@ textarea {
 }
 
 .list--contributors .list__item {
-    margin-right: .625rem;
+    margin-right: 0.625rem;
 }
 
 .list--contributors .list__pic {
@@ -11073,11 +11074,11 @@ textarea {
 .list--studios {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -.9375rem;
+    margin: 0 -0.9375rem;
 }
 
 .list--studios .list__item {
-    padding: .9375rem;
+    padding: 0.9375rem;
 }
 
 .list--studios .list__inner {
@@ -11109,14 +11110,14 @@ textarea {
 
 .list--studios .list__t {
     color: #ff9a05;
-    font-size: .875rem;
+    font-size: 0.875rem;
     font-weight: 700;
     text-transform: uppercase;
 }
 
 .list--studios .list__text {
     color: #939393;
-    font-size: .8125rem;
+    font-size: 0.8125rem;
 }
 
 .list--studios .list__descr {
