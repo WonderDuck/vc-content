@@ -100,10 +100,10 @@
       <!--blocks-->
       {%- assign tab_blocks = linklists[tab.url].links -%}
       {%- for current_block in tab_blocks -%}
-        {%- assign current_links = linklists[current_block.url] -%}
-        {% if current_links.links contains page.url %}
+        {%- assign current_links = linklists[current_block.url].links -%}
+        {% if current_links contains page.url %}
           <div class="list__item">
-            <a href="{{ tab.url | absolute_url }}" class="list__link">{{ tab.title }}</a>
+            <a href="{{ current_links[0].url | absolute_url }}" class="list__link">{{ tab.title }}</a>
           </div>
         {% endif %}
       {%- endfor -%}

@@ -9054,7 +9054,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
     background: #f8f8f8;
     box-sizing: border-box;
     height: 100%;
-    padding: 0.75rem 0 3.125rem 0;
+    padding: 0 0 3.125rem 0;
 }
 
 .blog__heading {
@@ -10765,7 +10765,7 @@ textarea {
 }
 
 .list--breadcrumb {
-    padding: 0.75rem 0;
+    padding: 1.5rem 0;
     align-items: center;
     display: flex;
 }
