@@ -7388,13 +7388,25 @@ code {
     font-size: 1.125rem;
 }
 
+.block__descr--normal ~ .block__descr--normal {
+    margin-top: 1.875rem;
+}
+
 .block__descr--medium {
     font-size: 1.5rem;
+}
+
+.block__descr--medium ~ .block__descr--medium {
+    margin-top: 1.875rem;
 }
 
 .block__descr--large {
     font-size: 1.75rem;
     line-height: 1.2;
+}
+
+.block__descr--large ~ .block__descr--large {
+    margin-top: 1.875rem;
 }
 
 .block__t {

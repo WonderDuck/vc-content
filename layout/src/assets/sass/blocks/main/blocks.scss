@@ -250,17 +250,32 @@
         &--normal
         {
             font-size: 1.125rem;
+
+            & ~ #{&}
+            {
+                margin-top: 1.875rem;
+            }
         }
 
         &--medium
         {
             font-size: 1.5rem;
+
+            & ~ #{&}
+            {
+                margin-top: 1.875rem;
+            }
         }
 
         &--large
         {
             font-size: 1.75rem;
             line-height: 1.2;
+
+            & ~ #{&}
+            {
+                margin-top: 1.875rem;
+            }
         }
     }
 
