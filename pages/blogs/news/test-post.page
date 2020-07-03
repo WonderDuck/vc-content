@@ -1,10 +1,25 @@
 [
     {
         "type": "settings",
-        "title": "",
+        "title": "testt post",
         "permalink": "blog/test-post",
         "layout": "theme",
-        "noindex": false
+        "noindex": false,
+        "category": "events",
+        "date": "2020-03-01T00:00:00.000Z",
+        "excerpt": "test test test post",
+        "main-image": "http://localhost/admin/assets/blogs/5932582_xlarge_MoXQsRpuhV.jpg",
+        "is-sticked": null,
+        "author": {
+            "id": "d42c28de31374b609278014c88ca9759",
+            "firstName": "test",
+            "lastName": "employee",
+            "photoUrl": "https://vcpro.blob.core.windows.net/cms-content/Pages/vccom/assets/images/team/12.jpg",
+            "jobTitle": "SEO Manager",
+            "biography": "This is our first test employee. Now he is VC Author!",
+            "linkedinLink": "http://bash.im"
+        },
+        "name": null
     },
     {
         "id": 1,

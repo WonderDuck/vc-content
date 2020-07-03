@@ -1,0 +1,96 @@
+[
+    {
+        "type": "settings",
+        "title": "agtest",
+        "permalink": "glossary/agtest",
+        "layout": "glossary",
+        "noindex": false,
+        "header": "agtest",
+        "description": "agtest",
+        "markup_webpage_title": null,
+        "markup_webpage_description": null,
+        "markup_webpage_image": null,
+        "markup_webpage_date_created": "2020-07-02T00:00:00.000Z",
+        "name": null,
+        "author": {
+            "id": "d42c28de31374b609278014c88ca9759",
+            "firstName": "test",
+            "lastName": "employee",
+            "photoUrl": "https://vcpro.blob.core.windows.net/cms-content/Pages/vccom/assets/images/team/12.jpg",
+            "jobTitle": "SEO Manager",
+            "biography": "This is our first test employee. Now he is VC Author!",
+            "linkedinLink": "http://bash.im"
+        }
+    },
+    {
+        "id": 1,
+        "type": "headings-collection",
+        "__id": "headingscollectionHUZe",
+        "headings": [
+            {
+                "title": "<p><span style=\"color:#e74c3c;\">O</span>ne</p>\n",
+                "seoTag": "h1"
+            },
+            {
+                "title": "<p><span style=\"color:#f39c12;\">T</span>wo</p>\n",
+                "seoTag": "h2"
+            },
+            {
+                "title": "<p><span style=\"color:#f1c40f;\">T</span>hree</p>\n",
+                "seoTag": "h3"
+            },
+            {
+                "title": "<p><span style=\"color:#27ae60;\">F</span>our</p>\n",
+                "seoTag": "h4"
+            },
+            {
+                "title": "<p><span style=\"color:#3498db;\">F</span>ive</p>\n",
+                "seoTag": "h5"
+            },
+            {
+                "title": "<p><span style=\"color:#2980b9;\">S</span>ix</p>\n",
+                "seoTag": "h6"
+            },
+            {
+                "title": "<p><span style=\"color:#8e44ad;\">N</span>one</p>\n",
+                "seoTag": "none"
+            }
+        ],
+        "containerAlignment": "center",
+        "textAreaWidth": "full",
+        "topPadding": "block--padding-top-large",
+        "bottomPadding": "block--padding-bottom-large",
+        "backgroundColor": "block--bg-white",
+        "backgroundColorHex": null,
+        "name": null
+    },
+    {
+        "id": 2,
+        "type": "cover-with-simple-text",
+        "__id": "coverwithsimpletextEBBY",
+        "horizontalAlignment": "center",
+        "textAreaWidth": "col-lg",
+        "titleSeoTag": "div",
+        "backgroundColorHex": null,
+        "backgroundOverlayColor": "none",
+        "backgroundOverlayColorHex": null,
+        "backgroundScrollEffect": "block--cover-static",
+        "title": "<p>ag<span style=\"color:#3498db;\">t</span>est</p>\n",
+        "subtitle": "<p>Anything you&#39;ve even dreamed about is possible to realise just at the moment when you decided to win.</p>\n",
+        "note": "<p>Our company</p>\n",
+        "background": null,
+        "firstButton": {
+            "url": "",
+            "urlText": "Call to action",
+            "style": "btn btn--orange"
+        },
+        "secondButton": {
+            "url": "",
+            "urlText": "",
+            "style": "btn btn--orange"
+        },
+        "verticalAlignment": "align-self-start",
+        "backgroundColor": "block--bg-white",
+        "name": null
+    }
+]
