@@ -7,7 +7,9 @@
         <div class="row justify-content-center">
             {% if block.title != '' %}
                 <div class="block__text {{block.textAreaWidth}}">
-                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
+                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                    
+                    {% include 'headings' headings: block.headings %}
                 </div>
             {% endif %}
         </div>
@@ -16,9 +18,9 @@
         {% include 'overlay-color-hex-style-with-counter' predefinedColor: block.imageOverlayColor, customColor: block.imageOverlayColorHex %}
         <div id="block-{{block.id}}" class="block__cover-pic lazyload"
             {% if block.backgroundImage != '' and block.backgroundImage.url != '' %} style="background-image: url('{{block.image.url}}')" {% endif %}>
-            {% if block.subtitle != '' %}
-                <div class="block__note">{{block.subtitle}}</div>
-            {% endif %}
         </div>
+        {% if block.subtitle != '' %}
+            <div class="image-description">{{block.subtitle}}</div>
+        {% endif %}
     </div>
 </div>
