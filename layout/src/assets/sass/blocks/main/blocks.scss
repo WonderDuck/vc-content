@@ -172,6 +172,12 @@
 		flex-direction: column;
 		position: relative;
 		z-index: 10;
+
+        .image-description
+        {
+            margin-top: 1rem;
+            font-size: .875rem;
+        }
 	}
 
 	&__note
@@ -405,7 +411,11 @@
 		{
 			align-items: center;
 			display: flex;
-			font-size: 0.875rem;
+            font-size: 1rem;
+
+            @include media-breakpoint-up(lg) {
+			    font-size: 1.125rem;
+            }
 		}
 	}
 	

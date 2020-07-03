@@ -5481,7 +5481,6 @@
     "displayField": "title",
     "category": "Media and Logotypes",
 	"includeShared": [
-		"seo-subtitle",
 		"headings"
 	],
     "settings": [

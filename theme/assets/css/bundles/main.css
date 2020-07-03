@@ -4332,12 +4332,13 @@ code {
   [class*='-page'] ol li::before,
   .blog-content ol li::before {
     align-items: center;
-    background: #ff9a05;
+    background: #FFB608;
     border-radius: 1.75rem;
     content: counter(num);
     counter-increment: num;
     display: flex;
     justify-content: center;
+    font-size: .875rem;
 }
 
 .page ul.custom li::before, [class*='-page'] ul.custom li::before, .blog-content ul.custom li::before {
@@ -7323,6 +7324,11 @@ code {
     z-index: 10;
 }
 
+.block__inner .image-description {
+    margin-top: 1rem;
+    font-size: .875rem;
+}
+
 .block__note {
     color: #aaa;
     font-size: 1.25rem;
@@ -7509,7 +7515,14 @@ code {
   .block ol li {
     align-items: center;
     display: flex;
-    font-size: 0.875rem;
+    font-size: 1rem;
+}
+
+@media (min-width: 992px) {
+    .block ul li,
+      .block ol li {
+        font-size: 1.125rem;
+    }
 }
 
 .block .block__descr p,
