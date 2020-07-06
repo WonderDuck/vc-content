@@ -4332,12 +4332,13 @@ code {
   [class*='-page'] ol li::before,
   .blog-content ol li::before {
     align-items: center;
-    background: #ff9a05;
+    background: #FFB608;
     border-radius: 1.75rem;
     content: counter(num);
     counter-increment: num;
     display: flex;
     justify-content: center;
+    font-size: .875rem;
 }
 
 .page ul.custom li::before, [class*='-page'] ul.custom li::before, .blog-content ul.custom li::before {
@@ -7161,7 +7162,7 @@ code {
 }
 
 .block .w-100, .block .row {
-    width: 100%;
+    width: calc(100% + 30px);
 }
 
 @media (max-width: 767.98px) {
@@ -7322,6 +7323,11 @@ code {
     z-index: 10;
 }
 
+.block__inner .image-description {
+    margin-top: 1rem;
+    font-size: .875rem;
+}
+
 .block__note {
     color: #aaa;
     font-size: 1.25rem;
@@ -7381,13 +7387,25 @@ code {
     font-size: 1.125rem;
 }
 
+.block__descr--normal ~ .block__descr--normal {
+    margin-top: 1.875rem;
+}
+
 .block__descr--medium {
     font-size: 1.5rem;
+}
+
+.block__descr--medium ~ .block__descr--medium {
+    margin-top: 1.875rem;
 }
 
 .block__descr--large {
     font-size: 1.75rem;
     line-height: 1.2;
+}
+
+.block__descr--large ~ .block__descr--large {
+    margin-top: 1.875rem;
 }
 
 .block__t {
@@ -7508,7 +7526,14 @@ code {
   .block ol li {
     align-items: center;
     display: flex;
-    font-size: 0.875rem;
+    font-size: 1rem;
+}
+
+@media (min-width: 992px) {
+    .block ul li,
+      .block ol li {
+        font-size: 1.125rem;
+    }
 }
 
 .block .block__descr p,

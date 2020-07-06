@@ -7,7 +7,7 @@
 
 	.w-100, .row
 	{
-		width: 100%;
+		width: calc(100% + 30px);
 	}
 
 	@include media-breakpoint-down(sm) {
@@ -172,6 +172,12 @@
 		flex-direction: column;
 		position: relative;
 		z-index: 10;
+
+        .image-description
+        {
+            margin-top: 1rem;
+            font-size: .875rem;
+        }
 	}
 
 	&__note
@@ -244,17 +250,32 @@
         &--normal
         {
             font-size: 1.125rem;
+
+            & ~ #{&}
+            {
+                margin-top: 1.875rem;
+            }
         }
 
         &--medium
         {
             font-size: 1.5rem;
+
+            & ~ #{&}
+            {
+                margin-top: 1.875rem;
+            }
         }
 
         &--large
         {
             font-size: 1.75rem;
             line-height: 1.2;
+
+            & ~ #{&}
+            {
+                margin-top: 1.875rem;
+            }
         }
     }
 
@@ -405,7 +426,11 @@
 		{
 			align-items: center;
 			display: flex;
-			font-size: 0.875rem;
+            font-size: 1rem;
+
+            @include media-breakpoint-up(lg) {
+			    font-size: 1.125rem;
+            }
 		}
 	}
 	

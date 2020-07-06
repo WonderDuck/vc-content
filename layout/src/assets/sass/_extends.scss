@@ -83,12 +83,13 @@
             &::before
             {
                 align-items: center;
-                background: $orange;
+                background: #FFB608;
                 border-radius: 1.75rem;
                 content: counter(num);
                 counter-increment: num;
                 display: flex;
                 justify-content: center;
+                font-size: .875rem;
             }
         }
     }

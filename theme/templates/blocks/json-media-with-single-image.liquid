@@ -18,9 +18,9 @@
         {% include 'overlay-color-hex-style-with-counter' predefinedColor: block.imageOverlayColor, customColor: block.imageOverlayColorHex %}
         <div id="block-{{block.id}}" class="block__cover-pic lazyload"
             {% if block.backgroundImage != '' and block.backgroundImage.url != '' %} style="background-image: url('{{block.image.url}}')" {% endif %}>
-            {% if block.subtitle != '' %}
-                {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__note' %}
-            {% endif %}
         </div>
+        {% if block.subtitle != '' %}
+            <div class="image-description">{{block.subtitle}}</div>
+        {% endif %}
     </div>
 </div>
