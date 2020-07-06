@@ -4,9 +4,9 @@
      {% if block.noPad == 'True' %} section--no-padding {% endif %}">
     <div class="blog">
         <div class="posts __responsive container">
-          	{% if block.title != '' %}
-          	    <h2>{{block.title}}</h2>
-          	{% endif %}
+            {% if block.title != '' %}
+            <h2>{{block.title}}</h2>
+            {% endif %}
             {% for blog in blogs %}
                 {% assign articles = blog.articles %}
                 <div class="list list--posts">
@@ -49,12 +49,14 @@
                                 </div>
                             </div>
                         </div>
-                        {% assign counter = counter | plus: 1 %}
-                        {% if counter == block.count %}
-                            {% break %}
-                        {% endif %}
-                    {% endfor %}
+                    </div>
                 </div>
+                {% assign counter = counter | plus: 1 %}
+                {% if counter == block.count %}
+                {% break %}
+                {% endif %}
+                {% endfor %}
+            </div>
             {% endfor %}
         </div>
     </div>
