@@ -7163,7 +7163,7 @@ code {
 }
 
 .block .w-100, .block .row {
-    width: 100%;
+    width: calc(100% + 30px);
 }
 
 @media (max-width: 767.98px) {
