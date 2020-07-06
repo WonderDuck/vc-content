@@ -20,14 +20,21 @@
 
                 <div class="col-lg">
                     {% if block.note != '' %}
-                        <div class="block__note">{{block.note}}</div>
+                        {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
+                        <div class="block__space"></div>
                     {% endif %}
+
+                    {% if block.title != '' %}
+                        {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                    {% endif %}
+                    
+                    {% include 'headings' headings: block.headings %}
                     <div class="block__space"></div>
 
-                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
+                    {% if block.subtitle != '' %}
+                        {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
+                    {% endif %}
 
-                    <div class="block__space"></div>
-                    <div class="block__descr">{{block.subtitle}}</div>
                     {% if block.firstButton != '' and block.firstButton.urlText != '' %}
                         <div class="block__space"></div>
                         <div class="block__actions">

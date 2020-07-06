@@ -1,0 +1,46 @@
+[
+    {
+        "type": "settings",
+        "title": "awtest",
+        "permalink": "blog/awtest",
+        "layout": "theme",
+        "noindex": false,
+        "header": "awtest",
+        "category": "technical",
+        "date": "2020-06-22T00:00:00.000Z",
+        "excerpt": "awtest awtest awtest awtest",
+        "main-image": "http://localhost/admin/assets/blogs/5480678_xlarge_B_AqDib4Cp.jpg",
+        "is-sticked": null,
+        "author": null,
+        "name": null
+    },
+    {
+        "id": 1,
+        "type": "cover-with-simple-text",
+        "__id": "coverwithsimpletextdQ21",
+        "horizontalAlignment": "center",
+        "textAreaWidth": "col-lg",
+        "titleSeoTag": "div",
+        "backgroundColorHex": null,
+        "backgroundOverlayColor": "none",
+        "backgroundOverlayColorHex": null,
+        "backgroundScrollEffect": "block--cover-static",
+        "title": "<p>awtest&nbsp;awtest&nbsp;awtest</p>\n",
+        "subtitle": "<p>Anything you&#39;ve even dreamed about is possible to realise just at the moment when you decided to win.</p>\n",
+        "note": "<p>Our company</p>\n",
+        "background": null,
+        "firstButton": {
+            "url": "",
+            "urlText": "Call to action",
+            "style": "btn btn--orange"
+        },
+        "secondButton": {
+            "url": "",
+            "urlText": "",
+            "style": "btn btn--orange"
+        },
+        "verticalAlignment": "align-self-start",
+        "backgroundColor": "block--bg-white",
+        "name": null
+    }
+]

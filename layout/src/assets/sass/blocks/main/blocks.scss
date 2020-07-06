@@ -7,7 +7,7 @@
 
 	.w-100, .row
 	{
-		width: 100%;
+		width: calc(100% + 30px);
 	}
 
 	@include media-breakpoint-down(sm) {
@@ -172,6 +172,7 @@
 		flex-direction: column;
 		position: relative;
 		z-index: 10;
+
         .image-description
         {
             margin-top: 1rem;
@@ -194,6 +195,35 @@
         margin-bottom: 0;
 
         @extend %font-headings;
+    }
+
+    h2#{&}__t
+    {
+        font-size: 1.75rem;
+    }
+
+    h3#{&}__t
+    {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    h4#{&}__t
+    {
+        font-size: 1.25rem;
+        line-height: 2rem;
+    }
+
+    h5#{&}__t
+    {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    h6#{&}__t
+    {
+        font-size: .75rem;
+        line-height: 1.5rem;
     }
 
     &__descr
@@ -220,17 +250,32 @@
         &--normal
         {
             font-size: 1.125rem;
+
+            & ~ #{&}
+            {
+                margin-top: 1.875rem;
+            }
         }
 
         &--medium
         {
             font-size: 1.5rem;
+
+            & ~ #{&}
+            {
+                margin-top: 1.875rem;
+            }
         }
 
         &--large
         {
             font-size: 1.75rem;
             line-height: 1.2;
+
+            & ~ #{&}
+            {
+                margin-top: 1.875rem;
+            }
         }
     }
 
@@ -383,8 +428,7 @@
 			display: flex;
             font-size: 1rem;
 
-            @include media-breakpoint-up(lg)
-            {
+            @include media-breakpoint-up(lg) {
 			    font-size: 1.125rem;
             }
 		}

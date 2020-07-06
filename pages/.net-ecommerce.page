@@ -8,6 +8,41 @@
         "id": 1
     },
     {
+        "id": 12,
+        "type": "headline-with-simple-text",
+        "__id": "headlinewithsimpletextsDdN",
+        "containerAlignment": "block--align-center",
+        "textAreaWidth": "col-lg",
+        "topPadding": "block--padding-top-large",
+        "bottomPadding": "block--padding-bottom-large",
+        "topDivider": null,
+        "bottomDivider": null,
+        "titleSeoTag": "div",
+        "backgroundColor": "block--bg-white",
+        "backgroundColorHex": null,
+        "backgroundOverlayColor": "none",
+        "backgroundOverlayColorHex": null,
+        "backgroundScrollEffect": "block--cover-static",
+        "title": "<p>Bring y<span style=\"color:#9b59b6;\">ou</span>r ideas to life</p>\n",
+        "subtitle": "<p>Anything you&#39;ve even dreamed about is possible to realise just at the moment when you decided to win.</p>\n",
+        "note": "<p>Our company</p>\n",
+        "background": {
+            "url": "http://localhost/admin/assets/pages/001_Ofz38A0nDp.jpg",
+            "altText": null
+        },
+        "firstButton": {
+            "url": "",
+            "urlText": "Call to action",
+            "style": "btn btn--orange"
+        },
+        "secondButton": {
+            "url": "",
+            "urlText": "",
+            "style": "btn btn--orange"
+        },
+        "name": null
+    },
+    {
         "id": 1,
         "type": "video",
         "name": "Video and text",

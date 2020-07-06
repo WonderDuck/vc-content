@@ -1,3 +1,3 @@
-{{block.backgroundColor}} {{block.backgroundScrollEffect}} block--cover block--cover--not-fixed"
+{{block.backgroundColor}} {{block.backgroundScrollEffect}} block--cover block--cover--not-fixed lazyload"
 {% if block.backgroundColorHex != '' and block.background == null or block.background == '' or block.background.url == '' %} style="background-color:{{block.backgroundColorHex}}" {% endif %}
-{% if block.background != '' and block.background.url != '' %} style="background-image: url('{{block.background.url}}')" {% endif %} id="block-{{block.id}}"
+{% if block.background != '' and block.background.url != '' %} data-bg="{{ block.background.url | replace: 'https://vcpro.blob.core.windows.net', 'https://ik.imagekit.io/je8lpsqkoi' }}" {% endif %} id="block-{{block.id}}"

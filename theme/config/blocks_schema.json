@@ -182,7 +182,47 @@
         "id": "markup_webpage_date_created",
         "label": "Date created",
         "type": "calendar"
-      }
+      },
+        {
+            "id": "author",
+            "label": "Author",
+            "type": "select",
+            "equalKey": "id",
+            "request": {
+                "url": "api/members/search",
+                "method": "post",
+                "label": "fullName",
+                "value": [
+                    "id",
+                    "firstName",
+                    "lastName",
+                    "photoUrl",
+                    {
+                        "key": "jobTitle",
+                        "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
+                        "isArray": false
+                    },
+                    {
+                        "key": "biography",
+                        "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
+                        "isArray": false
+                    },
+                    {
+                        "key": "linkedinLink",
+                        "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
+                        "isArray": false
+                    }
+                ],
+                "params": {
+                    "memberId": null,
+                    "deepSearch": true,
+                    "responseGroup": "Full",
+                    "sort": "memberType:desc;name:asc",
+                    "searchPhrase": "isAuthor:true"
+                }
+            },
+            "options": []
+        }
     ]
   },
   "footer": {
@@ -276,7 +316,146 @@
           "tab": "Settings",
           "group": "Background"
         }
-      ]
+      ],
+	  "seo-subtitle": [
+	    {
+			"id": "subtitleSeoTag",
+			"label": "Subtitle SEO tag",
+			"type": "select",
+			"default": "none",
+			"options": [
+			  {
+				"value": "h1",
+				"label": "H1"
+			  },
+			  {
+				"value": "h2",
+				"label": "H2"
+			  },
+			  {
+				"value": "h3",
+				"label": "H3"
+			  },
+			  {
+				"value": "h4",
+				"label": "H4"
+			  },
+			  {
+				"value": "h5",
+				"label": "H5"
+			  },
+			  {
+				"value": "h6",
+				"label": "H6"
+			  },
+			  {
+				"value": "none",
+				"label": "None"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Typography"
+		}
+	  ],
+	  "seo-note": [
+	    {
+			"id": "noteSeoTag",
+			"label": "Note SEO tag",
+			"type": "select",
+			"default": "none",
+			"options": [
+			  {
+				"value": "h1",
+				"label": "H1"
+			  },
+			  {
+				"value": "h2",
+				"label": "H2"
+			  },
+			  {
+				"value": "h3",
+				"label": "H3"
+			  },
+			  {
+				"value": "h4",
+				"label": "H4"
+			  },
+			  {
+				"value": "h5",
+				"label": "H5"
+			  },
+			  {
+				"value": "h6",
+				"label": "H6"
+			  },
+			  {
+				"value": "none",
+				"label": "None"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Typography"
+		}
+	  ],
+	  "headings": [
+		{
+			"id": "headings",
+			"label": "Headings",
+			"type": "list",
+			"addText": "Add heading",
+			"removeText": "Remove heading",
+			"displayField": "title",
+			"element": [
+				{
+					"id": "title",
+					"label": "Title",
+					"type": "text",
+					"settings": [
+						"TextColor",
+						"Link",
+						"Unlink"
+					]
+				},
+				{
+					"id": "seoTag",
+					"label": "SEO Tag",
+					"type": "select",
+					"default": "none",
+					"options": [
+					  {
+						"value": "h1",
+						"label": "H1"
+					  },
+					  {
+						"value": "h2",
+						"label": "H2"
+					  },
+					  {
+						"value": "h3",
+						"label": "H3"
+					  },
+					  {
+						"value": "h4",
+						"label": "H4"
+					  },
+					  {
+						"value": "h5",
+						"label": "H5"
+					  },
+					  {
+						"value": "h6",
+						"label": "H6"
+					  },
+					  {
+						"value": "none",
+						"label": "None"
+					  }
+					]
+				}
+			],
+			"tab": "Content"
+		}
+	]
     }
   },
   "cover-with-simple-text": {
@@ -285,7 +464,12 @@
     "icon": "image-text",
     "displayField": "name",
     "category": "Covers and Hero",
-    "includeShared": "cover-blocks",
+    "includeShared": [
+		"cover-blocks",
+		"seo-subtitle",
+		"seo-note",
+		"headings"
+	],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -528,7 +712,12 @@
     "icon": "image-text",
     "displayField": "name",
     "category": "Covers and Hero",
-    "includeShared": "cover-blocks",
+    "includeShared": [
+		"cover-blocks",
+		"seo-subtitle",
+		"seo-note",
+		"headings"
+	],
     "settings": [
       {
         "id": "titleSeoTag",
@@ -737,7 +926,12 @@
     "icon": "image-text",
     "displayField": "name",
     "category": "Covers and Hero",
-    "includeShared": "cover-blocks",
+    "includeShared": [
+		"cover-blocks",
+		"seo-subtitle",
+		"seo-note",
+		"headings"
+	],
     "settings": [
       {
         "id": "titleSeoTag",
@@ -954,7 +1148,12 @@
     "icon": "image-text",
     "displayField": "name",
     "category": "Covers and Hero",
-    "includeShared": "cover-blocks",
+    "includeShared": [
+		"cover-blocks",
+		"seo-subtitle",
+		"seo-note",
+		"headings"
+	],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -1417,7 +1616,12 @@
     "icon": "image-text",
     "displayField": "name",
     "category": "Covers and Hero",
-    "includeShared": "cover-blocks",
+    "includeShared": [
+		"cover-blocks",
+		"seo-subtitle",
+		"seo-note",
+		"headings"
+	],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -1676,6 +1880,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
+	"includeShared": [
+		"seo-subtitle",
+		"seo-note",
+		"headings"
+	],
     "settings": [
       {
         "id": "containerAlignment",
@@ -2004,6 +2213,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
+	"includeShared": [
+		"seo-subtitle",
+		"seo-note",
+		"headings"
+	],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -2247,6 +2461,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
+	"includeShared": [
+		"seo-subtitle",
+		"seo-note",
+		"headings"
+	],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -2500,6 +2719,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
+	"includeShared": [
+		"seo-subtitle",
+		"seo-note",
+		"headings"
+	],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -2761,6 +2985,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
+	"includeShared": [
+		"seo-subtitle",
+		"seo-note",
+		"headings"
+	],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -3264,6 +3493,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
+	"includeShared": [
+		"seo-subtitle",
+		"seo-note",
+		"headings"
+	],
     "settings": [
       {
         "id": "textAreaWidth",
@@ -3766,6 +4000,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
+	"includeShared": [
+		"seo-subtitle",
+		"seo-note",
+		"headings"
+	],
     "settings": [
       {
         "id": "textAreaWidth",
@@ -4152,6 +4391,144 @@
         "tab": "Content"
       }
     ]
+  },
+  "headings-collection": {
+    "id": "headings-collection",
+    "name": "Headings collection",
+    "icon": "image-text",
+    "displayField": "title",
+    "category": "Headlines and Forms",
+	"includeShared": [
+		"headings"
+	],
+    "settings": [
+		{
+			"id": "headings",
+			"default": [
+				{
+					"title": "Headings collection",
+					"seoTag": "none"
+				}
+			]
+		},
+		{
+			"id": "containerAlignment",
+			"label": "Container alignment",
+			"type": "select",
+			"default": "center",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				}
+			],
+			"tab": "Content"
+		},
+		{
+			"id": "textAreaWidth",
+			"label": "Text area width",
+			"type": "select",
+			"default": "full",
+			"options": [
+			  {
+				"value": "full",
+				"label": "Full width"
+			  },
+			  {
+				"value": "ten",
+				"label": "10 cols"
+			  },
+			  {
+				"value": "eight",
+				"label": "8 cols"
+			  },
+			  {
+				"value": "six",
+				"label": "6 cols"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Main block settings"
+		  },
+		  {
+			"id": "topPadding",
+			"label": "Top padding",
+			"type": "select",
+			"default": "block--padding-top-large",
+			"options": [
+			  {
+				"value": "block--padding-top-none",
+				"label": "None"
+			  },
+			  {
+				"value": "block--padding-top-half",
+				"label": "Small"
+			  },
+			  {
+				"value": "block--padding-top-large",
+				"label": "Medium"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Paddings"
+		  },
+		  {
+			"id": "bottomPadding",
+			"label": "Bottom padding",
+			"type": "select",
+			"default": "block--padding-bottom-large",
+			"options": [
+			  {
+				"value": "block--padding-bottom-none",
+				"label": "None"
+			  },
+			  {
+				"value": "block--padding-bottom-half",
+				"label": "Small"
+			  },
+			  {
+				"value": "block--padding-bottom-large",
+				"label": "Medium"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Paddings"
+		  },
+		  {
+			"id": "backgroundColor",
+			"label": "Colour",
+			"type": "select",
+			"default": "block--bg-white",
+			"options": [
+			  {
+				"value": "block--bg-white",
+				"label": "White"
+			  },
+			  {
+				"value": "block--bg-light",
+				"label": "Gray"
+			  },
+			  {
+				"value": "block--bg-orange",
+				"label": "Orange"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Background"
+		  },
+		  {
+			"id": "backgroundColorHex",
+			"label": "Colour HEX",
+			"type": "color",
+			"default": "",
+			"tab": "Settings",
+			"group": "Background"
+		  }
+	]
   },
   "text-in-paragraphs-or-in-columns": {
     "id": "text-in-paragraphs-or-in-columns",
@@ -4573,6 +4950,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Media and Logotypes",
+	"includeShared": [
+		"seo-subtitle",
+		"headings"
+	],
     "settings": [
       {
         "id": "containerAlignment",
@@ -4829,6 +5210,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Media and Logotypes",
+	"includeShared": [
+		"seo-subtitle",
+		"headings"
+	],
     "settings": [
       {
         "id": "columnsCount",
@@ -5095,6 +5480,9 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Media and Logotypes",
+	"includeShared": [
+		"headings"
+	],
     "settings": [
       {
         "id": "containerAlignment",
@@ -5140,6 +5528,13 @@
         "tab": "Settings",
         "group": "Main block settings"
       },
+	  {
+		"id": "fixedImageWidth",
+		"label": "Fixed image width",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings"
+	  },
       {
         "id": "topPadding",
         "label": "Top padding",
@@ -5559,6 +5954,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Features and Cards",
+	"includeShared": [
+		"seo-subtitle",
+		"headings"
+	],
     "settings": [
       {
         "id": "columnsCount",
@@ -5866,6 +6265,44 @@
               "Source"
             ]
           },
+		  {
+			"id": "subtitleSeoTag",
+			"label": "Subtitle SEO tag",
+			"type": "select",
+			"default": "none",
+			"options": [
+			  {
+				"value": "h1",
+				"label": "H1"
+			  },
+			  {
+				"value": "h2",
+				"label": "H2"
+			  },
+			  {
+				"value": "h3",
+				"label": "H3"
+			  },
+			  {
+				"value": "h4",
+				"label": "H4"
+			  },
+			  {
+				"value": "h5",
+				"label": "H5"
+			  },
+			  {
+				"value": "h6",
+				"label": "H6"
+			  },
+			  {
+				"value": "none",
+				"label": "None"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Typography"
+		  },
           {
             "id": "image",
             "type": "image",
@@ -5931,6 +6368,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "References and Quotes",
+	"includeShared": [
+		"seo-subtitle",
+		"headings"
+	],
     "settings": [
       {
         "id": "columnsCount",
@@ -6310,6 +6751,10 @@
     "icon": "image-text",
     "displayField": "review",
     "category": "References and Quotes",
+	"includeShared": [
+		"seo-subtitle",
+		"headings"
+	],
     "settings": [
       {
         "id": "textAreaWidth",
@@ -6537,6 +6982,10 @@
     "icon": "image-text",
     "displayField": "review",
     "category": "References and Quotes",
+	"includeShared": [
+		"seo-subtitle",
+		"headings"
+	],
     "settings": [
       {
         "id": "textAreaWidth",
@@ -6807,6 +7256,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Promotions and CTAs",
+	"includeShared": [
+		"seo-subtitle",
+		"headings"
+	],
     "settings": [
       {
         "id": "textAreaWidth",
@@ -7192,6 +7645,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Queries and Other",
+	"includeShared": [
+		"seo-subtitle",
+		"headings"
+	],
     "settings": [
       {
         "id": "columnsCount",
@@ -7496,6 +7953,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Queries and Other",
+	"includeShared": [
+		"seo-subtitle",
+		"headings"
+	],
     "settings": [
       {
         "id": "columnsCount",

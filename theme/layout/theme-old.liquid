@@ -2,10 +2,6 @@
 <!DOCTYPE html>
 <html ng-app="storefrontApp">
 <head>
-    <link rel="preconnect" href="https://fastgull.io" />
-    <link rel="preconnect" href="https://connect.facebook.net" />
-    <link rel="preconnect" href="https://p.adsymptotic.com" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com/" />
     {% include 'google-tag-manager-head' %}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,16 +24,15 @@
     <title>ASP.NET ecommerce platform - Virto Commerce</title>
     {% endif %}
     {{ 'style.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
-    <link rel="preload" href="{{ 'jquery.fancybox.min.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="../../fonts/CircularStd-Book.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" href="../../fonts/CircularStd-Bold.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" href="../../fonts/CircularStd-Black.woff" as="font" type="font/woff" crossorigin>
+    {{ 'jquery.fancybox.min.css' | asset_url | stylesheet_tag }}
+    {% include 'segment' %}
     {{ content_for_header }}
     <base href="{{ '/' | absolute_url }}" />
     <link rel="canonical" href="{{ canonical_url }}" />
     <script>
         var BASE_URL = '{{ "/" | full_url }}';
     </script>
+    {% include 'autopilot' %}
     {% include 'markup-corporation' %}
     {% include 'markup-website' %}
     {% if article %}
@@ -62,11 +57,6 @@
             <!-- TODO: getting started is main menu, must be renamed -->
             {% include 'getting-started' %}
             <article class="main" role="main">
-                {% if template == 'page' or template == 'json-page' %}
-                <div class="container">
-                    {% include 'breadcrumb' %}
-                </div>
-                {% endif %}
                 {{ content_for_layout }}
             </article>
             {% include 'footer' %}
@@ -98,8 +88,9 @@
     {{ 'js/app.js' | asset_url | script_tag }}
     {{ 'themes/assets/scripts/angular/casestudy.js' | script_tag }}
     {{ 'js/main.js?v=' | append main_js_version | asset_url | script_tag }}
-    <script src="{{ 'js/ipdata.js?v=1.02' | asset_url }}" async></script>
+    {{ 'js/ipdata.js?v=1.01' | asset_url | script_tag }}
     {{ 'js/team.js' | asset_url | script_tag }}
+    {{ 'segment-form-handler.js' | asset_url | script_tag }}
     <script src="{{ 'lazysizes.min.js?v=1.0.1' | asset_url }}"></script>
 </body>
 </html>

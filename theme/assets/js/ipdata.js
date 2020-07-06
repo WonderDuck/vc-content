@@ -256,7 +256,7 @@ $(function () {
         accepts: {
             'Accept': 'application/json'
         },
-        async: false,
+        async: true,
         success: function (data) {
             var inputs = $('form :input');
             inputs.filter('[name="user_country"]').prop('value', data.country_name);

@@ -2,7 +2,10 @@
     {% if block.backgroundColorHex == '' %} {{block.backgroundColor}}" {% else %}" style="background-color:{{block.backgroundColorHex}}" {% endif %}>
     <div class="block__inner container">
         <div class="block__learn {% if block.titleAlignment == 'center' %} block__learn--center {% endif %} {{block.titleColor}}">
-            {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
+            {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+            
+            {% include 'headings' headings: block.headings %}
+
             {% if block.button != '' and block.button.urlText != '' %}
                 <a href="{{block.button.url}}" class="{{block.button.style}}" {% if block.button.openInNewTab == 'True' %} target="_blank" {% endif %}>{{block.button.urlText}}</a>
             {% endif %}

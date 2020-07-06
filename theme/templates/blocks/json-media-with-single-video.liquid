@@ -7,7 +7,9 @@
         {% if block.title != '' %}
             <div class="row justify-content-center">
                 <div class="block__text {{block.textAreaWidth}}">
-                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
+                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                    
+                    {% include 'headings' headings: block.headings %}
                 </div>
             </div>
         {% endif %}

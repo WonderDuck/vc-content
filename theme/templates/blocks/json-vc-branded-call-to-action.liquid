@@ -17,12 +17,14 @@
         <div class="row">
             <div class="block__text {{block.textAreaWidth}}">
                 {% if block.title != '' %}
-                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
+                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
                 {% endif %}
+                
+                {% include 'headings' headings: block.headings %}
 
                 {% if block.subtitle != '' %}
                     <div class="block__space"></div>
-                    <div class="block__descr">{{block.subtitle}}</div>
+                    {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
                 {% endif %}
 
                 {% if block.firstButton != '' and block.firstButton.urlText != '' %}

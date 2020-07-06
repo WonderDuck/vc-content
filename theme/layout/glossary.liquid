@@ -44,6 +44,9 @@
     {% include 'markup-corporation' %}
     {% include 'markup-website' %}
     {% include 'markup-opengraph' %}
+    {% if page_settings %}
+    {% include 'markup-article' %}
+    {% endif %}
 </head>
 <body ng-controller="mainController">
     {% include 'google-tag-manager-body' %}
@@ -72,11 +75,17 @@
             </div>
 
             <article class="main" role="main">
-                <div class="glossary container">
-                    {% include 'glossary-left-menu' %}
-                    <div class="glossary__content">
-                        {{ content_for_layout }}
-                        {% include 'disqus' %}
+                <div class="container">
+                    <div class="glossary">
+                        <div style="width:100%; min-width:100%;">
+                            {% include 'breadcrumb' %}
+                        </div>
+                        {% include 'glossary-left-menu' %}
+                        <div class="glossary__content">
+                            {{ content_for_layout }}
+                            {% include 'article-author' article_author: page_settings.author -%}
+                            {% include 'disqus' %}
+                        </div>
                     </div>
                 </div>
             </article>
@@ -114,7 +123,7 @@
         });
     </script>
     {{ 'js/main.js?v=' | append main_js_version | asset_url | script_tag }}
-    {{ 'js/ipdata.js?v=1.01' | asset_url | script_tag }}
+    <script src="{{ 'js/ipdata.js?v=1.02' | asset_url }}" async></script>
     {{ 'segment-form-handler.js' | asset_url | script_tag }}
 </body>
 </html>

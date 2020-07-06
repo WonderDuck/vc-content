@@ -1,12 +1,15 @@
+<!-- Breadcrumb -->
 {% unless template == 'index' or template == 'cart' %}
 <div class="list list--breadcrumb" role="navigation" aria-label="breadcrumbs">
-    <div class="list__item">      <a class="list__link" href="{{ "/" | absolute_url }}" title="{{ 'general.breadcrumbs.home_link_title' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+    <div class="list__item">
+      <a class="list__link" href="{{ '/' | absolute_url }}" title="{{ 'general.breadcrumbs.home_link_title' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
     </div>
 
   {% if template contains 'vendor' or template contains 'product' or template contains 'collection' %}
     <div class="list__item">
         <a href="{{ '/apps' | absolute_url }}" class="list__link">App Store</a>
-    </div>  {% endif %}
+    </div>
+  {% endif %}
 
   {% if template contains 'vendor' %}
 
@@ -92,9 +95,29 @@
     <div class="list__item">{{ article.title }}</div>
 
   {% elsif template contains 'page' %}
+    {%- assign menu_tabs = linklists['main-menu'] -%}
+    {%- for tab in menu_tabs.links -%}
+      <!--blocks-->
+      {%- assign tab_blocks = linklists[tab.url].links -%}
+      {%- for current_block in tab_blocks -%}
+        {%- assign current_links = linklists[current_block.url].links -%}
+        {% if current_links contains page.url %}
+          <div class="list__item">
+            <a href="{{ current_links[0].url | absolute_url }}" class="list__link">{{ tab.title }}</a>
+          </div>
+        {% endif %}
+      {%- endfor -%}
+    {%- endfor -%}
 
-   <div class="list__item">{{ page.title }}</div>
-
+    {%- assign glossary_links = linklists['Glossary'].links -%}
+    {% assign found_link = glossary_links | where: 'Url', 'contains', page.url | first %}
+    {% if found_link and page.url != 'glossary' %}
+      <div class="list__item">
+        <a href="{{ 'glossary' | absolute_url }}" class="list__link">Glossary</a>
+      </div>
+    {% endif %}
+      
+    <div class="list__item">{{ page.title }}</div>
   {% else %}
 
    <div class="list__item">{{ page_title }}</div>

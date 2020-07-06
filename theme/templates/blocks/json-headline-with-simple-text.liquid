@@ -6,16 +6,21 @@
             <div class="row {% if block.containerAlignment == 'block--align-center' %} justify-content-center {% endif %} {% if block.containerAlignment == 'block--align-right' %} justify-content-end {% endif %}">
                 <div class="block__text {{block.textAreaWidth}}">
                     {% if block.note != '' %}
-                        <div class="block__note">{{block.note}}</div>
+                        {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
                         <div class="block__space"></div>
                     {% endif %}
 
-                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
+                    {% if block.title != '' %}
+                        {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                    {% endif %}
+
+                    {% include 'headings' headings: block.headings %}
+                    <div class="block__space"></div>
 
                     {% if block.subtitle != '' %}
-                    <div class="block__space"></div>
-                        <div class="block__descr">{{block.subtitle}}</div>
+                        {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
                     {% endif %}
+
                     {% if block.firstButton != '' and block.firstButton.urlText != '' %}
                         <div class="block__space"></div>
                         <div class="block__actions">

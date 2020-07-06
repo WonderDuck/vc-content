@@ -8,10 +8,9 @@
             <div class="row justity-content-center">
                 <div class="{{block.textAreaWidth}}">
                 {% if block.title != '' %}
-                    <div class="block__t">
-                        {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
-                    </div>
-                    <div class="block__space"></div>
+                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                    
+                    {% include 'headings' headings: block.headings %}
                 {% endif %}
                 {% if block.paragraph != '' %}
                     {% if block.overlayGradient == 'True' %}
@@ -47,7 +46,7 @@
                         </style>
                     {% endif %}
                     {% if block.numberOfColumns == '1' %}
-                        <div class="block__descr--normal {% if block.overlayGradient == 'True' %} block__descr--fade-{{block.id}} {% endif %}">{{block.paragraph}}</div>
+                        <div {% if block.overlayGradient == 'True' %} class="block__descr--fade-{{block.id}}" {% endif %}>{{block.paragraph}}</div>
                     {% else %}
                         <div class="row">
                             {% assign words = block.paragraph | split: " " %}
