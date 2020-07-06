@@ -5528,6 +5528,13 @@
         "tab": "Settings",
         "group": "Main block settings"
       },
+	  {
+		"id": "fixedImageWidth",
+		"label": "Fixed image width",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings"
+	  },
       {
         "id": "topPadding",
         "label": "Top padding",
