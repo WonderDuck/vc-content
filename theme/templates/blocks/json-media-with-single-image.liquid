@@ -19,8 +19,8 @@
         {% if block.fixedImageWidth == 'True' %}
             {% if block.backgroundImage != '' and block.backgroundImage.url != '' %} <img class="block__pic lazyload" data-src="{{block.image.url}}"/> {% endif %}>
         {% else %}
-            <div id="block-{{block.id}}" class="block__cover-pic lazyload"
-                {% if block.backgroundImage != '' and block.backgroundImage.url != '' %} style="background-image: url('{{block.image.url}}')" {% endif %}>
+            <div id="block-{{block.id}}" class="block__cover-pic lazyload">
+                {% if block.backgroundImage != '' and block.backgroundImage.url != '' %} style="background-image: url('{{block.image.url}}')" {% endif %}
             </div>
         {% endif %}
 
