@@ -1,4 +1,6 @@
-{% if tag != 'div' %}
+{% assign text = text | replace: '&nbsp;', ' '  %}
+
+{% if tag %}
     {% assign text = text | remove: '<p>' | remove: '</p>' %}
 {% endif %}
 
