@@ -7836,6 +7836,7 @@ code {
     align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .block .review__img {
