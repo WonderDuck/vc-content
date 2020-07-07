@@ -1,5 +1,6 @@
 {% assign text = text | replace: '&nbsp;', ' '  %}
-{% if tag != 'none' %}
+
+{% if tag %}
     {% assign text = text | remove: '<p>' | remove: '</p>' %}
 {% endif %}
 
