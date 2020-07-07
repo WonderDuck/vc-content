@@ -14,13 +14,40 @@
             {% endif %}
         </div>
 
-        <div class="block__space block__space--size-lg"></div>
-        {% include 'overlay-color-hex-style-with-counter' predefinedColor: block.imageOverlayColor, customColor: block.imageOverlayColorHex %}
-        {% if block.fixedImageWidth == 'True' %}
-            {% if block.backgroundImage != '' and block.backgroundImage.url != '' %} <img class="block__pic lazyload" data-src="{{block.image.url}}"/> {% endif %}
-        {% else %}
-            <div id="block-{{block.id}}" class="block__cover-pic lazyload" {% if block.backgroundImage != '' and block.backgroundImage.url != '' %} data-bg="{{block.image.url}}" {% endif %}>
-            </div>
+        {% if block.backgroundImage != '' and block.backgroundImage.url != '' %}
+            <div class="block__space block__space--size-lg"></div>
+
+            {% assign colorHex = block.imageOverlayColor %}
+            {% if block.imageOverlayColorHex != '' %}
+                {% assign colorHex = block.imageOverlayColorHex %}
+            {% endif %}
+            <style>
+                #block-{{block.__id}}
+                {
+                    position: relative;
+                }
+
+                #block-{{block.__id}}:after
+                {
+                    background: {{colorHex}};
+                    opacity:.7;
+                    bottom: 0;
+	                content: ' ';
+	                left: 0;
+	                position: absolute;
+	                right: 0;
+	                top: 0;
+	                z-index: 5;
+                }
+            </style>
+
+            {% if block.fixedImageWidth == 'True' %}
+                <div id="block-{{block.__id}}">
+                    <img class="block__pic lazyload" data-src="{{block.image.url}}" />
+                </div>
+            {% else %}
+                <div id="block-{{block.__id}}" class="block__cover-pic lazyload" {% if block.backgroundImage != '' and block.backgroundImage.url != '' %} data-bg="{{block.image.url}}" {% endif %}></div>
+            {% endif %}
         {% endif %}
 
         {% if block.subtitle != '' %}

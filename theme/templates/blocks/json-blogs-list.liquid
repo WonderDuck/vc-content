@@ -49,14 +49,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        {% assign counter = counter | plus: 1 %}
+                        {% if counter == block.count %}
+                        {% break %}
+                        {% endif %}
+                    {% endfor %}
                 </div>
-                {% assign counter = counter | plus: 1 %}
-                {% if counter == block.count %}
-                {% break %}
-                {% endif %}
-                {% endfor %}
-            </div>
             {% endfor %}
         </div>
     </div>
