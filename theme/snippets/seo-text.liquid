@@ -1,7 +1,9 @@
 {% assign text = text | replace: '&nbsp;', ' '  %}
 
 {% if tag %}
-    {% assign text = text | remove: '<p>' | remove: '</p>' %}
+    {% if tag != 'none' and tag != 'div' %}
+        {% assign text = text | remove: '<p>' | remove: '</p>' %}
+    {% endif %}
 {% endif %}
 
 {% if tag == 'h1' %}
