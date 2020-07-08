@@ -64,7 +64,9 @@
             <article class="main" role="main">
                 {% if template == 'page' or template == 'json-page' %}
                 <div class="container">
+                    {% comment %}
                     {% include 'breadcrumb' %}
+                    {% endcomment %}
                 </div>
                 {% endif %}
                 {{ content_for_layout }}
