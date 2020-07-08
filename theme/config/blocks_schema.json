@@ -6249,25 +6249,9 @@
               "Unlink"
             ]
           },
-          {
-            "id": "subtitle",
-            "type": "text",
-            "label": "Subtitle",
-            "settings": [
-              "TextColor",
-              "NumberedList",
-              "BulletedList",
-              "Bold",
-              "Italic",
-              "Link",
-              "Unlink",
-              "Maximize",
-              "Source"
-            ]
-          },
 		  {
-			"id": "subtitleSeoTag",
-			"label": "Subtitle SEO tag",
+			"id": "titleSeoTag",
+			"label": "Title SEO tag",
 			"type": "select",
 			"default": "none",
 			"options": [
@@ -6303,6 +6287,22 @@
 			"tab": "Settings",
 			"group": "Typography"
 		  },
+          {
+            "id": "subtitle",
+            "type": "text",
+            "label": "Subtitle",
+            "settings": [
+              "TextColor",
+              "NumberedList",
+              "BulletedList",
+              "Bold",
+              "Italic",
+              "Link",
+              "Unlink",
+              "Maximize",
+              "Source"
+            ]
+          },
           {
             "id": "image",
             "type": "image",

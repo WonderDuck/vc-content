@@ -39,10 +39,10 @@
                                 {% endif %}
                             {% endif %}
                             {% if column.title != '' %}
-                                <div class="list__t">{{column.title}}</div>
+                                {% include 'seo-text' tag: column.titleSeoTag, text: column.title, class: 'list__t' %}
                             {% endif %}
                             {% if column.subtitle != '' %}
-                                {% include 'seo-text' tag: column.subtitleSeoTag, text: column.subtitle, class: 'list__descr' %}
+                                <div class="list__descr">{{column.subtitle}}</div>
                             {% endif %}
                             {% if column.button != '' and column.button.urlText != '' %}
                                 <div class="block__space"></div>
