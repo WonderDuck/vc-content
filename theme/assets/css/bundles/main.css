@@ -7162,10 +7162,6 @@ code {
     padding: 3.75rem 0;
 }
 
-.block .w-100, .block .row {
-    width: calc(100% + 30px);
-}
-
 @media (max-width: 767.98px) {
     .block .container {
         padding: 0;
@@ -7318,8 +7314,6 @@ code {
 .block__inner {
     align-items: flex-start;
     color: #2c3237;
-    display: flex;
-    flex-direction: column;
     position: relative;
     z-index: 10;
 }
@@ -8089,7 +8083,7 @@ code {
 }
 
 .block--cover--not-fixed {
-    min-height: initial;
+    min-height: 0;
 }
 
 .block--cover__note, .block--cover__t, .block--cover__descr {
@@ -9557,6 +9551,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
+    text-align: left;
 }
 
 .blog .list--posts .list__t {
