@@ -9551,6 +9551,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
+    text-align: left;
 }
 
 .blog .list--posts .list__t {
