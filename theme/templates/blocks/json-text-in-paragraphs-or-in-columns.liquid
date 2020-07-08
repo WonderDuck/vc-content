@@ -11,6 +11,7 @@
                     
                 {% include 'headings' headings: block.headings %}
             {% endif %}
+            <div class="block__space"></div>
             {% if block.paragraph != '' %}
                 {% if block.overlayGradient == 'True' %}
                     {% if block.backgroundColor == 'block--bg-light' %}
@@ -45,7 +46,7 @@
                     </style>
                 {% endif %}
                 {% if block.numberOfColumns == '1' %}
-                    <div {% if block.overlayGradient == 'True' %} class="block__descr--fade-{{block.id}}" {% endif %}>{{block.paragraph}}</div>
+                    <div {% if block.overlayGradient == 'True' %} class="block__descr--fade-{{block.id}}" {% else %} class="block__descr" {% endif %}>{{block.paragraph}}</div>
                 {% else %}
                     <div class="row">
                         {% assign words = block.paragraph | split: " " %}
