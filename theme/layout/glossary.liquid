@@ -48,7 +48,7 @@
     {% include 'markup-article' %}
     {% endif %}
 </head>
-<body ng-controller="mainController">
+<body>
     {% include 'google-tag-manager-body' %}
     {% if can_track %}
     {% include 'gdpr-cookie-compliance' %}
@@ -76,11 +76,10 @@
 
             <article class="main" role="main">
                 <div class="container">
-                    <div class="glossary">
+                    <div class="glossary" ng-controller="glossaryController">
                         <div style="width:100%; min-width:100%;">
-                            {% comment %}
                             {% include 'breadcrumb' %}
-                            {% endcomment %}
+                            {% include 'tags-selector' %}
                         </div>
                         {% include 'glossary-left-menu' %}
                         <div class="glossary__content">
@@ -108,7 +107,7 @@
             linkedIn: function (url) {
                 window.open('https://www.linkedin.com/cws/share?url=' + encodeURIComponent(url), '_blank');
             }
-        }
+        };
     </script>
     <script>
             var BASE_URL = '{{ "/" | full_url }}';
@@ -124,8 +123,21 @@
             });
         });
     </script>
-    {{ 'js/main.js?v=' | append main_js_version | asset_url | script_tag }}
     <script src="{{ 'js/ipdata.js?v=1.02' | asset_url }}" async></script>
     {{ 'segment-form-handler.js' | asset_url | script_tag }}
+    {{ '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js' | script_tag }}
+    {{ '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js' | script_tag }}
+    {{ '//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js' | script_tag }}
+    {{ '//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-cookies.js' | script_tag }}
+    {{ '//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js' | script_tag }}
+    {{ '//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js' | script_tag }}
+    {{ '//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.7/angular-sanitize.min.js' | script_tag }}
+    {{ '//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.12.1/angular-translate.min.js' | script_tag }}
+    {{ '//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.12.1/angular-translate-loader-url/angular-translate-loader-url.min.js' | script_tag }}
+    {{ '//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js' | script_tag }}
+    {{ 'app.js' | asset_url | script_tag }}
+    {{ 'services.js' | asset_url | script_tag }}
+    {{ 'glossary.js?v=' | append glossary_js_version | asset_url | script_tag }}    
+    {{ 'js/main.js?v=' | append main_js_version | asset_url | script_tag }}
 </body>
 </html>
