@@ -1,0 +1,40 @@
+<div id="{{ block.__id }}" class="section {% if block.style == 'dark' %} section--gray {% endif %}
+     {% if block.noTop == 'True' %} section--small-top {% endif %}
+     {% if block.noBottom == 'True' %} section--small-bottom {% endif %}
+     {% if block.noPad == 'True' %} section--no-padding {% endif %}">
+    <div class="blog">
+        <div class="posts __responsive container">
+            {% if block.title != '' %}
+            <h2>{{ block.title }}</h2>
+            {% endif %}
+            <div class="list list--posts">
+                {% if block.itemsType == 'fixed-items' %}
+                    {% for link_text in block.items %}
+                        {% assign article = pages | where: 'permalink', 'contains', link_text.text | first %}
+                        {% if article %}
+                            {% include 'article-preview' %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% if block.itemsType == 'query' %}
+                    {% if block.queryType == 'by-author' %}
+                        {% for blog in blogs %}
+                                {% for article in blog.articles reversed limit: block.count %}
+                                    {% if article.meta_info.author and article.meta_info.author contains 'employee' %}
+                                        {% include 'article-preview' %}
+                                    {% endif %}
+                                {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if block.queryType == 'last-items' %}
+                        {% for blog in blogs %}
+                                {% for article in blog.articles reversed limit: block.count %}
+                                    {% include 'article-preview' %}
+                                {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
