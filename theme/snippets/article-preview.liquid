@@ -1,0 +1,51 @@
+<div class="list__item">
+    {% if article.image_url and article.image_url != '' %}
+        <a class="list__bg" href="{{ article.url }}" style="background-image: url({{ article.image_url }});"></a>
+    {% elsif article.meta_info.markup_webpage_image and article.meta_info.markup_webpage_image != '' %}
+        <a class="list__bg" href="{{ article.url }}" style="background-image: url({{ article.meta_info.markup_webpage_image }});"></a>
+    {% else %}
+        <a class="list__bg" href="{{ article.url }}" style="background-image: url(blue-abstract-background.jpg);"></a>
+    {% endif %}
+    <div class="list__info">
+        <div class="list__t">
+            <a href="{{ article.url }}" class="list__t">{{ article.title }}</a>
+        </div>
+        <div class="list__descr">
+            {% if article.excerpt and article.excerpt != '' %}
+                <a class="list__descr" href="{{ article.url }}">{{ article.excerpt }}</a>
+            {% else %}
+                <a class="list__descr" href="{{ article.url }}">{{ article.description }}</a>
+            {% endif %}
+            <div class="block__space"></div>
+            {% if article.meta_info.date %}
+                <div>{{ article.meta_info.date | date: "d MMMM yyyy" }}</div>
+            {% else %}
+                <div>{{ article.meta_info.markup_webpage_date_created | date: "d MMMM yyyy" }}</div>
+            {% endif %}
+        </div>
+        {% if article.tags.size > 0 %}
+        <div class="list list--tags">
+            {% for tag in article.tags limit:3 %}
+                {% assign tag_url = '/blog/tag/' | append: tag  %}
+                <a class="list__item" href="{{ tag_url | absolute_url }}">{{ "blogs.tags." | append: tag | t }}</a>
+            {% endfor %}
+        </div>
+        {% endif %}    
+        <div class="list__author">
+            <div class="list__author-logo">
+            {% if article.meta_info.author.photoUrl %}
+                <img data-src="{{ article.meta_info.author.photoUrl }}" title="" style="max-height: 100%; border-radius: 100%;" class="lazyload" />
+            {% else %}
+                <img data-src="/themes/assets/logo-mobile.svg" title="" style="max-height: 100%;" class="lazyload" />
+            {% endif %}
+            </div>
+            <div class="list__author-text">
+            {% if article.meta_info.author.firstName %}
+                <div class="list__author-name">{{ article.meta_info.author.firstName }} {{ article.meta_info.author.lastName }}</div>
+            {% else %}
+                <div class="list__author-name">VirtoCommerce</div>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
