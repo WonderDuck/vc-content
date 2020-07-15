@@ -10,7 +10,7 @@
                     <div class="block__media">
                         {% if block.containerImage.url != '' %}
                             <div class="block__media">
-                                <img data-src="{{block.containerImage.url}}" title="{{block.containerImage.altText}}" class="block__pic lazyload" />
+                                <img data-src="{{ block.containerImage.url | image_url }}" title="{{block.containerImage.altText}}" class="block__pic lazyload" />
                             </div>
                         {% endif %}
                     </div>
@@ -50,7 +50,7 @@
                     <div class="block__media">
                         {% if block.containerImage.url != '' %}
                             <div class="block__media">
-                                <img data-src="{{block.containerImage.url}}" title="{{block.containerImage.altText}}" class="block__pic lazyload" />
+                                <img data-src="{{ block.containerImage.url | image_url }}" title="{{block.containerImage.altText}}" class="block__pic lazyload" />
                             </div>
                         {% endif %}
                     </div>

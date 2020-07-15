@@ -3,7 +3,7 @@
 <div id="{{ block.__id }}" class="block {{block.topPadding}} {{block.bottomPadding}} {% include 'cover-background-settings' %}>
     <div class="block__inner container">
         {% if block.logotypeImage.url != '' %}
-            <img src="{{block.logotypeImage.url}}" />
+            <img data-src="{{ block.logotypeImage.url | image_url }}" class="lazyload" />
             <span>{{block.logotypeTitle}}</span>
         {% endif %}
         {% if block.note != '' %}

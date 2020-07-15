@@ -18,8 +18,8 @@
 
         {% include 'overlay-color-hex-style-with-counter' predefinedColor: block.imageOverlayColor, customColor: block.imageOverlayColorHex %}
 
-        <a href="{{block.videoUrl}}" class="block__cover-pic block__media block-video" id="block-{{block.id}}" title="{{block.image.altText}}" data-fancybox=""
-            {% if block.image != '' and block.image.url != '' %} style="background-image: url('{{block.image.url}}')" {% endif %}>
+        <a href="{{block.videoUrl}}" class="block__cover-pic block__media block-video lazyload" id="block-{{block.id}}" title="{{block.image.altText}}" data-fancybox=""
+            {% if block.image != '' and block.image.url != '' %} data-bg="{{ block.image.url | image_url }}" {% endif %}>
             <div class="block-video__action"></div>
         </a>
     </div>
