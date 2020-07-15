@@ -11843,7 +11843,7 @@
   "dynamic-content": {
     "name": "Dynamic content",
     "icon": "text-columns",
-    "category": "Archive",
+    "category": "Queries and Other",
     "settings": [
       {
         "id": "style",
