@@ -31,6 +31,21 @@
     ]
   },
   {
+    "name": "Marketing settings",
+    "icon": "header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Marketing settings"
+      },
+      {
+        "type": "string",
+        "id": "target_account_service_url",
+        "label": "Target account service URL"
+      }
+    ]
+  },
+  {
     "name": "Colors",
     "icon": "eyedropper",
     "settings": [
