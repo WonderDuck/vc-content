@@ -19,9 +19,13 @@
                 {% if block.itemsType == 'query' %}
                     {% if block.queryType == 'by-author' %}
                         {% for blog in blogs %}
-                                {% for article in blog.articles reversed limit: block.count %}
-                                    {% if article.meta_info.author and article.meta_info.author contains 'employee' %}
+                                {% for article in blog.articles reversed %}
+                                    {% if article.meta_info.author and article.meta_info.author.lastName == block.author.lastName %}
                                         {% include 'article-preview' %}
+                                        {% assign counter = counter | plus: 1 %}
+                                        {% if counter == block.count %}
+                                            {% break %}
+                                        {% endif %}
                                     {% endif %}
                                 {% endfor %}
                         {% endfor %}
