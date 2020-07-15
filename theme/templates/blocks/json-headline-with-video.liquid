@@ -10,7 +10,7 @@
                     <div class="block__media">
                         {% if block.videoThumbnail.url != '' %}
                             <div class="block-video">
-                                <img src="{{block.videoThumbnail.url}}" title="{{block.videoThumbnail.altText}}" class="block__pic" />
+                                <img data-src="{{ block.videoThumbnail.url | image_url }}" title="{{block.videoThumbnail.altText}}" class="block__pic lazyload" />
                                 <a href="{{block.videoUrl}}" class="block-video__action" data-fancybox=""></a>
                             </div>
                         {% endif %}
@@ -51,7 +51,7 @@
                     <div class="block__media">
                         {% if block.videoThumbnail.url != '' %}
                             <div class="block-video">
-                                <img src="{{block.videoThumbnail.url}}" title="{{block.videoThumbnail.altText}}" class="block__pic" />
+                                <img data-src="{{ block.videoThumbnail.url | image_url }}" title="{{block.videoThumbnail.altText}}" class="block__pic lazyload" />
                                 <a href="{{block.videoUrl}}" class="block-video__action" data-fancybox=""></a>
                             </div>
                         {% endif %}

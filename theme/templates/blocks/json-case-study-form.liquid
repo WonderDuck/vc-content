@@ -2,11 +2,11 @@
      {% if block.noTop == 'True' %} section--small-top {% endif %}
      {% if block.noBottom == 'True' %} section--small-bottom {% endif %}
      {% if block.noPad == 'True' %} section--no-padding {% endif %}">
-  <div class="section section--form {% if block.image.url != '' %} dark {% endif %} {{block.color}}" {% if block.image.url != '' %} style="background-image: url({{ block.image.url }});" {% endif %}>
+  <div class="section section--form {% if block.image.url != '' %} dark {% endif %} {{block.color}} lazyload" {% if block.image.url != '' %} data-bg="{{ block.image.url | image_url }}" {% endif %}>
     <div class="section__inner container">
       <div class="section__header">
         {% if block.logo != '' %}
-        <img src="{{block.logo.url}}" />
+        <img data-src="{{ block.logo.url | image_url}}" class="lazyload" />
         {% endif %}
       </div>
       <div class="section__casestudy-header row">

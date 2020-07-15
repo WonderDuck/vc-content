@@ -10,7 +10,7 @@
                 <div class="list__inner">
                     {% if item.image != '' and item.image.url != '' %}
                     <div class="list__img">
-                        <img src="{{ item.image.url }}" alt="{{ item.image.altText }}" class="list__pic">
+                        <img data-src="{{ item.image.url | image_url }}" alt="{{ item.image.altText }}" class="list__pic lazyload" />
                     </div>
                     {% endif %}
                     <div class="list__t">{{ item.title }}</div>
@@ -26,8 +26,3 @@
         </div>
     </div>
 </div>
-
-{% comment %}
-
-
-{% endcomment %}

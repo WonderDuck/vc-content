@@ -7466,7 +7466,6 @@ code {
 }
 
 .block--align-center .block__inner {
-    align-items: center;
     text-align: center;
 }
 
@@ -7622,7 +7621,7 @@ code {
 
 .block .form {
     align-items: center;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     flex-wrap: wrap;
     margin-bottom: 1rem;
@@ -7700,6 +7699,7 @@ code {
     font-size: 0.875rem;
     max-width: 18.75rem;
     text-align: center;
+    margin: 0 auto;
 }
 
 .block .block__form {
@@ -9074,7 +9074,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
     background: #f8f8f8;
     box-sizing: border-box;
     height: 100%;
-    padding: 3.125rem 0;
+    padding: 0 0 3.125rem 0;
 }
 
 .blog__heading {

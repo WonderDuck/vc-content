@@ -18,7 +18,7 @@
                     <p>&nbsp;</p>
                 </div>
                 <div>
-                    <img class="solution-section-image--bottom-float-left" src="{{section.image.url}}" />
+                    <img class="solution-section-image--bottom-float-left lazyload" data-src="{{ section.image.url | image_url }}" />
                     <div>
                         <p>{{section.country}}</p>
                         <a href="{{section.sourceLink.url}}" target="_''" class="dark-blue-link">{{section.sourceLink.urlText}}</a>
@@ -27,7 +27,7 @@
             </div>
             {% else %}
             <div class="col-lg-6 {% if section.titleStyle == 'none' %}no-title-section{% endif %}">
-                <img class="solution-section-image--{{section.imagePosition}}" src="{{section.image.url}}" />
+                <img class="solution-section-image--{{section.imagePosition}} lazyload" data-src="{{ section.image.url | image_url }}" />
                 {% if section.titleStyle == 'visible' %}
                 <div class="list__t">{{section.title}}</div>
                 {% endif %}

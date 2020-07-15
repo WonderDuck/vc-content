@@ -14,10 +14,10 @@
             <div class="list__item col-md-6 col-lg-4">
                 <div class="{% if block.frame == 'True' %}has-border{% endif %}">
                     {% if column.image.url != '' %}
-                    <img src="{{ column.image.url }}"
+                    <img data-src="{{ column.image.url | image_url }}"
                          {% if column.image.width != '' %} width="{{column.image.width}}" {% endif %}
                          {% if column.image.height != '' %} height="{{column.image.height}}" {% endif %}
-                         alt="{{ item.image.altText }}" class="columns__pic {{ block.imageAlignment }}">
+                         alt="{{ item.image.altText }}" class="columns__pic {{ block.imageAlignment }} lazyload" />
                     {% endif %}
                     {% if column.title != '' %}
                     <div class="list__t {{ block.titleAlignment }}">{{ column.title }}</div>

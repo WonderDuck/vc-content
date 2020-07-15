@@ -20,7 +20,7 @@
                         {% endif %}
                         {% if block.iconsType == 'images' %}
                             {% if item.image.url != '' %}
-                                <img src="{{item.image.url}}" alt="" class="list__ico" />
+                                <img data-src="{{ item.image.url | image_url }}" alt="" class="list__ico lazyload" />
                             {% endif %}
                         {% endif %}
                         {% if item.title != '' %}

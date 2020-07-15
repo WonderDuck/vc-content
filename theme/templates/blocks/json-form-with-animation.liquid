@@ -13,7 +13,7 @@
             <div class="col-lg-6">
                 {% if block.logo != '' %}
                 <div class="section__logo d-none d-sm-block">
-                    <img src="{{ block.logo.url }}" alt="" />
+                    <img data-src="{{ block.logo.url | image_url }}" alt="" class="lazyload" />
                 </div>
                 {% endif %}
                 <div class="section__t">{{ block.title }}</div>

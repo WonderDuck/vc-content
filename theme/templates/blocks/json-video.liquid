@@ -6,7 +6,7 @@
         <div class="row align-items-lg-center {% if block.align == 'right' %} flex-row-reverse {% endif %}">
             <div class="section__img col-lg">
                 <a href="{{ block.videoUrl }}" class="section-video" data-fancybox="">
-                    <img src="{{ block.image.url }}" alt="" class="section__pic">
+                    <img data-src="{{ block.image.url | image_url }}" alt="" class="section__pic lazyload" />
                         <div class="section-author">
                             <div class="section-author__pic" style="background-image: url({{ block.avatar.url }});"></div>
                             <div class="section-author__name">{{ block.videoName }}</div>

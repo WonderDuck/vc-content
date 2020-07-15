@@ -27,10 +27,10 @@
                         <div class="list__img">
                             {% if logotype.url != '' %}
                                 <a href="{{logotype.url}}" {% if logotype.openInNewTab == 'True' %}target="_blank"{% endif %}>
-                                    <img src="{{logotype.image.url}}" title="{{logotype.image.altText}}" class="list__pic" />
+                                    <img data-src="{{ logotype.image.url | image_url }}" title="{{logotype.image.altText}}" class="list__pic lazyload" />
                                 </a>
                             {% else %}
-                                <img src="{{logotype.image.url}}" title="{{logotype.image.altText}}" class="list__pic" />
+                                <img data-src="{{ logotype.image.url | image_url }}" title="{{logotype.image.altText}}" class="list__pic lazyload" />
                             {% endif %}
                         </div>
                     </div>

@@ -10,7 +10,7 @@
             <div class="section__sidebar col-lg-auto">
                 <div class="section__inner">
                     {% if block.image != '' and block.image.url != '' %}
-                    <img class="section__pic" src="{{ block.image.url }}" alt="{{ item.image.altText }}">
+                    <img class="section__pic lazyload" data-src="{{ block.image.url | image_url }}" alt="{{ item.image.altText }}" />
                     {% endif %}
                     <form class="form">
                         <div class="form-group">

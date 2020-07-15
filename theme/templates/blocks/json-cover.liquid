@@ -24,9 +24,9 @@
      <div class="block {{block.backgroundScrollEffect}} {{alignment}} 
      {% if block.backgroundColor == 'none' and block.backgroundColorHex == '' %} block--cover {% endif %}
      {% if block.backgroundColor != 'none' and block.backgroundColorHex == '' %} {{block.backgroundColor}} {% endif %}
-     {% if block.backgroundOverlayColorHex != '' %} has-hex-{{counter}} {% endif %}"
+     {% if block.backgroundOverlayColorHex != '' %} has-hex-{{counter}} {% endif %} lazyload"
      {% if block.backgroundColorHex != '' %} style="background-color:{{block.backgroundColorHex}}" {% endif %}
-     {% if block.backgroundColor == 'none' and block.background.url != '' %} style="background-image: url('{{block.background.url}}') {% endif %}">
+     {% if block.backgroundColor == 'none' and block.background.url != '' %} data-bg="{{ block.background.url | image__url }}" {% endif %}>
         <div class="block__inner container">
             <div class="block__text">
                 {% if block.note != '' %}
