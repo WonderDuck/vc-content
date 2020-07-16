@@ -12,6 +12,6 @@ storefrontApp.controller('glossaryController', ['$scope', function ($scope) {
 
     $scope.setCurrentCategory = function (category) {
         $scope.currentCategory = category;
-        $scope.glossaries = $scope.currentCategory ? $scope.glossariesOriginal.filter(c => c.category === $scope.currentCategory) : $scope.glossariesOriginal;
+        $scope.glossaries = $scope.currentCategory ? $scope.glossariesOriginal.filter(c => c.url.toLowerCase().includes('?tag=' + $scope.currentCategory.toLowerCase())) : $scope.glossariesOriginal;
     };
 }]);
