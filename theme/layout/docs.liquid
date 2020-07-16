@@ -44,6 +44,7 @@
     {% include 'markup-corporation' %}
     {% include 'markup-website' %}
     {% include 'markup-opengraph' %}
+    {% include 'target-account-service-url' %}
 </head>
 <body ng-controller="docsController">
     {% assign docs_pages = pages | where: 'url', 'contains', 'docs' | sort_list: 'url' %}

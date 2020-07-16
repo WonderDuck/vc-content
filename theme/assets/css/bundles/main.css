@@ -9202,6 +9202,10 @@ input.ng-touched.ng-invalid, .input-validation-error {
     margin-bottom: 1.25rem;
 }
 
+.blog-content a {
+    color: #fff;
+}
+
 .blog-content ul,
     .blog-content ol {
     margin-bottom: 1.25rem;
@@ -9226,7 +9230,13 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .blog-post__bg::after {
-    background: rgba(0, 0, 0, 0.25);
+    background: -moz-linear-gradient(top, black, rgba(0, 0, 0, 0.45));
+    background: -webkit-gradient(left top, left bottom, color-stop(black, color-stop(rgba(0, 0, 0, 0.45))));
+    background: -webkit-linear-gradient(top, black, rgba(0, 0, 0, 0.45));
+    background: -o-linear-gradient(top, black, rgba(0, 0, 0, 0.45));
+    background: -ms-linear-gradient(top, black, rgba(0, 0, 0, 0.45));
+    background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.45));
+    background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.45));
     border-radius: 0.625rem;
     bottom: 0;
     content: " ";
@@ -9275,7 +9285,14 @@ input.ng-touched.ng-invalid, .input-validation-error {
     line-height: 1.15;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 575.98px) {
+    .blog-post__t {
+        font-size: 1.2rem;
+        margin-bottom: 0.9375rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 1199.98px) {
     .blog-post__t {
         font-size: 1.5rem;
         margin-bottom: 0.9375rem;
@@ -9283,6 +9300,13 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 @media (min-width: 992px) {
+    .blog-post__t {
+        font-size: 2rem;
+        margin-bottom: 1.875rem;
+    }
+}
+
+@media (min-width: 1200px) {
     .blog-post__t {
         font-size: 2.5rem;
         margin-bottom: 1.875rem;
@@ -9310,6 +9334,19 @@ input.ng-touched.ng-invalid, .input-validation-error {
     font-size: 1rem;
     justify-content: center;
     width: 7.5rem;
+    margin-top: 3.75rem;
+}
+
+@media (max-width: 575.98px) {
+    .blog-post .btn {
+        margin-top: .75rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .blog-post .btn {
+        margin-top: 1.75rem;
+    }
 }
 
 @media (max-width: 991.98px) {
@@ -9319,7 +9356,9 @@ input.ng-touched.ng-invalid, .input-validation-error {
     }
 
     .blog-post__category {
-        margin: 1.25rem 1.25rem 0;
+        display: table-cell;
+        color: black;
+        vertical-align: middle;
     }
 
     .blog-post__text {
@@ -9336,11 +9375,19 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 @media (min-width: 992px) {
     .blog-post__category {
-        margin: 3.75rem 3.75rem 0;
+        display: table-cell;
+        color: black;
+        vertical-align: middle;
     }
 
     .blog-post__text {
         padding: 3.75rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .blog-post__text {
+        margin: auto 0;
     }
 }
 
@@ -9582,7 +9629,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
     align-items: center;
     display: flex;
     height: 3rem;
-    margin-top: auto;
 }
 
 .blog .list--posts .list__author-logo {
@@ -10210,6 +10256,11 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .btn--black.btn--outline:hover {
     color: #fff;
+}
+
+.btn[disabled] {
+    background: #d3d3d3;
+    border-color: #d3d3d3;
 }
 
 @media (max-width: 767.98px) {

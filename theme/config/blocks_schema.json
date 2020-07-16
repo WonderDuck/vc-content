@@ -158,31 +158,54 @@
     "static": "top",
     "icon": "header",
     "settings": [
-      {
-        "type": "header",
-        "content": "Structured data"
-      },
-      {
-        "id": "markup_webpage_title",
-        "label": "Page title",
-        "type": "string"
-      },
-      {
-        "id": "markup_webpage_description",
-        "label": "Page meta description",
-        "type": "string"
-      },
-      {
-        "type": "image",
-        "id": "markup_webpage_image",
-        "label": "Page image",
-        "inline": true
-      },
-      {
-        "id": "markup_webpage_date_created",
-        "label": "Date created",
-        "type": "calendar"
-      },
+        {
+            "type": "header",
+            "content": "Structured data"
+        },
+        {
+            "id": "category",
+            "label": "Category",
+            "type": "select",
+            "options": [
+                {
+                    "value": "technical",
+                    "label": "Technical"
+                },
+                {
+                    "value": "events",
+                    "label": "Events"
+                },
+                {
+                    "value": "blogs",
+                    "label": "Blogs"
+                },
+                {
+                    "value": "pressreleases",
+                    "label": "Press Releases"
+                }
+            ]
+        },
+        {
+            "id": "markup_webpage_title",
+            "label": "Page title",
+            "type": "string"
+        },
+        {
+            "id": "markup_webpage_description",
+            "label": "Page meta description",
+            "type": "string"
+        },
+        {
+            "type": "image",
+            "id": "markup_webpage_image",
+            "label": "Page image",
+            "inline": true
+        },
+        {
+            "id": "markup_webpage_date_created",
+            "label": "Date created",
+            "type": "calendar"
+        },
         {
             "id": "author",
             "label": "Author",
@@ -11820,7 +11843,7 @@
   "dynamic-content": {
     "name": "Dynamic content",
     "icon": "text-columns",
-    "category": "Archive",
+    "category": "Queries and Other",
     "settings": [
       {
         "id": "style",
