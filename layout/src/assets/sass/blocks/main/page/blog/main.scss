@@ -152,8 +152,8 @@
             position: absolute;
             width: 100%;
 
-            $gradient-from: rgba(0,0,0,.45);
-            $gradient-to: rgba(0,0,0,1);
+            $gradient-from: rgba(0,0,0,0);
+            $gradient-to: rgba(0,0,0,.45);
 
             &::after {
                 background: -moz-linear-gradient(top, $gradient-from, $gradient-to);
