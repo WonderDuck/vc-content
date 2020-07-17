@@ -1,14 +1,8 @@
+{% raw %}
 <div class="blog" style="padding: 0 0; background: white;">
-    <div class="list list--tags">
+    <div class="list list--tags" ng-cloak ng-if="glossaryCategories || glossaryCategories.length">
         <a class="list__item" ng-class="{ 'list__item--active': currentCategory == '' }" ng-disabled="isLoading" ng-click="setCurrentCategory('');">All</a>
-        <a class="list__item" ng-class="{ 'list__item--active': currentCategory == 'Technical' }" ng-disabled="isLoading" ng-click="setCurrentCategory('Technical');">Technical</a>
-        <a class="list__item" ng-class="{ 'list__item--active': currentCategory == 'Event' }" ng-disabled="isLoading" ng-click="setCurrentCategory('Event');">Event</a>
-        {% comment %} {% for category in blog.categories %}
-            {% assign category_handle = category | handleize %}
-            {% assign blog_url = '~/blogs/' | append: blog.handle  %}
-            {% assign category_url = '/blog/category/' | append: category %}
-            {% assign categoryName = "blogs.categories." | append: category | t %}
-            <a class="list__item" ng-class="{ 'list__item--active': currentCategory == '{{category}}' }" ng-disabled="isLoading" ng-click="setCurrentCategory('{{category}}');">{{categoryName}}</a>
-        {% endfor %} {% endcomment %}
+        <a class="list__item" ng-repeat="category in glossaryCategories" ng-class="{ 'list__item--active': currentCategory == category.value }" ng-disabled="isLoading" ng-click="setCurrentCategory(category.value);">{{ category.label }}</a>
     </div>
 </div>
+{% endraw %}
