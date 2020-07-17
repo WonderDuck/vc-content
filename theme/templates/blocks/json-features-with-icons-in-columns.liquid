@@ -30,19 +30,19 @@
                             {% endif %}
                             {% if block.iconsType == 'customIcon' %}
                                 {% if column.image.url != '' %}
-                                    <div class="list__image lazyload" title="{{column.image.altText}}" data-bg="{{column.image.url}}"></div>
+                                    <div class="list__image lazyload" title="{{column.image.altText}}" data-bg="{{ column.image.url | image_url }}"></div>
                                 {% endif %}
                             {% endif %}
                             {% if block.iconsType == 'images' %}
                                 {% if column.image.url != '' %}
-                                    <img data-src="{{column.image.url}}" title="{{column.image.altText}}" class="list__ico lazyload" />
+                                    <img data-src="{{ column.image.url | image_url }}" title="{{column.image.altText}}" class="list__ico lazyload" />
                                 {% endif %}
                             {% endif %}
                             {% if column.title != '' %}
                                 {% include 'seo-text' tag: column.titleSeoTag, text: column.title, class: 'list__t' %}
                             {% endif %}
                             {% if column.subtitle != '' %}
-                                <div class="list__descr">{{column.subtitle}}</div>
+                                {% include 'seo-text' tag: column.subtitleSeoTag, text: column.subtitle, class: 'list__descr' %}
                             {% endif %}
                             {% if column.button != '' and column.button.urlText != '' %}
                                 <div class="block__space"></div>

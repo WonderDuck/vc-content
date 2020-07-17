@@ -278,6 +278,27 @@ $(function () {
             $('button,input[type="submit"][disabled]').removeAttr('disabled');
         }
     }, 1000);
+
+    $('#company').on('change', function () {
+        var form = $(this).closest('form');
+        var submitBtn = form.children('[type=submit]');
+        var targetAccId = "is_target_account";
+
+        $.ajax({
+            type: 'GET',
+            url: `${targetAccountServiceUrl}&CompanyName=${$(this).val()}`,
+            beforeSend: function () {
+                form.children(`input[id="${targetAccId}"]`).remove();
+                submitBtn.attr('disabled', true);
+            },
+            success: function (data) {
+                form.append(`<input type="text" id="${targetAccId}" name="${targetAccId}" value="${data}" style="display: none" />`);
+            },
+            complete: function () {
+                submitBtn.removeAttr('disabled');
+            }
+        });
+    });
   
 	// ?utm_source=asset_downloads&
 	//  utm_medium=email&

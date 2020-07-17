@@ -25,7 +25,7 @@
             <div class="review">
                 <div class="review__img">
                     {% if block.picture != '' and block.picture.url != '' %}
-                        <img src="{{block.picture.url}}" title="{{block.picture.altText}}" />
+                        <img data-src="{{ block.picture.url | image_url }}" title="{{block.picture.altText}}" class="lazyload" />
                     {% endif %}
                 </div>
                 <div class="review__info">

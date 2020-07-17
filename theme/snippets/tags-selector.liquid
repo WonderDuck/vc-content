@@ -1,0 +1,8 @@
+{% raw %}
+<div class="blog" style="padding: 0 0; background: white;">
+    <div class="list list--tags" ng-cloak ng-if="glossaryCategories || glossaryCategories.length">
+        <a class="list__item" ng-class="{ 'list__item--active': currentCategory == '' }" ng-disabled="isLoading" ng-click="setCurrentCategory('');">All</a>
+        <a class="list__item" ng-repeat="category in glossaryCategories" ng-class="{ 'list__item--active': currentCategory == category.value }" ng-disabled="isLoading" ng-click="setCurrentCategory(category.value);">{{ category.label }}</a>
+    </div>
+</div>
+{% endraw %}

@@ -43,10 +43,10 @@
 
             {% if block.fixedImageWidth == 'True' %}
                 <div id="block-{{block.__id}}">
-                    <img class="block__pic lazyload" data-src="{{block.image.url}}" />
+                    <img class="block__pic lazyload" data-src="{{block.image.url | image_url}}" />
                 </div>
             {% else %}
-                <div id="block-{{block.__id}}" class="block__cover-pic lazyload" {% if block.backgroundImage != '' and block.backgroundImage.url != '' %} data-bg="{{block.image.url}}" {% endif %}></div>
+                <div id="block-{{block.__id}}" class="block__cover-pic lazyload" {% if block.backgroundImage != '' and block.backgroundImage.url != '' %} data-bg="{{block.image.url | image_url}}" {% endif %}></div>
             {% endif %}
         {% endif %}
 

@@ -1,14 +1,13 @@
 <div class="blog-content">
     <div class="blog-post">
-        <div class="blog-post__bg lazyload" data-bg="{% if article.image_url != '' %}{{ article.image_url | replace: 'https://vcpro.blob.core.windows.net', 'https://ik.imagekit.io/je8lpsqkoi' | append '?tr=w-800,h-560' }}{% else %}blue-abstract-background.jpg{% endif %}"></div>
-        <div class="blog-post__category" data-name="{{ article.category }}">{{ "blogs.categories." | append: article.category | t }}</div>
+        <div class="blog-post__bg lazyload" data-bg="{% if article.image_url != '' %}{{ article.image_url | image_url: 800, 560 }}{% else %}blue-abstract-background.jpg{% endif %}"></div>
         <div class="blog-post__text">
-            <div class="blog-post__t">{{ article.title }}</div>
+            <div class="blog-post__t"><a href="{{article.url | absolute_url }}">{{ article.title }}</a></div>
             <div class="blog-post__descr">
-                {{ article.excerpt }}
+                <a href="{{article.url | absolute_url}}">{{article.excerpt}}</a>
             </div>
+            <div class="blog-post__category" data-name="{{ article.category }}">{{ "blogs.categories." | append: article.category | t }}</div>
             <a href="{{ article.url | absolute_url }}" class="btn btn--white">Read</a>
         </div>
     </div>
 </div>
-

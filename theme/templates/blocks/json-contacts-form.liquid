@@ -60,7 +60,7 @@
                         {% for item in block.items %}
                         <div class="features__item col">
                             <div class="features__img">
-                                <img src="{{ item.image.url }}" alt="{{ item.image.altText }}" class="features__icon">
+                                <img data-src="{{ item.image.url | image_url }}" alt="{{ item.image.altText }}" class="features__icon lazyload">
                             </div>
                             <div class="features__descr">{{ item.text }}</div>
                         </div>
@@ -71,8 +71,3 @@
         </div>
     </div>
 </div>
-
-{% comment %}
-
-
-{% endcomment %}

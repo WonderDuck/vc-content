@@ -7,7 +7,7 @@
     <div class="container">
       <div class="title">{{item.title}}</div>
       <div class="description">{{item.description}}</div>
-      <img src="{{item.image.url}}" />
+      <img data-src="{{ item.image.url | image_url }}" class="lazyload" />
     </div>
     {% endfor %}
   </div>

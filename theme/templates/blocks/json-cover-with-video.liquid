@@ -11,7 +11,7 @@
                                 {% if block.video != '' %}
                                     <a href="{{ block.video }}" class="section-video" data-fancybox="">
                                         {% if block.videoThumbnail != '' and block.videoThumbnail.url != '' %}
-                                            <img src="{{block.videoThumbnail.url}}" title="{{block.videoThumbnail.altText}}" class="block__pic" />
+                                            <img data-src="{{ block.videoThumbnail.url | image_url }}" title="{{block.videoThumbnail.altText}}" class="block__pic lazyload" />
                                             <div class="block-video__action"></div>
                                         {% endif %}
                                     </a>
@@ -56,7 +56,7 @@
                                 {% if block.video != '' %}
                                     <a href="{{ block.video }}" class="section-video" data-fancybox="">
                                         {% if block.videoThumbnail != '' and block.videoThumbnail.url != '' %}
-                                            <img src="{{block.videoThumbnail.url}}" title="{{block.videoThumbnail.altText}}" class="block__pic" />
+                                            <img data-src="{{ block.videoThumbnail.url | image_url }}" title="{{block.videoThumbnail.altText}}" class="block__pic lazyload" />
                                             <div class="block-video__action"></div>
                                         {% endif %}
                                     </a>

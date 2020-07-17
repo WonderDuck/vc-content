@@ -1,0 +1,88 @@
+<div id="{{ block.__id }}" class="section {% if block.style == 'dark' %} section--gray {% endif %}
+     {% if block.noTop == 'True' %} section--small-top {% endif %}
+     {% if block.noBottom == 'True' %} section--small-bottom {% endif %}
+     {% if block.noPad == 'True' %} section--no-padding {% endif %}">
+    <div class="blog">
+        <div class="posts __responsive container">
+            {% if block.title != '' %}
+            <h2>{{ block.title }}</h2>
+            {% endif %}
+            <div class="list list--posts">
+                {% if block.itemsType == 'fixed-items' %}
+                    {% for link_text in block.items %}
+                        {% assign article = pages | where: 'permalink', 'contains', link_text.text | first %}
+                        {% if article %}
+                            {% include 'article-preview' %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% if block.itemsType == 'query' %}
+                    {% if block.sourceType == 'blog' %}
+                        {% if block.queryType == 'by-author' %}
+                            {% for blog in blogs %}
+                                {% for article in blog.articles | sort_list: 'publishedAt:desc' %}
+                                    {% if article.meta_info.author and article.meta_info.author.lastName == block.author.lastName %}
+                                        {% include 'article-preview' %}
+                                        {% assign counter = counter | plus: 1 %}
+                                        {% if counter == block.count %}
+                                            {% break %}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        {% endif %}
+                        {% if block.queryType == 'last-items' %}
+                            {% for blog in blogs %}
+                                {% assign articles = blog.articles | sort_list: 'publishedAt:desc' %}
+                                {% for article in articles limit: block.count %}
+                                    {% include 'article-preview' %}
+                                {% endfor %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                    {% if block.sourceType == 'case-studies' %}
+                        {% assign studies = pages | where: 'permalink', 'contains', 'case-studies/' %}
+                        {% for article in studies limit: block.count %}
+                            {% include 'article-preview' %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if block.sourceType == 'white-papers' %}
+                        {% assign white_papers = pages | where: 'permalink', 'contains', '-whitepaper' %}
+                        {% for article in white_papers limit: block.count %}
+                            {% include 'article-preview' %}
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if block.sourceType == 'glossary' %}
+                        {% assign glossaries = pages | where: 'permalink', 'contains', 'glossary/' %}
+                        {% assign glossary_links = linklists['Glossary'].links %}
+                        {% if block.queryType == 'last-items' %}
+                            {% for article in glossaries | sort_list: 'publishedAt:desc' %}
+                                {% assign found_link = glossary_links | where: 'Url', 'contains', article.permalink | first %}
+                                {% if found_link %}
+                                    {% include 'article-preview' %}
+                                    {% assign counter = counter | plus: 1 %}
+                                    {% if counter == block.count %}
+                                        {% break %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        {% if block.queryType == 'by-author' %}
+                            {% for article in glossaries | sort_list: 'publishedAt:desc' %}
+                            {% assign found_link = glossary_links | where: 'Url', 'contains', article.permalink | first %}
+                                {% if found_link and article.meta_info.author and article.meta_info.author.lastName == block.author.lastName %}
+                                    {% include 'article-preview' %}
+                                    {% assign counter = counter | plus: 1 %}
+                                    {% if counter == block.count %}
+                                        {% break %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

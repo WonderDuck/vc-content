@@ -13,7 +13,7 @@
             {% for item in block.items %}
             <div class="list__item {{ block.colStyle }}">
                 {% if item.image != null and item.image.url != '' %}
-                <img src="{{ item.image.url }}" alt="{{ item.image.altText }}" class="list__icon {{ item.iconStyle }} {{ item.iconAlign }}">
+                <img data-src="{{ item.image.url | image_url }}" alt="{{ item.image.altText }}" class="list__icon {{ item.iconStyle }} {{ item.iconAlign }} lazyload" />
                 {% endif %}
                 {% if item.title != '' %}
                 <div class="list__t">{{ item.title }}</div>

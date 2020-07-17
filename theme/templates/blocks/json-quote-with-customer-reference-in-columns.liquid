@@ -29,7 +29,7 @@
                             <div class="list__country">
                                 <div class="list__country-img">
                                     {% if item.image != '' %}
-                                        <img src="{{item.image.url}}" title="{{item.image.altText}}" />
+                                        <img data-src="{{ item.image.url | image_url }}" title="{{item.image.altText}}" class="lazyload" />
                                     {% endif %}
                                 </div>
                                 <div class="list__country-text">
@@ -43,7 +43,7 @@
                     {% else %}
                         <div class="list__item list__item--flex">
                             <div>
-                                <img src="{{item.image.url}}" title="{{item.image.altText}}" class="list__quote" />
+                                <img data-src="{{ item.image.url | image_url }}" title="{{item.image.altText}}" class="list__quote lazyload" />
                             </div>
                             <div class="list__reviewer">
                                 <div class="list__descr">

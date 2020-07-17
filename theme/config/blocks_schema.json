@@ -163,6 +163,29 @@
         "content": "Structured data"
       },
       {
+        "id": "category",
+        "label": "Category",
+        "type": "select",
+        "options": [
+          {
+            "value": "technical",
+            "label": "Technical"
+          },
+          {
+            "value": "events",
+            "label": "Events"
+          },
+          {
+            "value": "blogs",
+            "label": "Blogs"
+          },
+          {
+            "value": "pressreleases",
+            "label": "Press Releases"
+          }
+        ]
+      },
+      {
         "id": "markup_webpage_title",
         "label": "Page title",
         "type": "string"
@@ -183,46 +206,46 @@
         "label": "Date created",
         "type": "calendar"
       },
-        {
-            "id": "author",
-            "label": "Author",
-            "type": "select",
-            "equalKey": "id",
-            "request": {
-                "url": "api/members/search",
-                "method": "post",
-                "label": "fullName",
-                "value": [
-                    "id",
-                    "firstName",
-                    "lastName",
-                    "photoUrl",
-                    {
-                        "key": "jobTitle",
-                        "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
-                        "isArray": false
-                    },
-                    {
-                        "key": "biography",
-                        "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
-                        "isArray": false
-                    },
-                    {
-                        "key": "linkedinLink",
-                        "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
-                        "isArray": false
-                    }
-                ],
-                "params": {
-                    "memberId": null,
-                    "deepSearch": true,
-                    "responseGroup": "Full",
-                    "sort": "memberType:desc;name:asc",
-                    "searchPhrase": "isAuthor:true"
-                }
+      {
+        "id": "author",
+        "label": "Author",
+        "type": "select",
+        "equalKey": "id",
+        "request": {
+          "url": "api/members/search",
+          "method": "post",
+          "label": "fullName",
+          "value": [
+            "id",
+            "firstName",
+            "lastName",
+            "photoUrl",
+            {
+              "key": "jobTitle",
+              "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
+              "isArray": false
             },
-            "options": []
-        }
+            {
+              "key": "biography",
+              "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
+              "isArray": false
+            },
+            {
+              "key": "linkedinLink",
+              "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
+              "isArray": false
+            }
+          ],
+          "params": {
+            "memberId": null,
+            "deepSearch": true,
+            "responseGroup": "Full",
+            "sort": "memberType:desc;name:asc",
+            "searchPhrase": "isAuthor:true"
+          }
+        },
+        "options": []
+      }
     ]
   },
   "footer": {
@@ -317,145 +340,145 @@
           "group": "Background"
         }
       ],
-	  "seo-subtitle": [
-	    {
-			"id": "subtitleSeoTag",
-			"label": "Subtitle SEO tag",
-			"type": "select",
-			"default": "none",
-			"options": [
-			  {
-				"value": "h1",
-				"label": "H1"
-			  },
-			  {
-				"value": "h2",
-				"label": "H2"
-			  },
-			  {
-				"value": "h3",
-				"label": "H3"
-			  },
-			  {
-				"value": "h4",
-				"label": "H4"
-			  },
-			  {
-				"value": "h5",
-				"label": "H5"
-			  },
-			  {
-				"value": "h6",
-				"label": "H6"
-			  },
-			  {
-				"value": "none",
-				"label": "None"
-			  }
-			],
-			"tab": "Settings",
-			"group": "Typography"
-		}
-	  ],
-	  "seo-note": [
-	    {
-			"id": "noteSeoTag",
-			"label": "Note SEO tag",
-			"type": "select",
-			"default": "none",
-			"options": [
-			  {
-				"value": "h1",
-				"label": "H1"
-			  },
-			  {
-				"value": "h2",
-				"label": "H2"
-			  },
-			  {
-				"value": "h3",
-				"label": "H3"
-			  },
-			  {
-				"value": "h4",
-				"label": "H4"
-			  },
-			  {
-				"value": "h5",
-				"label": "H5"
-			  },
-			  {
-				"value": "h6",
-				"label": "H6"
-			  },
-			  {
-				"value": "none",
-				"label": "None"
-			  }
-			],
-			"tab": "Settings",
-			"group": "Typography"
-		}
-	  ],
-	  "headings": [
-		{
-			"id": "headings",
-			"label": "Headings",
-			"type": "list",
-			"addText": "Add heading",
-			"removeText": "Remove heading",
-			"displayField": "title",
-			"element": [
-				{
-					"id": "title",
-					"label": "Title",
-					"type": "text",
-					"settings": [
-						"TextColor",
-						"Link",
-						"Unlink"
-					]
-				},
-				{
-					"id": "seoTag",
-					"label": "SEO Tag",
-					"type": "select",
-					"default": "none",
-					"options": [
-					  {
-						"value": "h1",
-						"label": "H1"
-					  },
-					  {
-						"value": "h2",
-						"label": "H2"
-					  },
-					  {
-						"value": "h3",
-						"label": "H3"
-					  },
-					  {
-						"value": "h4",
-						"label": "H4"
-					  },
-					  {
-						"value": "h5",
-						"label": "H5"
-					  },
-					  {
-						"value": "h6",
-						"label": "H6"
-					  },
-					  {
-						"value": "none",
-						"label": "None"
-					  }
-					]
-				}
-			],
-			"tab": "Content"
-		}
-	]
+      "seo-subtitle": [
+        {
+          "id": "subtitleSeoTag",
+          "label": "Subtitle SEO tag",
+          "type": "select",
+          "default": "none",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "tab": "Settings",
+          "group": "Typography"
+        }
+      ],
+      "seo-note": [
+        {
+          "id": "noteSeoTag",
+          "label": "Note SEO tag",
+          "type": "select",
+          "default": "none",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "tab": "Settings",
+          "group": "Typography"
+        }
+      ],
+      "headings": [
+        {
+          "id": "headings",
+          "label": "Headings",
+          "type": "list",
+          "addText": "Add heading",
+          "removeText": "Remove heading",
+          "displayField": "title",
+          "element": [
+            {
+              "id": "title",
+              "label": "Title",
+              "type": "text",
+              "settings": [
+                "TextColor",
+                "Link",
+                "Unlink"
+              ]
+            },
+            {
+              "id": "seoTag",
+              "label": "SEO Tag",
+              "type": "select",
+              "default": "none",
+              "options": [
+                {
+                  "value": "h1",
+                  "label": "H1"
+                },
+                {
+                  "value": "h2",
+                  "label": "H2"
+                },
+                {
+                  "value": "h3",
+                  "label": "H3"
+                },
+                {
+                  "value": "h4",
+                  "label": "H4"
+                },
+                {
+                  "value": "h5",
+                  "label": "H5"
+                },
+                {
+                  "value": "h6",
+                  "label": "H6"
+                },
+                {
+                  "value": "none",
+                  "label": "None"
+                }
+              ]
+            }
+          ],
+          "tab": "Content"
+        }
+      ]
     }
   },
   "cover-with-simple-text": {
@@ -465,11 +488,11 @@
     "displayField": "name",
     "category": "Covers and Hero",
     "includeShared": [
-		"cover-blocks",
-		"seo-subtitle",
-		"seo-note",
-		"headings"
-	],
+      "cover-blocks",
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -713,11 +736,11 @@
     "displayField": "name",
     "category": "Covers and Hero",
     "includeShared": [
-		"cover-blocks",
-		"seo-subtitle",
-		"seo-note",
-		"headings"
-	],
+      "cover-blocks",
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
     "settings": [
       {
         "id": "titleSeoTag",
@@ -927,11 +950,11 @@
     "displayField": "name",
     "category": "Covers and Hero",
     "includeShared": [
-		"cover-blocks",
-		"seo-subtitle",
-		"seo-note",
-		"headings"
-	],
+      "cover-blocks",
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
     "settings": [
       {
         "id": "titleSeoTag",
@@ -1149,11 +1172,11 @@
     "displayField": "name",
     "category": "Covers and Hero",
     "includeShared": [
-		"cover-blocks",
-		"seo-subtitle",
-		"seo-note",
-		"headings"
-	],
+      "cover-blocks",
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -1617,11 +1640,11 @@
     "displayField": "name",
     "category": "Covers and Hero",
     "includeShared": [
-		"cover-blocks",
-		"seo-subtitle",
-		"seo-note",
-		"headings"
-	],
+      "cover-blocks",
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -1880,11 +1903,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
-	"includeShared": [
-		"seo-subtitle",
-		"seo-note",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
     "settings": [
       {
         "id": "containerAlignment",
@@ -2213,11 +2236,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
-	"includeShared": [
-		"seo-subtitle",
-		"seo-note",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -2461,11 +2484,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
-	"includeShared": [
-		"seo-subtitle",
-		"seo-note",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -2719,11 +2742,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
-	"includeShared": [
-		"seo-subtitle",
-		"seo-note",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -2985,11 +3008,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
-	"includeShared": [
-		"seo-subtitle",
-		"seo-note",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -3493,11 +3516,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
-	"includeShared": [
-		"seo-subtitle",
-		"seo-note",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
     "settings": [
       {
         "id": "textAreaWidth",
@@ -4000,11 +4023,11 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
-	"includeShared": [
-		"seo-subtitle",
-		"seo-note",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
     "settings": [
       {
         "id": "textAreaWidth",
@@ -4398,137 +4421,137 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Headlines and Forms",
-	"includeShared": [
-		"headings"
-	],
+    "includeShared": [
+      "headings"
+    ],
     "settings": [
-		{
-			"id": "headings",
-			"default": [
-				{
-					"title": "Headings collection",
-					"seoTag": "none"
-				}
-			]
-		},
-		{
-			"id": "containerAlignment",
-			"label": "Container alignment",
-			"type": "select",
-			"default": "center",
-			"options": [
-				{
-					"value": "left",
-					"label": "Left"
-				},
-				{
-					"value": "center",
-					"label": "Center"
-				}
-			],
-			"tab": "Content"
-		},
-		{
-			"id": "textAreaWidth",
-			"label": "Text area width",
-			"type": "select",
-			"default": "full",
-			"options": [
-			  {
-				"value": "full",
-				"label": "Full width"
-			  },
-			  {
-				"value": "ten",
-				"label": "10 cols"
-			  },
-			  {
-				"value": "eight",
-				"label": "8 cols"
-			  },
-			  {
-				"value": "six",
-				"label": "6 cols"
-			  }
-			],
-			"tab": "Settings",
-			"group": "Main block settings"
-		  },
-		  {
-			"id": "topPadding",
-			"label": "Top padding",
-			"type": "select",
-			"default": "block--padding-top-large",
-			"options": [
-			  {
-				"value": "block--padding-top-none",
-				"label": "None"
-			  },
-			  {
-				"value": "block--padding-top-half",
-				"label": "Small"
-			  },
-			  {
-				"value": "block--padding-top-large",
-				"label": "Medium"
-			  }
-			],
-			"tab": "Settings",
-			"group": "Paddings"
-		  },
-		  {
-			"id": "bottomPadding",
-			"label": "Bottom padding",
-			"type": "select",
-			"default": "block--padding-bottom-large",
-			"options": [
-			  {
-				"value": "block--padding-bottom-none",
-				"label": "None"
-			  },
-			  {
-				"value": "block--padding-bottom-half",
-				"label": "Small"
-			  },
-			  {
-				"value": "block--padding-bottom-large",
-				"label": "Medium"
-			  }
-			],
-			"tab": "Settings",
-			"group": "Paddings"
-		  },
-		  {
-			"id": "backgroundColor",
-			"label": "Colour",
-			"type": "select",
-			"default": "block--bg-white",
-			"options": [
-			  {
-				"value": "block--bg-white",
-				"label": "White"
-			  },
-			  {
-				"value": "block--bg-light",
-				"label": "Gray"
-			  },
-			  {
-				"value": "block--bg-orange",
-				"label": "Orange"
-			  }
-			],
-			"tab": "Settings",
-			"group": "Background"
-		  },
-		  {
-			"id": "backgroundColorHex",
-			"label": "Colour HEX",
-			"type": "color",
-			"default": "",
-			"tab": "Settings",
-			"group": "Background"
-		  }
-	]
+      {
+        "id": "headings",
+        "default": [
+          {
+            "title": "Headings collection",
+            "seoTag": "none"
+          }
+        ]
+      },
+      {
+        "id": "containerAlignment",
+        "label": "Container alignment",
+        "type": "select",
+        "default": "center",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          }
+        ],
+        "tab": "Content"
+      },
+      {
+        "id": "textAreaWidth",
+        "label": "Text area width",
+        "type": "select",
+        "default": "full",
+        "options": [
+          {
+            "value": "full",
+            "label": "Full width"
+          },
+          {
+            "value": "ten",
+            "label": "10 cols"
+          },
+          {
+            "value": "eight",
+            "label": "8 cols"
+          },
+          {
+            "value": "six",
+            "label": "6 cols"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Main block settings"
+      },
+      {
+        "id": "topPadding",
+        "label": "Top padding",
+        "type": "select",
+        "default": "block--padding-top-large",
+        "options": [
+          {
+            "value": "block--padding-top-none",
+            "label": "None"
+          },
+          {
+            "value": "block--padding-top-half",
+            "label": "Small"
+          },
+          {
+            "value": "block--padding-top-large",
+            "label": "Medium"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Paddings"
+      },
+      {
+        "id": "bottomPadding",
+        "label": "Bottom padding",
+        "type": "select",
+        "default": "block--padding-bottom-large",
+        "options": [
+          {
+            "value": "block--padding-bottom-none",
+            "label": "None"
+          },
+          {
+            "value": "block--padding-bottom-half",
+            "label": "Small"
+          },
+          {
+            "value": "block--padding-bottom-large",
+            "label": "Medium"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Paddings"
+      },
+      {
+        "id": "backgroundColor",
+        "label": "Colour",
+        "type": "select",
+        "default": "block--bg-white",
+        "options": [
+          {
+            "value": "block--bg-white",
+            "label": "White"
+          },
+          {
+            "value": "block--bg-light",
+            "label": "Gray"
+          },
+          {
+            "value": "block--bg-orange",
+            "label": "Orange"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "backgroundColorHex",
+        "label": "Colour HEX",
+        "type": "color",
+        "default": "",
+        "tab": "Settings",
+        "group": "Background"
+      }
+    ]
   },
   "text-in-paragraphs-or-in-columns": {
     "id": "text-in-paragraphs-or-in-columns",
@@ -4950,10 +4973,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Media and Logotypes",
-	"includeShared": [
-		"seo-subtitle",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "headings"
+    ],
     "settings": [
       {
         "id": "containerAlignment",
@@ -5210,10 +5233,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Media and Logotypes",
-	"includeShared": [
-		"seo-subtitle",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "headings"
+    ],
     "settings": [
       {
         "id": "columnsCount",
@@ -5480,9 +5503,9 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Media and Logotypes",
-	"includeShared": [
-		"headings"
-	],
+    "includeShared": [
+      "headings"
+    ],
     "settings": [
       {
         "id": "containerAlignment",
@@ -5528,13 +5551,13 @@
         "tab": "Settings",
         "group": "Main block settings"
       },
-	  {
-		"id": "fixedImageWidth",
-		"label": "Fixed image width",
-		"type": "checkbox",
-		"default": false,
-		"tab": "Settings"
-	  },
+      {
+        "id": "fixedImageWidth",
+        "label": "Fixed image width",
+        "type": "checkbox",
+        "default": false,
+        "tab": "Settings"
+      },
       {
         "id": "topPadding",
         "label": "Top padding",
@@ -5954,10 +5977,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Features and Cards",
-	"includeShared": [
-		"seo-subtitle",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "headings"
+    ],
     "settings": [
       {
         "id": "columnsCount",
@@ -6249,9 +6272,63 @@
               "Unlink"
             ]
           },
+          {
+            "id": "titleSeoTag",
+            "label": "Title SEO tag",
+            "type": "select",
+            "default": "none",
+            "options": [
+              {
+                "value": "h1",
+                "label": "H1"
+              },
+              {
+                "value": "h2",
+                "label": "H2"
+              },
+              {
+                "value": "h3",
+                "label": "H3"
+              },
+              {
+                "value": "h4",
+                "label": "H4"
+              },
+              {
+                "value": "h5",
+                "label": "H5"
+              },
+              {
+                "value": "h6",
+                "label": "H6"
+              },
+              {
+                "value": "none",
+                "label": "None"
+              }
+            ],
+            "tab": "Settings",
+            "group": "Typography"
+          },
+          {
+            "id": "subtitle",
+            "type": "text",
+            "label": "Subtitle",
+            "settings": [
+              "TextColor",
+              "NumberedList",
+              "BulletedList",
+              "Bold",
+              "Italic",
+              "Link",
+              "Unlink",
+              "Maximize",
+              "Source"
+            ]
+          },
 		  {
-			"id": "titleSeoTag",
-			"label": "Title SEO tag",
+			"id": "subtitleSeoTag",
+			"label": "Subtitle SEO tag",
 			"type": "select",
 			"default": "none",
 			"options": [
@@ -6287,22 +6364,6 @@
 			"tab": "Settings",
 			"group": "Typography"
 		  },
-          {
-            "id": "subtitle",
-            "type": "text",
-            "label": "Subtitle",
-            "settings": [
-              "TextColor",
-              "NumberedList",
-              "BulletedList",
-              "Bold",
-              "Italic",
-              "Link",
-              "Unlink",
-              "Maximize",
-              "Source"
-            ]
-          },
           {
             "id": "image",
             "type": "image",
@@ -6368,10 +6429,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "References and Quotes",
-	"includeShared": [
-		"seo-subtitle",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "headings"
+    ],
     "settings": [
       {
         "id": "columnsCount",
@@ -6555,12 +6616,12 @@
         "tab": "Settings",
         "group": "Background"
       },
-    {
-    "id": "logotypesSize",
-    "label": "Logotypes size",
-    "type": "select",
-    "default": "small",
-    "options": [
+      {
+        "id": "logotypesSize",
+        "label": "Logotypes size",
+        "type": "select",
+        "default": "small",
+        "options": [
           {
             "value": "big",
             "label": "Big"
@@ -6570,15 +6631,15 @@
             "label": "Small"
           }
         ],
-    "tab": "Settings"
-    },
-    {
-    "id": "logotypesIsRounded",
-    "label": "Rounded logotypes",
-    "type": "checkbox",
-    "default": true,
-    "tab": "Settings"
-    },
+        "tab": "Settings"
+      },
+      {
+        "id": "logotypesIsRounded",
+        "label": "Rounded logotypes",
+        "type": "checkbox",
+        "default": true,
+        "tab": "Settings"
+      },
       {
         "id": "title",
         "label": "Title",
@@ -6631,7 +6692,9 @@
             "id": "company",
             "type": "text",
             "label": "Company",
-      "settings": ["TextColor"]
+            "settings": [
+              "TextColor"
+            ]
           },
           {
             "id": "review",
@@ -6649,32 +6712,32 @@
               "Source"
             ]
           },
-      {
-      "id": "casestudyLink",
-      "type": "url",
-      "label": "Casestudy link",
-      "urlLabel": "Url",
-      "textLabel": "Button text",
-      "styleLabel": "Link style",
-      "styles": [
-        {
-        "value": "",
-        "label": "Default"
-        },
-        {
-        "value": "btn btn--black",
-        "label": "Black button"
-        },
-        {
-        "value": "btn btn--orange",
-        "label": "Orange button"
-        },
-        {
-        "value": "btn btn--white",
-        "label": "White button"
-        }
-      ]
-      },
+          {
+            "id": "casestudyLink",
+            "type": "url",
+            "label": "Casestudy link",
+            "urlLabel": "Url",
+            "textLabel": "Button text",
+            "styleLabel": "Link style",
+            "styles": [
+              {
+                "value": "",
+                "label": "Default"
+              },
+              {
+                "value": "btn btn--black",
+                "label": "Black button"
+              },
+              {
+                "value": "btn btn--orange",
+                "label": "Orange button"
+              },
+              {
+                "value": "btn btn--white",
+                "label": "White button"
+              }
+            ]
+          },
           {
             "id": "image",
             "type": "image",
@@ -6751,10 +6814,10 @@
     "icon": "image-text",
     "displayField": "review",
     "category": "References and Quotes",
-	"includeShared": [
-		"seo-subtitle",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "headings"
+    ],
     "settings": [
       {
         "id": "textAreaWidth",
@@ -6982,10 +7045,10 @@
     "icon": "image-text",
     "displayField": "review",
     "category": "References and Quotes",
-	"includeShared": [
-		"seo-subtitle",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "headings"
+    ],
     "settings": [
       {
         "id": "textAreaWidth",
@@ -7256,10 +7319,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Promotions and CTAs",
-	"includeShared": [
-		"seo-subtitle",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "headings"
+    ],
     "settings": [
       {
         "id": "textAreaWidth",
@@ -7645,10 +7708,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Queries and Other",
-	"includeShared": [
-		"seo-subtitle",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "headings"
+    ],
     "settings": [
       {
         "id": "columnsCount",
@@ -7953,10 +8016,10 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Queries and Other",
-	"includeShared": [
-		"seo-subtitle",
-		"headings"
-	],
+    "includeShared": [
+      "seo-subtitle",
+      "headings"
+    ],
     "settings": [
       {
         "id": "columnsCount",
@@ -11797,6 +11860,154 @@
         "label": "Show last blogs",
         "type": "boolean",
         "default": "true"
+      },
+      {
+        "id": "items",
+        "label": "Items",
+        "type": "list",
+        "addText": "Add item",
+        "removeText": "Remove item",
+        "displayField": "title",
+        "element": [
+          {
+            "id": "text",
+            "label": "Blog permalink",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  },
+  "dynamic-content": {
+    "name": "Dynamic content",
+    "icon": "text-columns",
+    "category": "Queries and Other",
+    "settings": [
+      {
+        "id": "style",
+        "label": "Block style",
+        "type": "select",
+        "default": "light",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "tab": "Settings"
+      },
+      {
+        "id": "title",
+        "label": "Title",
+        "type": "string"
+      },
+      {
+        "id": "itemsType",
+        "label": "Items type",
+        "type": "select",
+        "options": [
+          {
+            "value": "query",
+            "label": "Query"
+          },
+          {
+            "value": "fixed-items",
+            "label": "Fixed Items"
+          }
+        ]
+      },
+      {
+        "id": "count",
+        "label": "Count",
+        "type": "number",
+        "default": "3"
+      },
+      {
+        "id": "sourceType",
+        "label": "Source type",
+        "type": "select",
+        "options": [
+          {
+            "value": "blog",
+            "label": "Blog"
+          },
+          {
+            "value": "glossary",
+            "label": "Glossary"
+          },
+          {
+            "value": "case-studies",
+            "label": "Case Studies"
+          },
+          {
+            "value": "white-papers",
+            "label": "White Papers"
+          }
+        ]
+      },
+      {
+        "id": "queryType",
+        "label": "Query type",
+        "type": "select",
+        "options": [
+          {
+            "value": "last-items",
+            "label": "Last Items"
+          },
+          {
+            "value": "by-author",
+            "label": "By Author"
+          }
+        ]
+      },
+      {
+        "id": "author",
+        "label": "Author",
+        "type": "select",
+        "equalKey": "id",
+        "request": {
+          "url": "api/members/search",
+          "method": "post",
+          "label": "fullName",
+          "value": [
+            "id",
+            "firstName",
+            "lastName",
+            "photoUrl",
+            {
+              "key": "jobTitle",
+              "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
+              "isArray": false
+            },
+            {
+              "key": "biography",
+              "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
+              "isArray": false
+            },
+            {
+              "key": "linkedinLink",
+              "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
+              "isArray": false
+            }
+          ],
+          "params": {
+            "memberId": null,
+            "deepSearch": true,
+            "responseGroup": "Full",
+            "sort": "memberType:desc;name:asc",
+            "searchPhrase": "isAuthor:true"
+          }
+        },
+        "options": [
+          {
+            "value": " ",
+            "label": " "
+          }
+        ]
       },
       {
         "id": "items",

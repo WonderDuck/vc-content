@@ -27,7 +27,7 @@
                 {% endif %}
 
                 {% if block.referenceStyle == 'reference' %}
-                    <img src="{{block.image.url}}" title="{{block.image.altText}}" class="block__quote" />
+                    <img data-src="{{ block.image.url | image_url }}" title="{{block.image.altText}}" class="block__quote lazyload" />
                     <div class="block__t mt-auto">
                         {% include 'seo-text' tag: block.titleSeoTag, text: block.title %}
                     </div>

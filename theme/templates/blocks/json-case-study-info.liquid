@@ -3,7 +3,7 @@
      {% if block.noBottom == 'True' %} section--small-bottom {% endif %}
      {% if block.noPad == 'True' %} section--no-padding {% endif %}">
   <div class="section__casestudy container">
-    <img class="casestudy-img" src="{{block.image.url}}" />
+    <img class="casestudy-img lazyload" data-src="{{ block.image.url | image_url}}" />
     <div class="section__descr">
       <div class="description">
         {{block.description}}

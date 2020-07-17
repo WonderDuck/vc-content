@@ -22,7 +22,7 @@
                         {{ item.title }}
                     </div>
                     <div class="list__descr">
-                        <img src="{{ item.image.url }}" />
+                        <img data-src="{{ item.image.url | image_url }}" class="lazyload" />
                         <div class="portrait-content">
                             {{item.text}}
                         </div>
@@ -32,7 +32,7 @@
                     {% endif %}
                     {% else %}
                     <div class="{{imageStyle}}">
-                        <img src="{{ item.image.url }}" alt="{{ item.image.altText }}" {% if item.imageStyle == 'stretch' %} class="list__pic" {% endif %} />
+                        <img data-src="{{ item.image.url | image_url }}" alt="{{ item.image.altText }}" class="{% if item.imageStyle == 'stretch' %}list__pic{% endif %} lazyload" />
                     </div>
                     <div class="list__t">{{ item.title }}</div>
                     <div class="list__descr">

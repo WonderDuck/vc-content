@@ -124,6 +124,10 @@
             margin-bottom: 1.25rem;
         }
 
+        a {
+            color: #fff;
+        }
+
         @extend %ul-and-ol;
 
         ul,
@@ -148,8 +152,17 @@
             position: absolute;
             width: 100%;
 
+            $gradient-from: rgba(0,0,0,0);
+            $gradient-to: rgba(0,0,0,.45);
+
             &::after {
-                background: rgba(0, 0, 0, 0.25);
+                background: -moz-linear-gradient(top, $gradient-from, $gradient-to);
+                background: -webkit-gradient(left top, left bottom, color-stop($gradient-from, color-stop($gradient-to)));
+                background: -webkit-linear-gradient(top, $gradient-from, $gradient-to);
+                background: -o-linear-gradient(top, $gradient-from, $gradient-to);
+                background: -ms-linear-gradient(top, $gradient-from, $gradient-to);
+                background: linear-gradient(to bottom, $gradient-from, $gradient-to);
+                background: linear-gradient(to bottom, $gradient-from, $gradient-to);
                 border-radius: 0.625rem;
                 bottom: 0;
                 content: " ";
@@ -199,12 +212,22 @@
         &__t {
             line-height: 1.15;
 
-            @include media-breakpoint-down(md) {
+            @include media-breakpoint-down(xs) {
+                font-size: 1.2rem;
+                margin-bottom: 0.9375rem;
+            }
+
+            @include media-breakpoint-between(sm, lg) {
                 font-size: 1.5rem;
                 margin-bottom: 0.9375rem;
             }
 
             @include media-breakpoint-up(lg) {
+                font-size: 2rem;
+                margin-bottom: 1.875rem;
+            }
+
+            @include media-breakpoint-up(xl) {
                 font-size: 2.5rem;
                 margin-bottom: 1.875rem;
             }
@@ -227,6 +250,15 @@
             font-size: 1rem;
             justify-content: center;
             width: 7.5rem;
+            margin-top: 3.75rem;
+
+            @include media-breakpoint-down(xs) {
+                margin-top: .75rem;
+            }
+
+            @include media-breakpoint-between(md, lg) {
+                margin-top: 1.75rem;
+            }
         }
 
         @include media-breakpoint-down(md) {
@@ -234,7 +266,9 @@
             height: 30rem;
 
             &__category {
-                margin: 1.25rem 1.25rem 0;
+                display: table-cell;
+                color: black;
+                vertical-align: middle;
             }
 
             &__text {
@@ -249,11 +283,19 @@
 
         @include media-breakpoint-up(lg) {
             &__category {
-                margin: 3.75rem 3.75rem 0;
+                display: table-cell;
+                color: black;
+                vertical-align: middle;
             }
 
             &__text {
                 padding: 3.75rem;
+            }
+        }
+
+        @include media-breakpoint-only(md) {
+            &__text {
+                margin: auto 0;
             }
         }
     }
@@ -495,7 +537,6 @@
             align-items: center;
             display: flex;
             height: 3rem;
-            margin-top: auto;
 
             &-logo {
                 height: 3rem;
