@@ -17,9 +17,10 @@
                     {% endfor %}
                 {% endif %}
                 {% if block.itemsType == 'query' %}
-                    {% if block.queryType == 'by-author' %}
-                        {% for blog in blogs %}
-                                {% for article in blog.articles reversed %}
+                    {% if block.sourceType == 'blog' %}
+                        {% if block.queryType == 'by-author' %}
+                            {% for blog in blogs %}
+                                {% for article in blog.articles | sort_list: 'publishedAt:desc' %}
                                     {% if article.meta_info.author and article.meta_info.author.lastName == block.author.lastName %}
                                         {% include 'article-preview' %}
                                         {% assign counter = counter | plus: 1 %}
@@ -28,15 +29,33 @@
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}
-                        {% endfor %}
-                    {% endif %}
-                    {% if block.queryType == 'last-items' %}
-                        {% for blog in blogs %}
-                                {% for article in blog.articles reversed limit: block.count %}
+                            {% endfor %}
+                        {% endif %}
+                        {% if block.queryType == 'last-items' %}
+                            {% for blog in blogs %}
+                                {% assign articles = blog.articles | sort_list: 'publishedAt:desc' %}
+                                {% for article in articles limit: block.count %}
                                     {% include 'article-preview' %}
                                 {% endfor %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                    {% if block.sourceType == 'case-studies' %}
+                        {% assign studies = pages | where: 'permalink', 'contains', 'case-studies/' %}
+                        {% for article in studies limit: block.count %}
+                            {% include 'article-preview' %}
                         {% endfor %}
                     {% endif %}
+                    {% if block.sourceType == 'white-papers' %}
+                        {% assign white_papers = pages | where: 'permalink', 'contains', '-whitepaper' %}
+                        {% for article in white_papers limit: block.count %}
+                            {% include 'article-preview' %}
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if block.sourceType == 'glossary' %}
+                    {% endif %}
+                    
                 {% endif %}
             </div>
         </div>
