@@ -1,10 +1,10 @@
 <div class="list__item">
     {% if article.image_url and article.image_url != '' %}
-        <a class="list__bg" href="{{ article.url }}" style="background-image: url({{ article.image_url }});"></a>
+        <a class="list__bg lazyload" href="{{ article.url }}" data-bg="{{ article.image_url | image_url }}"></a>
     {% elsif article.meta_info.markup_webpage_image and article.meta_info.markup_webpage_image != '' %}
-        <a class="list__bg" href="{{ article.url }}" style="background-image: url({{ article.meta_info.markup_webpage_image }});"></a>
+        <a class="list__bg lazyload" href="{{ article.url }}" data-bg="{{ article.meta_info.markup_webpage_image | image_url }}"></a>
     {% else %}
-        <a class="list__bg" href="{{ article.url }}" style="background-image: url(blue-abstract-background.jpg);"></a>
+        <a class="list__bg lazyload" href="{{ article.url }}" data-bg="{{ 'blue-abstract-background.jpg' | image_url }}"></a>
     {% endif %}
     <div class="list__info">
         <div class="list__t">
