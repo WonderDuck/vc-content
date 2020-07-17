@@ -26,14 +26,12 @@
                 <div>{{ article.meta_info.markup_webpage_date_created | date: "d MMMM yyyy" }}</div>
             {% endif %}
             </div>
-            {% if article.tags.size > 0 %}
             <div class="list list--tags">
                 {% for tag in article.tags limit:3 %}
                     {% assign tag_url = '/blog/tag/' | append: tag  %}
                     <a class="list__item" href="{{ tag_url | absolute_url }}">{{ "blogs.tags." | append: tag | t }}</a>
                 {% endfor %}
             </div>
-            {% endif %}    
             <div class="list__author">
                 <div class="list__author-logo">
                 {% if article.meta_info.author.photoUrl %}
