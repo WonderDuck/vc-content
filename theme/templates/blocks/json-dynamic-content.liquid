@@ -54,8 +54,33 @@
                     {% endif %}
 
                     {% if block.sourceType == 'glossary' %}
+                        {% assign glossaries = pages | where: 'permalink', 'contains', 'glossary/' %}
+                        {% assign glossary_links = linklists['Glossary'].links %}
+                        {% if block.queryType == 'last-items' %}
+                            {% for article in glossaries | sort_list: 'publishedAt:desc' %}
+                                {% assign found_link = glossary_links | where: 'Url', 'contains', article.permalink | first %}
+                                {% if found_link %}
+                                    {% include 'article-preview' %}
+                                    {% assign counter = counter | plus: 1 %}
+                                    {% if counter == block.count %}
+                                        {% break %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        {% if block.queryType == 'by-author' %}
+                            {% for article in glossaries | sort_list: 'publishedAt:desc' %}
+                            {% assign found_link = glossary_links | where: 'Url', 'contains', article.permalink | first %}
+                                {% if found_link and article.meta_info.author and article.meta_info.author.lastName == block.author.lastName %}
+                                    {% include 'article-preview' %}
+                                    {% assign counter = counter | plus: 1 %}
+                                    {% if counter == block.count %}
+                                        {% break %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
                     {% endif %}
-                    
                 {% endif %}
             </div>
         </div>
