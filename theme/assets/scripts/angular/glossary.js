@@ -2,12 +2,14 @@ var storefrontApp = angular.module('storefrontApp');
 
 storefrontApp.controller('glossaryController', ['$scope', function ($scope) {
     $scope.glossaries = [];
+    $scope.glossaryCategories = [];
     $scope.glossariesOriginal = [];
     $scope.currentCategory = '';
 
     $scope.initGlossary = function () {
         $scope.glossaries = JSON.parse(window.glossaries);
         $scope.glossariesOriginal = JSON.parse(window.glossaries);
+        $scope.glossaryCategories = window.glossaryCategories;
     }
 
     $scope.setCurrentCategory = function (category) {

@@ -76,8 +76,8 @@
             </div>
 
             <article class="main" role="main">
-                <div class="container">
-                    <div class="glossary" ng-controller="glossaryController">
+                <div class="container" ng-controller="glossaryController">
+                    <div class="glossary" ng-init="initGlossary()">
                         <div style="width:100%; min-width:100%;">
                             {% include 'breadcrumb' %}
                             {% include 'tags-selector' %}
