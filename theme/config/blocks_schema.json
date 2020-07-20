@@ -193,13 +193,13 @@
       {
         "id": "markup_webpage_description",
         "label": "Page meta description",
-        "type": "string"
+        "type": "string",
+        "multiline": true
       },
       {
         "type": "image",
         "id": "markup_webpage_image",
-        "label": "Page image",
-        "inline": true
+        "label": "Page image"
       },
       {
         "id": "markup_webpage_date_created",

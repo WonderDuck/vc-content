@@ -1,0 +1,21 @@
+{% if page_settings %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@virtocommerce" />
+    <meta name="twitter:creator" content="@virtocommerce" />
+
+    {% if page_settings.markup_webpage_title != '' %}
+        <meta name="twitter:title" content="{{page_settings.markup_webpage_title}}" />
+    {% endif %}
+
+    {% if page_settings.markup_webpage_description != '' %}
+        <meta name="twitter:description" content="{{page_settings.markup_webpage_description}}" />
+    {% endif %}
+
+    {% if page_settings.markup_webpage_image != '' %}
+        <meta name="twitter:image" content="{{page_settings.markup_webpage_image.url}}" />
+
+        {% if page_settings.markup_webpage_image.altText != '' %}
+            <meta name="twitter:image:alt" content="{{page_settings.markup_webpage_image.altText}}" />
+        {% endif %}
+    {% endif %}
+{% endif %}
