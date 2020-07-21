@@ -19,7 +19,7 @@ Use this guide to import new products into Virto Commerce Platform (backend) cat
 ## Create catalog data file in .csv format
 
 In order to have a file with your own products like downloaded **electronics-new-products-example.csv**, you need to create new .csv file in csv file editor.
-* In Excel just select the product properties you need from the list and fill in the product properties columns as in our document. Set the PrimaryImage column values to URLs to your images in **Assets**.
+* In Excel just select the product properties you need from the list and fill in the product properties columns as in our document. Set the PrimaryImage column values to URLs to your images in **Assets**. For each cell in AltImage column you can set multiple values using "--" or "|" delimiter between them.
 * In LibreOffice you need to create table with the number of columns equal to the number of properties of your products and fill it. For a delimiter, select a comma.
 * Save file in .csv format.
 
@@ -61,7 +61,7 @@ You need to add images for products: go to **More > Assets > catalog >** click o
 
 ## Importing and mapping your catalog data into Virto Commerce
 
-* At the top of the **Asus-Laptops** category blade click the **Import** icon **> VirtoCommerce CSV import >** select **Semicolon** in **Csv column delimiter >** click on the image and select **electronics-new-products-example.csv** file to upload. Wait a little... 
+* At the top of the **Asus-Laptops** category blade click the **Import** icon **> VirtoCommerce CSV import >** select **Semicolon** in **Csv column delimiter >** click on the image and select **electronics-new-products-example.csv** file to upload. Wait a little...
 
 >Note: importing new products from the file without specifying either the category id or the category path in it, defaults to the root directory - to the catalog.
 
@@ -98,7 +98,7 @@ Now you need to generate thumbnails for new images.
 
 ![New thumbnail task](../../assets/images/docs/new-thumbnail-task.png "New thumbnails generation task")
 
-* Create and save thumbnail option details: Name - **348x348**, Thumbnail file name suffix - **348x348**, Resize method - **FixedSize**, Width (pixels) - **348**, Height (pixels) - **348**, Anchor position - **Center**. 
+* Create and save thumbnail option details: Name - **348x348**, Thumbnail file name suffix - **348x348**, Resize method - **FixedSize**, Width (pixels) - **348**, Height (pixels) - **348**, Anchor position - **Center**.
 * Similarly add details for 3 other resolutions: **216x216, 168x168, 64x64**.
 * Can close only **Thumbnails settings** blade now.
 * Put the cursor in the **Thumbnail settings** field (in **New thumbnails generation task** blade), add all the previously created settings, save new thumbnails generation task.
@@ -140,7 +140,7 @@ In order to create a new catalog items .csv file, you need to know which defined
 | CategoryPath (required if CategoryId is empty) | text            | Laptops/Asus-Laptops                                                      |
 | CategoryId (required if CategoryPath is empty) | text            |                                                                           |
 | MainProductId                                  | text            |                                                                           |
-| PrimaryImage (image url in app)                | text            | http://localhost/admin/assets/catalog/ASUS/99bb9e00c.jpg 
+| PrimaryImage (image url in app)                | text            | http://localhost/admin/assets/catalog/ASUS/99bb9e00c.jpg
 | AltImage                                       | text            | asus-vivobook-w202na-dh02                                                 |
 | SeoUrl                                         | text            | asus-vivobook-w202na-dh02                                                 |
 | SeoTitle                                       | text            |                                                                           |
