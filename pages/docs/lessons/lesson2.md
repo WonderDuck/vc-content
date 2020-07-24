@@ -19,7 +19,7 @@ Use this guide to import new products into Virto Commerce Platform (backend) cat
 ## Create catalog data file in .csv format
 
 In order to have a file with your own products like downloaded **electronics-new-products-example.csv**, you need to create new .csv file in csv file editor.
-* In Excel just select the product properties you need from the list and fill in the product properties columns as in our document. Set the PrimaryImage column values to URLs to your images in **Assets**. For each cell in AltImage column you can set multiple values using "--" or "|" delimiter between them.
+* In Excel just select the product properties you need from the list and fill in the product properties columns as in our document. Set the PrimaryImage column values to URLs to your images in **Assets**. For each cell in AltImage column you can set multiple values using "--" or "|" delimiter between them (multiple images import is available only for platform v.3).
 * In LibreOffice you need to create table with the number of columns equal to the number of properties of your products and fill it. For a delimiter, select a comma.
 * Save file in .csv format.
 
