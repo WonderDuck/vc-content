@@ -30,6 +30,7 @@
     <script>
         var BASE_URL = '{{ "/" | full_url }}';
     </script>
+    {% include 'url-segments-variables' %}
     {% include 'markup-corporation' %}
     {% include 'markup-website' %}
     {% if article %}

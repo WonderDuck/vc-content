@@ -231,6 +231,33 @@ $(function () {
                         break;
                 }
 
+                var form = $(this);
+                var submitBtn = form.children('[type=submit]');
+
+                var token = null;
+                var cookies = document.cookie.split(';');
+                for (var cookie of cookies) {
+                    if (cookie.startsWith(' XSRF-TOKEN=')) {
+                        token = cookie.replace(' XSRF-TOKEN=', '');
+                    }
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: `/${shopId}/${cultureName}/targetAccountV2`,
+                    data: {
+                        companyName: form.find('#companyV2').val(),
+                        email: form.find('#email').val()
+                    },
+                    headers: { 'X-XSRF-TOKEN': token },
+                    beforeSend: function () {
+                        submitBtn.attr('disabled', true);
+                    },
+                    complete: function () {
+                        submitBtn.removeAttr('disabled');
+                    }
+                });
+
                 var redirectUrl = e.target.dataset.targetUrl;
                 if (redirectUrl && redirectUrl != '') {
                     document.location.href = redirectUrl;
