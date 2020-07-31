@@ -250,18 +250,33 @@ $(function () {
                         email: form.find('#email').val()
                     },
                     headers: { 'X-XSRF-TOKEN': token },
-                    beforeSend: function () {
-                        submitBtn.attr('disabled', true);
-                    },
-                    complete: function () {
-                        submitBtn.removeAttr('disabled');
+                    beforeSend: () => submitBtn.attr('disabled', true)
+                });
+
+                $.ajax({
+                    type: 'GET',
+                    url: 'https://api.ipdata.co/?api-key=d55d3413982d00ce1d4ef0008d06578d74f3a96deed0ae2f0f6f10da&fields=ip',
+                    beforeSend: () => submitBtn.attr('disabled', true),
+                    success: function (ip) {
+                        $.ajax({
+                            type: 'POST',
+                            url: `/${shopId}/${cultureName}/location`,
+                            data: {
+                                ip: ip,
+                                email: form.find('#email').val()
+                            },
+                            headers: { 'X-XSRF-TOKEN': token },
+                            success: function () {
+                                var redirectUrl = e.target.dataset.targetUrl;
+                                if (redirectUrl && redirectUrl != '') {
+                                    document.location.href = redirectUrl;
+                                }
+                            },
+                            complete: () => submitBtn.removeAttr('disabled')
+                        });
                     }
                 });
 
-                var redirectUrl = e.target.dataset.targetUrl;
-                if (redirectUrl && redirectUrl != '') {
-                    document.location.href = redirectUrl;
-                }
                 return true;
             } else {
                 switch (e.target.id) {

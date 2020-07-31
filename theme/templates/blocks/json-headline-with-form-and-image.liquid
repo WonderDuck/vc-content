@@ -111,7 +111,6 @@
                                         <input type="text" {% if item.fieldId != '' %} id="{{item.fieldId}}" {% endif %} name="{{item.fieldName}}" value="{{item.fieldValue}}" style="display:none" />
                                     {% endif %}
                                 {% endfor %}
-                                {% include 'user-location-form-inputs' %}
                                 {% if block.note != '' %}
                                     {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note2' %}
                                 {% endif %}
