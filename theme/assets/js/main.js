@@ -254,6 +254,16 @@ $(function () {
                 });
 
                 $.ajax({
+                    type: 'POST',
+                    url: `/${shopId}/${cultureName}/gatedAssets`,
+                    data: {
+                        assetId: form.find('#asset_id').val(),
+                        email: form.find('#email').val()
+                    },
+                    headers: { 'X-XSRF-TOKEN': token }
+                });
+
+                $.ajax({
                     type: 'GET',
                     url: 'https://api.ipdata.co/?api-key=d55d3413982d00ce1d4ef0008d06578d74f3a96deed0ae2f0f6f10da&fields=ip',
                     beforeSend: () => submitBtn.attr('disabled', true),
