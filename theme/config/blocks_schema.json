@@ -3399,7 +3399,11 @@
           {
             "id": "radioListItems",
             "label": "Radio items",
-            "type": "list",
+            "type": "popup-list",
+            "options": {
+              "width": "70%",
+              "max-height": "70%"
+            },
             "addText": "Add radio option",
             "removeText": "Remove item",
             "displayField": "text",
@@ -3906,7 +3910,11 @@
           {
             "id": "radioListItems",
             "label": "Radio items",
-            "type": "list",
+            "type": "popup-list",
+            "options": {
+              "width": "70%",
+              "max-height": "70%"
+            },
             "addText": "Add radio option",
             "removeText": "Remove item",
             "displayField": "text",
@@ -4316,7 +4324,11 @@
       {
         "id": "formFields",
         "label": "Fields",
-        "type": "list",
+        "type": "popup-list",
+		"options": {
+		  "width": "70%",
+		  "max-height": "70%"
+		},
         "addText": "Add field",
         "removeText": "Remove field",
         "displayField": "labelText",
