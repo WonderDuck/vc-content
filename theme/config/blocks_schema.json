@@ -3443,7 +3443,10 @@
           {
             "id": "selectOptions",
             "label": "Select options",
-            "type": "list",
+            "type": "popup-list",
+            "options": {
+              "width": "30%"
+            },
             "addText": "Add select option",
             "removeText": "Remove option",
             "displayField": "label",
@@ -3954,7 +3957,10 @@
           {
             "id": "selectOptions",
             "label": "Select options",
-            "type": "list",
+            "type": "popup-list",
+            "options": {
+              "width": "30%"
+            },
             "addText": "Add select option",
             "removeText": "Remove option",
             "displayField": "label",
