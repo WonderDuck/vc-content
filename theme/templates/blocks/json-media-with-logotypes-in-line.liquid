@@ -4,7 +4,7 @@
     {% if block.backgroundColorHex == '' %}{{block.backgroundColor}}{% endif %}"
     {% if block.backgroundColorHex != '' %}style="background-color:{{block.backgroundColorHex}}"{% endif %}">
     <div class="block__inner container">
-        <div class="row justify-content-center">
+        <div class="row">
             <div class="block__text {{block.textAreaWidth}}">
                 {% if block.title != '' %}
                     {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
@@ -21,7 +21,7 @@
         </div>
 
         {% if block.logotypes.size > 0 %}
-            <div class="list list-partners {% if block.containerAlignment == 'block--align-center' %}list-partners--centered{% endif %}">
+            <div class="list list-partners {% if block.containerAlignment == 'block--align-center' %}list-partners--centered justify-content-center{% endif %}">
                 {% for logotype in block.logotypes %}
                     <div class="list__item">
                         <div class="list__img">
