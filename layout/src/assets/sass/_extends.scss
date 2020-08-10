@@ -194,7 +194,6 @@
 
     .list__pic
     {
-        display: block;
         position: relative;
         max-height: 100%;
         z-index: 5;
@@ -422,7 +421,7 @@
             flex: 0 0 4.375rem;
             height: 4.375rem;
             min-height: 0;
-            width: 4.375rem;
+            width: 100%;
 
             &--big
             {
@@ -434,6 +433,14 @@
             &::after
             {
                 border-radius: 100%;
+            }
+
+            &--not-rounded
+            {
+                &::after
+                {
+                    border-radius: initial;
+                }
             }
         }
 

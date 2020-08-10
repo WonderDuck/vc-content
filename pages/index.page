@@ -1,0 +1,285 @@
+[
+    {
+        "type": "settings",
+        "title": "",
+        "permalink": "index",
+        "layout": "theme",
+        "noindex": false
+    },
+    {
+        "id": 1,
+        "type": "cover-with-image-and-flexible-title",
+        "__id": "coverwithimageandflexibletitleV1I",
+        "titleSeoTag": "h1",
+        "backgroundColorHex": null,
+        "backgroundOverlayColor": "none",
+        "backgroundOverlayColorHex": null,
+        "backgroundScrollEffect": "block--cover-static",
+        "title": "<p>B2B Digital Commerce for Enterprises</p>\n",
+        "subtitle": "<p>Get to market faster. Solve your most complex ecommerce needs with Virto Commerce.</p>\n",
+        "note": "",
+        "background": null,
+        "containerImage": {
+            "url": "https://ik.imagekit.io/je8lpsqkoi/assets/images/home/bg.png"
+        },
+        "firstButton": {
+            "url": "request-demo",
+            "urlText": "Request a Demo",
+            "style": "btn btn--orange"
+        },
+        "secondButton": {
+            "url": "",
+            "urlText": "",
+            "style": "btn btn--orange"
+        },
+        "horizontalAlignment": "right",
+        "verticalAlignment": "align-self-center",
+        "backgroundColor": "block--bg-white",
+        "subtitleSeoTag": "none",
+        "noteSeoTag": "none",
+        "headings": [],
+        "name": null,
+        "titleFontSize": null
+    },
+    {
+        "id": 2,
+        "type": "business-leaders",
+        "__id": "businessleadersUVS1",
+        "name": "Business Leaders",
+        "title": "<p>Business Leaders Choose Virto Commerce</p>\n",
+        "subtitle": "<p>View just a handful of the top companies that use</p>\n\n<p>Virto Commerce to power their ecommerce</p>\n",
+        "topPadding": "block--padding-top-large",
+        "bottomPadding": "block--padding-bottom-large",
+        "topDivider": null,
+        "bottomDivider": null,
+        "horizontalAlignment": "left",
+        "verticalAlignment": "align-self-start",
+        "backgroundColor": "block--bg-light"
+    },
+    {
+        "id": 3,
+        "type": "customer-references-in-columns",
+        "__id": "customerreferencesincolumnsIWze",
+        "columnsCount": "4",
+        "containerAlignment": "block--align-center",
+        "textAreaWidth": "col-lg",
+        "topPadding": "block--padding-top-large",
+        "bottomPadding": "block--padding-bottom-half",
+        "topDivider": null,
+        "bottomDivider": null,
+        "titleSeoTag": "div",
+        "backgroundColor": "block--bg-white",
+        "backgroundColorHex": null,
+        "logotypesSize": "small",
+        "logotypesIsRounded": false,
+        "title": "<p>All you need in one place</p>\n",
+        "subtitle": "<p>Virto Commerce is a flexible B2B ecommerce solution<br />\nthat offers powerful tools for enterprise business users.</p>\n",
+        "items": [
+            {
+                "name": "Catalog Management",
+                "jobTitle": "",
+                "company": "",
+                "review": "<p>Access sophisticated catalog management capabilities on the Virto Commerce platform, making it simple to manage even the most complex B2B product lists and detailed product information.</p>\n",
+                "casestudyLink": null,
+                "image": {
+                    "url": "../assets/images/home/benefits/catalog.svg"
+                },
+                "overlayColor": "none",
+                "overlayColorHex": ""
+            },
+            {
+                "name": "CMS",
+                "jobTitle": "",
+                "company": "",
+                "review": "<p>Manage your store and content with the Virto Commerce powerful content management system (CMS). Virto Commerce is also integrated with many <a href=\"/glossary/e-commerce-cms\">top CMS platforms</a>.</p>\n",
+                "casestudyLink": null,
+                "image": {
+                    "url": "../assets/images/home/benefits/cms.svg"
+                },
+                "overlayColor": "none",
+                "overlayColorHex": ""
+            },
+            {
+                "name": "Order Management",
+                "jobTitle": "",
+                "company": "",
+                "review": "<p>Gain complete control over order management with industry-leading features from Virto Commerce. Easily integrate the features into complex enterprise workflows -- including many leading ERP and fulfillment systems.</p>\n",
+                "casestudyLink": null,
+                "image": {
+                    "url": "../assets/images/home/benefits/order.svg"
+                },
+                "overlayColor": "none",
+                "overlayColorHex": null
+            },
+            {
+                "name": "Complex pricing",
+                "jobTitle": null,
+                "company": null,
+                "review": "<p>Manage pricing logic, establish complex pricing, and customize contracts with the flexibility available in Virto Commerce.</p>\n",
+                "casestudyLink": null,
+                "image": {
+                    "url": "../assets/images/home/benefits/coin.svg"
+                },
+                "overlayColor": "none",
+                "overlayColorHex": null
+            }
+        ],
+        "subtitleSeoTag": "none",
+        "headings": [],
+        "name": null,
+        "titleFontSize": "medium"
+    },
+    {
+        "id": 4,
+        "type": "customer-references-in-columns",
+        "__id": "customerreferencesincolumnspsVM",
+        "columnsCount": "3",
+        "containerAlignment": "block--align-center",
+        "textAreaWidth": "col-lg",
+        "topPadding": "block--padding-top-large",
+        "bottomPadding": "block--padding-bottom-large",
+        "topDivider": null,
+        "bottomDivider": null,
+        "titleSeoTag": "div",
+        "backgroundColor": "block--bg-light",
+        "backgroundColorHex": null,
+        "logotypesSize": "small",
+        "logotypesIsRounded": false,
+        "title": "<p>Your Long - Term Digital Commerce Partner</p>\n",
+        "subtitle": "<p>Virto Commerce is more than just software &ndash; When you use it, you have support from our Virto team of experts, community, and partners worldwide and suite of value added services to ensure your solution is a success.</p>\n",
+        "items": [
+            {
+                "name": "Partners",
+                "jobTitle": "",
+                "company": "",
+                "review": "<p>Worldwide network of certified implementation partners to fit every project.</p>\n",
+                "casestudyLink": {
+                    "url": "find-implementation-partner",
+                    "urlText": "Learn more",
+                    "style": "",
+                    "openInNewTab": false
+                },
+                "image": {
+                    "url": "../assets/images/home/benefits/partners.svg"
+                },
+                "overlayColor": "none",
+                "overlayColorHex": null
+            },
+            {
+                "name": "Expert Services",
+                "jobTitle": "",
+                "company": "",
+                "review": "<p>Virto Commerce experts are at your disposal - offering unique digital commerce knowledge.</p>\n",
+                "casestudyLink": {
+                    "url": "b2b-ecommerce-services",
+                    "urlText": "Learn more",
+                    "style": "",
+                    "openInNewTab": false
+                },
+                "image": {
+                    "url": "../assets/images/home/benefits/solution.svg"
+                },
+                "overlayColor": "none",
+                "overlayColorHex": null
+            },
+            {
+                "name": "Community & App Store",
+                "jobTitle": "",
+                "company": "",
+                "review": "<p>Explore our growing App Store of extensions and themes to customize your solution.</p>\n",
+                "casestudyLink": {
+                    "url": "apps",
+                    "urlText": "Learn more",
+                    "style": "",
+                    "openInNewTab": false
+                },
+                "image": {
+                    "url": "../assets/images/home/benefits/community.svg"
+                },
+                "overlayColor": "none",
+                "overlayColorHex": null
+            }
+        ],
+        "subtitleSeoTag": "none",
+        "headings": [],
+        "name": null,
+        "titleFontSize": "medium"
+    },
+    {
+        "id": 5,
+        "type": "media-with-logotypes-in-line",
+        "__id": "mediawithlogotypesinlineBhuF",
+        "containerAlignment": "block--align-center",
+        "textAreaWidth": "col-lg",
+        "topPadding": "block--padding-top-large",
+        "bottomPadding": "block--padding-bottom-large",
+        "topDivider": null,
+        "bottomDivider": null,
+        "titleSeoTag": "div",
+        "backgroundColor": "block--bg-white",
+        "backgroundColorHex": null,
+        "title": "",
+        "subtitle": "",
+        "logotypes": [
+            {
+                "image": {
+                    "url": "../assets/images/home/technologies/azure.svg",
+                    "altText": null
+                },
+                "url": "",
+                "openInNewTab": false
+            },
+            {
+                "image": {
+                    "url": "../assets/images/home/technologies/net.svg"
+                },
+                "url": "",
+                "openInNewTab": false
+            },
+            {
+                "image": {
+                    "url": "../assets/images/home/technologies/elastic.svg"
+                },
+                "url": "",
+                "openInNewTab": false
+            },
+            {
+                "image": {
+                    "url": "../assets/images/home/technologies/angular.svg"
+                },
+                "url": "",
+                "openInNewTab": false
+            },
+            {
+                "image": {
+                    "url": "../assets/images/home/technologies/ts.svg"
+                },
+                "url": "",
+                "openInNewTab": false
+            }
+        ],
+        "subtitleSeoTag": "none",
+        "headings": [],
+        "name": null
+    },
+    {
+        "id": 6,
+        "type": "text",
+        "__id": "text1SAY",
+        "name": "Text",
+        "title": "See how Virto Commerce can lead your digital transformation",
+        "headerType": "like-h2",
+        "titleAlignment": "section__t--center-alignment",
+        "style": "dark",
+        "decorator": "section--pattern",
+        "content": "",
+        "url": {
+            "url": "contact-us",
+            "style": "btn btn--orange btn--lg",
+            "urlText": "Get Started"
+        },
+        "noTop": null,
+        "noBottom": null,
+        "noPad": null
+    }
+]
