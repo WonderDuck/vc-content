@@ -813,6 +813,18 @@
     ]
   },
   {
+    "name": "Footer",
+    "icon": "footer",
+    "settings": [
+      {
+		"id": "footerText",
+		"label": "Text",
+        "type": "string",
+		"multiline": true
+      }
+	]
+  },
+  {
     "name": "Home page",
     "icon": "home",
     "settings": [
