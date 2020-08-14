@@ -7799,11 +7799,6 @@ code {
     width: 100%;
 }
 
-.block .block__pic--fixed {
-    width: auto;
-    margin: 0 auto;
-}
-
 .block [class*="col-"]:first-child .block__form,
   .block [class*="col-"]:first-child .block__media,
   .block [class*="col-"]:first-child .block__text {
