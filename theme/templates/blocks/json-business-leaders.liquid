@@ -1,12 +1,16 @@
-<div id="{{ block.__id }}" class="section {% if block.noTop == true %} section--small-top {% endif %}
-     {% if block.noTop == 'True' %} section--small-top {% endif %}
-     {% if block.noBottom == 'True' %} section--small-bottom {% endif %}
-     {% if block.noPad == 'True' %} section--no-padding {% endif %}">
+<div id="{{ block.__id }}" class="section {{block.topPadding}} {{block.bottomPadding}} {{block.backgroundColor}}
+    {% if block.topDivider == 'True' %} block--divider-top {% endif %}
+    {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}">
     <div class="section__inner container">
-        <h2 class="section__t">Business Leaders Choose Virto Commerce</h2>
-        <p class="section__descr--centered">
-            View just a handful of the top companies that use <br />Virto Commerce to power their ecommerce
-        </p>
+        {% if block.title != '' %}
+            <h2 class="section__t">{{block.title}}</h2>
+        {% endif %}
+        
+        {% if block.subtitle != '' %}
+            <p class="section__descr--centered">
+                {{block.subtitle}}
+            </p>
+        {% endif %}
         <ul class="nav nav--customers">
             <li class="nav__item">
                 <a href="/case-studies/bosch" class="nav__link">

@@ -30,6 +30,7 @@
     <script>
         var BASE_URL = '{{ "/" | full_url }}';
     </script>
+    {% include 'url-segments-variables' %}
     {% include 'markup-corporation' %}
     {% include 'markup-website' %}
     {% if article %}
@@ -38,6 +39,7 @@
         {% include 'markup-webpage' %}
     {% endif %}
     {% include 'markup-opengraph' %}
+    {% include 'twitter-cards-meta' %}
     {% include 'target-account-service-url' %}
 </head>
 <body>

@@ -193,13 +193,13 @@
       {
         "id": "markup_webpage_description",
         "label": "Page meta description",
-        "type": "string"
+        "type": "string",
+        "multiline": true
       },
       {
         "type": "image",
         "id": "markup_webpage_image",
-        "label": "Page image",
-        "inline": true
+        "label": "Page image"
       },
       {
         "id": "markup_webpage_date_created",
@@ -478,7 +478,129 @@
           ],
           "tab": "Content"
         }
-      ]
+      ],
+	  "paddings": [
+		{
+			"id": "topPadding",
+			"label": "Top padding",
+			"type": "select",
+			"default": "block--padding-top-large",
+			"options": [
+			  {
+				"value": "block--padding-top-none",
+				"label": "None"
+			  },
+			  {
+				"value": "block--padding-top-half",
+				"label": "Small"
+			  },
+			  {
+				"value": "block--padding-top-large",
+				"label": "Medium"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Paddings"
+		  },
+		  {
+			"id": "bottomPadding",
+			"label": "Bottom padding",
+			"type": "select",
+			"default": "block--padding-bottom-large",
+			"options": [
+			  {
+				"value": "block--padding-bottom-none",
+				"label": "None"
+			  },
+			  {
+				"value": "block--padding-bottom-half",
+				"label": "Small"
+			  },
+			  {
+				"value": "block--padding-bottom-large",
+				"label": "Medium"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Paddings"
+	    }
+	  ],
+	  "dividers": [
+		{
+			"id": "topDivider",
+			"label": "Top divider",
+			"type": "checkbox",
+			"default": false,
+			"tab": "Settings",
+			"group": "Dividers"
+		},
+		{
+			"id": "bottomDivider",
+			"label": "Bottom divider",
+			"type": "checkbox",
+			"default": false,
+			"tab": "Settings",
+			"group": "Dividers"
+	    }
+	  ],
+	  "title": [
+		{
+			"id": "title",
+			"label": "Title",
+			"type": "text",
+			"default": "Bring your ideas to life",
+			"tab": "Content",
+			"settings": [
+			  "TextColor",
+			  "Link",
+			  "Unlink"
+			]
+		}
+	  ],
+	  "subtitle": [
+	    {
+			"id": "subtitle",
+			"label": "Subtitle",
+			"type": "text",
+			"default": "Anything you've even dreamed about is possible to realise just at the moment when you decided to win.",
+			"tab": "Content",
+			"settings": [
+			  "TextColor",
+			  "NumberedList",
+			  "BulletedList",
+			  "Bold",
+			  "Italic",
+			  "Link",
+			  "Unlink",
+			  "Maximize",
+			  "Source"
+			]
+		}
+	  ],
+	  "title-font-size": [
+		  {
+			"id": "titleFontSize",
+			"label": "Title font size",
+			"type": "select",
+			"default": "medium",
+			"options": [
+			  {
+				"value": "small",
+				"label": "Small"
+			  },
+			  {
+				"value": "medium",
+				"label": "Medium"
+			  },
+			  {
+				"value": "large",
+				"label": "Large"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Typography"
+		  }
+	  ]
     }
   },
   "cover-with-simple-text": {
@@ -737,6 +859,221 @@
     "category": "Covers and Hero",
     "includeShared": [
       "cover-blocks",
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
+    "settings": [
+      {
+        "id": "titleSeoTag",
+        "label": "Title SEO tag",
+        "type": "select",
+        "default": "div",
+        "options": [
+          {
+            "value": "h1",
+            "label": "H1"
+          },
+          {
+            "value": "h2",
+            "label": "H2"
+          },
+          {
+            "value": "h3",
+            "label": "H3"
+          },
+          {
+            "value": "div",
+            "label": "DIV"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Typography"
+      },
+      {
+        "id": "backgroundColorHex",
+        "label": "Colour HEX",
+        "type": "color",
+        "default": "",
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "backgroundOverlayColor",
+        "label": "Background overlay color",
+        "type": "select",
+        "default": "none",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "black",
+            "label": "Black"
+          },
+          {
+            "value": "white",
+            "label": "White"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "backgroundOverlayColorHex",
+        "label": "Overlay color HEX",
+        "type": "color",
+        "default": "",
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "backgroundScrollEffect",
+        "label": "Background scroll effect",
+        "type": "select",
+        "default": "block--cover-static",
+        "options": [
+          {
+            "value": "block--cover-fixed",
+            "label": "Fixed"
+          },
+          {
+            "value": "block--cover-static",
+            "label": "Static"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Bring your ideas to life",
+        "tab": "Content",
+        "settings": [
+          "TextColor",
+          "Link",
+          "Unlink"
+        ]
+      },
+      {
+        "id": "subtitle",
+        "label": "Subtitle",
+        "type": "text",
+        "default": "Anything you've even dreamed about is possible to realise just at the moment when you decided to win.",
+        "tab": "Content",
+        "settings": [
+          "TextColor",
+          "NumberedList",
+          "BulletedList",
+          "Bold",
+          "Italic",
+          "Link",
+          "Unlink",
+          "Maximize",
+          "Source"
+        ]
+      },
+      {
+        "id": "note",
+        "label": "Note",
+        "type": "text",
+        "default": "Our company",
+        "tab": "Content",
+        "settings": [
+          "TextColor",
+          "Link",
+          "Unlink"
+        ]
+      },
+      {
+        "id": "background",
+        "label": "Upload background image",
+        "type": "image",
+        "tab": "Content",
+        "group": "Background"
+      },
+      {
+        "id": "containerImage",
+        "label": "Upload image",
+        "type": "image",
+        "default": {
+          "url": "/assets/pages/video-screen-4.png"
+        },
+        "tab": "Content",
+        "group": "Container media"
+      },
+      {
+        "id": "firstButton",
+        "label": "First button",
+        "type": "url",
+        "urlLabel": "Url",
+        "textLabel": "Button text",
+        "styleLabel": "Link style",
+        "styles": [
+          {
+            "value": "btn btn--black",
+            "label": "Black button"
+          },
+          {
+            "value": "btn btn--orange",
+            "label": "Orange button"
+          },
+          {
+            "value": "btn btn--white",
+            "label": "White button"
+          }
+        ],
+        "default": {
+          "url": "",
+          "urlText": "Call to action",
+          "style": "btn btn--orange"
+        },
+        "tab": "Content",
+        "group": "Buttons"
+      },
+      {
+        "id": "secondButton",
+        "label": "Second button",
+        "type": "url",
+        "urlLabel": "Url",
+        "textLabel": "Button text",
+        "styleLabel": "Link style",
+        "styles": [
+          {
+            "value": "btn btn--black",
+            "label": "Black button"
+          },
+          {
+            "value": "btn btn--orange",
+            "label": "Orange button"
+          },
+          {
+            "value": "btn btn--white",
+            "label": "White button"
+          }
+        ],
+        "default": {
+          "url": "",
+          "urlText": "",
+          "style": "btn btn--orange"
+        },
+        "tab": "Content",
+        "group": "Buttons"
+      }
+    ]
+  },
+  "cover-with-image-and-flexible-title": {
+    "id": "cover-with-image-and-flexible-title",
+    "name": "Cover with image and flexible title",
+    "icon": "image-text",
+    "displayField": "name",
+    "category": "Covers and Hero",
+    "includeShared": [
+      "cover-blocks",
+	  "title-font-size",
       "seo-subtitle",
       "seo-note",
       "headings"
@@ -3399,7 +3736,11 @@
           {
             "id": "radioListItems",
             "label": "Radio items",
-            "type": "list",
+            "type": "popup-list",
+            "options": {
+              "width": "70%",
+              "max-height": "70%"
+            },
             "addText": "Add radio option",
             "removeText": "Remove item",
             "displayField": "text",
@@ -3439,7 +3780,10 @@
           {
             "id": "selectOptions",
             "label": "Select options",
-            "type": "list",
+            "type": "popup-list",
+            "options": {
+              "width": "30%"
+            },
             "addText": "Add select option",
             "removeText": "Remove option",
             "displayField": "label",
@@ -3906,7 +4250,11 @@
           {
             "id": "radioListItems",
             "label": "Radio items",
-            "type": "list",
+            "type": "popup-list",
+            "options": {
+              "width": "70%",
+              "max-height": "70%"
+            },
             "addText": "Add radio option",
             "removeText": "Remove item",
             "displayField": "text",
@@ -3946,7 +4294,10 @@
           {
             "id": "selectOptions",
             "label": "Select options",
-            "type": "list",
+            "type": "popup-list",
+            "options": {
+              "width": "30%"
+            },
             "addText": "Add select option",
             "removeText": "Remove option",
             "displayField": "label",
@@ -4316,7 +4667,11 @@
       {
         "id": "formFields",
         "label": "Fields",
-        "type": "list",
+        "type": "popup-list",
+		"options": {
+		  "width": "70%",
+		  "max-height": "70%"
+		},
         "addText": "Add field",
         "removeText": "Remove field",
         "displayField": "labelText",
@@ -6430,6 +6785,7 @@
     "displayField": "title",
     "category": "References and Quotes",
     "includeShared": [
+	  "title-font-size",
       "seo-subtitle",
       "headings"
     ],
@@ -11251,52 +11607,36 @@
     "icon": "image-text",
     "displayField": "name",
     "category": "Archive",
+	"includeShared": [
+		"title",
+		"subtitle",
+		"paddings",
+		"dividers"
+	],
     "settings": [
-      {
-        "id": "name",
-        "label": "Block name",
-        "type": "string",
-        "default": "Business Leaders"
-      },
-      {
-        "id": "style",
-        "label": "Block style",
-        "type": "select",
-        "default": "light",
-        "tab": "Settings",
-        "options": [
-          {
-            "value": "light",
-            "label": "Light"
-          },
-          {
-            "value": "dark",
-            "label": "Dark"
-          }
-        ]
-      },
-      {
-        "id": "noTop",
-        "label": "Remove top margin",
-        "type": "checkbox",
-        "tab": "Settings",
-        "default": true
-      },
-      {
-        "id": "noBottom",
-        "label": "Remove bottom margin",
-        "type": "checkbox",
-        "tab": "Settings",
-        "default": false
-      },
-      {
-        "id": "noPad",
-        "label": "Remove paddings",
-        "type": "checkbox",
-        "tab": "Settings",
-        "default": false
-      }
-    ]
+		{
+          "id": "backgroundColor",
+          "label": "Colour",
+          "type": "select",
+          "default": "block--bg-white",
+          "options": [
+            {
+              "value": "block--bg-white",
+              "label": "White"
+            },
+            {
+              "value": "block--bg-light",
+              "label": "Gray"
+            },
+            {
+              "value": "block--bg-orange",
+              "label": "Orange"
+            }
+          ],
+          "tab": "Settings",
+          "group": "Background"
+        }
+	]
   },
   "image-with-text-overlay": {
     "hide": true,

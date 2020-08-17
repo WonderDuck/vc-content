@@ -187,6 +187,29 @@
         line-height: 2.5rem;
         margin-bottom: 0;
 
+        &--flexible
+        {
+            font-weight: 900;
+
+            &-small
+            {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+
+            &-medium
+            {
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
+
+            &-large
+            {
+                font-size: 3rem;
+                line-height: 3.5rem;
+            }
+        }
+
         @extend %font-headings;
     }
 
@@ -358,6 +381,7 @@
 		.block__actions
 		{
 			justify-content: center;
+            margin: auto auto 0;
 		}
 
 		.list-items--reviews.list-items
@@ -714,6 +738,12 @@
 	{
 		display: block;
 		width: 100%;
+        
+        &--fixed
+        {
+            width: auto;
+            margin: 0 auto;
+        }
 	}
 
 	[class*="col-"]

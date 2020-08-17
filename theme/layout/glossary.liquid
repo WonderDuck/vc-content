@@ -40,6 +40,7 @@
     {% include 'segment' %}
     {{ content_for_header }}
     <base href="{{ '/' | absolute_url }}" />
+    {% include 'url-segments-variables' %}
     {% include 'autopilot' %}
     {% include 'markup-corporation' %}
     {% include 'markup-website' %}
@@ -47,6 +48,7 @@
     {% if page_settings %}
     {% include 'markup-article' %}
     {% endif %}
+    {% include 'twitter-cards-meta' %}
     {% include 'target-account-service-url' %}
 </head>
 <body>
@@ -124,7 +126,6 @@
             });
         });
     </script>
-    <script src="{{ 'js/ipdata.js?v=1.02' | asset_url }}" async></script>
     {{ 'segment-form-handler.js' | asset_url | script_tag }}
     {{ '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js' | script_tag }}
     {{ '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js' | script_tag }}

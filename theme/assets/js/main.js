@@ -235,6 +235,7 @@ $(function () {
                 if (redirectUrl && redirectUrl != '') {
                     document.location.href = redirectUrl;
                 }
+
                 return true;
             } else {
                 switch (e.target.id) {
