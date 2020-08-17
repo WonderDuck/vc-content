@@ -231,61 +231,10 @@ $(function () {
                         break;
                 }
 
-                var form = $(this);
-                var submitBtn = form.children('[type=submit]');
-
-                var token = null;
-                var cookies = document.cookie.split(';');
-                for (var cookie of cookies) {
-                    if (cookie.startsWith(' XSRF-TOKEN=')) {
-                        token = cookie.replace(' XSRF-TOKEN=', '');
-                    }
+                var redirectUrl = e.target.dataset.targetUrl;
+                if (redirectUrl && redirectUrl != '') {
+                    document.location.href = redirectUrl;
                 }
-
-                $.ajax({
-                    type: 'POST',
-                    url: `/${shopId}/${cultureName}/targetAccountV2`,
-                    data: {
-                        companyName: form.find('#companyV2').val(),
-                        email: form.find('#email').val()
-                    },
-                    headers: { 'X-XSRF-TOKEN': token },
-                    beforeSend: () => submitBtn.attr('disabled', true)
-                });
-
-                $.ajax({
-                    type: 'POST',
-                    url: `/${shopId}/${cultureName}/gatedAssets`,
-                    data: {
-                        assetId: form.find('#asset_id').val(),
-                        email: form.find('#email').val()
-                    },
-                    headers: { 'X-XSRF-TOKEN': token }
-                });
-
-                $.ajax({
-                    type: 'GET',
-                    url: 'https://api.ipdata.co/?api-key=d55d3413982d00ce1d4ef0008d06578d74f3a96deed0ae2f0f6f10da&fields=ip',
-                    beforeSend: () => submitBtn.attr('disabled', true),
-                    success: function (ip) {
-                        $.ajax({
-                            type: 'POST',
-                            url: `/${shopId}/${cultureName}/location`,
-                            data: {
-                                ip: ip,
-                                email: form.find('#email').val()
-                            },
-                            headers: { 'X-XSRF-TOKEN': token },
-                            success: function () {
-                                var redirectUrl = e.target.dataset.targetUrl;
-                                if (redirectUrl && redirectUrl != '') {
-                                    document.location.href = redirectUrl;
-                                }
-                            },
-                            complete: () => submitBtn.removeAttr('disabled')
-                        });
-                    }
-                });
 
                 return true;
             } else {
