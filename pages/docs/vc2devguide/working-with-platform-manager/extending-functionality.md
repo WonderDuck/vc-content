@@ -13,11 +13,11 @@ Modules can extend Virto Commerce Platform either with JavaScript or with manage
 
 JavaSript allows the user to:
 * add new items to main menu. [Registration in application's menu](./creating-new-module)
-* add new widgets to widget containers (on dashboard or in blades). [Working with widgets](./basic-functions/widgets)
+* add new widgets to widget containers (on dashboard or in blades). [Working with widgets](./basic-functions/widgets.md)
 * add new blades
-* add custom content inside the blade or totally redefine the content using [metaform](./basic-functions/metaform) control
-* add new buttons and other content to existing blade toolbars. [Working with blade toolbar](./basic-functions/blade-toolbar)
-* define new types of notifications and add new notification templates. [Working with notifications](./basic-functions/push-notifications)
+* add custom content inside the blade or totally redefine the content using [metaform](./basic-functions/metaform.md) control
+* add new buttons and other content to existing blade toolbars. [Working with blade toolbar](./basic-functions/blade-toolbar.md)
+* define new types of notifications and add new notification templates. [Working with notifications](./basic-functions/push-notifications.md)
 * define new UI for settings management
 
 Managed code allows the user to:
