@@ -30,19 +30,19 @@ Current version of Virto Commerce platform version 2 core pack includes the foll
    <li> vc-module-pricing v2.18.10 or later </li> 
    <li> vc-module-cart v2.17.1 or later </li> 
    <li> vc-module-licensing v1.0.0 or later </li> 
-   <li> vc-module-catalog-publishing or later v1.1.5 </li> 
-   <li> vc-module-azure-search or later v1.2.0 </li> 
-   <li> vc-module-elastic-search or later v1.2.3 </li> 
-   <li> vc-module-image-tools or later v1.2.1 </li> 
-   <li> vc-module-quote or later v2.12 </li> 
-   <li> vc-module-subscription or later v1.1.10 </li> 
-   <li> vc-module-sitemaps or later v1.1.7 </li> 
-   <li> vc-module-google-ecommerce-analytics or later v1.3.0 </li> 
-   <li> vc-module-cache v1.0.19 or later  </li> 
+   <li> vc-module-catalog-publishing v1.1.5 or later </li> 
+   <li> vc-module-azure-search v1.2.0 or later </li> 
+   <li> vc-module-elastic-search v1.2.3 or later </li> 
+   <li> vc-module-image-tools v1.2.1 or later</li> 
+   <li> vc-module-quote v2.12 or later</li> 
+   <li> vc-module-subscription v1.1.10 or later</li> 
+   <li> vc-module-sitemaps v1.1.7 or later </li> 
+   <li> vc-module-google-ecommerce-analytics v1.3.0 or later </li> 
+   <li> vc-module-cache v1.0.19 or later </li> 
    <li> vc-module-lucene-search v1.1.0 or later </li> 
-   <li> vc-module-dynamic-expressions or later v2.13.3 </li> 
-   <li> vc-module-catalog-personalization or later v1.1.4 </li> 
-   <li> vc-module-catalog-csv-import or later v1.1.5 </li> 
+   <li> vc-module-dynamic-expressions v2.13.3  or later</li> 
+   <li> vc-module-catalog-personalization v1.1.4 or later</li> 
+   <li> vc-module-catalog-csv-import v1.1.5 or later </li> 
    <li> vc-storefront v2.22.0 or later </li> 
    <li> vc-module-export v2.2.2 or later  </li>    
 </ul> 
