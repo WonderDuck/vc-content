@@ -12,7 +12,7 @@
 
 Version v2-2020-Q1
 
-Current version of Virto Commerce platform core pack includes the following modules versions:  
+Current version of Virto Commerce platform version 2 core pack includes the following modules versions:  
   
 <ul> 
    <li> vc-module-order v2.17.29</li> 
@@ -49,7 +49,7 @@ Current version of Virto Commerce platform core pack includes the following modu
 
 Version v2-2019-03 
 
-Current version of Virto Commerce platform core pack includes the following modules versions:  
+Current version of Virto Commerce platform version 2 core pack includes the following modules versions:  
 
 <ul> 
    <li> vc-module-Paypal-ExpressCheckout v2.12.1 </li> 
