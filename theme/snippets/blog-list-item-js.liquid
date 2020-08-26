@@ -1,27 +1,25 @@
-<div class="list__item" ng-repeat="article in articles">
-    <a class="list__bg lazyload" href="{% raw %}{{ article.url }}{% endraw %}" data-bg="{% raw %}{{ article.imageUrl.replace('https://vcpro.blob.core.windows.net', 'https://ik.imagekit.io/je8lpsqkoi') + '?tr=w-343,h-160' }}{% endraw %}"></a>
-    <div class="list__info">
-        <div class="list__t">
-            <a href="{% raw %}{{article.url}}{% endraw %}" ng-bind="article.title"></a>
+<a class="list__bg lazyload" href="{% raw %}{{ article.url }}{% endraw %}" data-bg="{% raw %}{{ article.imageUrl.replace('https://vcpro.blob.core.windows.net', 'https://ik.imagekit.io/je8lpsqkoi') + '?tr=w-343,h-160' }}{% endraw %}"></a>
+<div class="list__info">
+    <div class="list__t">
+        <a href="{% raw %}{{article.url}}{% endraw %}" ng-bind="article.title"></a>
+    </div>
+    <div class="list__descr">
+        {% raw %}
+        <a class="list__descr" href="{{article.url}}">{{article.excerpt}}</a>
+        <div class="block__space"></div>
+        <div ng-bind="article.createdDate | date: 'd MMMM y'"></div>
+        {% endraw %}
+    </div>
+    <div class="list list--tags">
+        <a class="list__item" ng-if="article.category" ng-click="setCurrentCategory(article.category)" ng-bind="'blogs.categories.' + article.category | translate"></a>
+    </div>
+    <div class="list__author">
+        <div class="list__author-logo">
+            <img ng-if="article.metaInfo.author.photoUrl" data-src="{% raw %}{{ article.metaInfo.author.photoUrl }}{% endraw %}" title="" style="max-height: 100%; border-radius: 100%;" class="lazyload" />
+            <img ng-if="!article.metaInfo.author.photoUrl" data-src="/themes/assets/logo-mobile.svg" title="" style="max-height: 100%; no-repeat scroll 0 0" class="lazyload" />
         </div>
-        <div class="list__descr">
-            {% raw %}
-            <a class="list__descr" href="{{article.url}}">{{article.excerpt}}</a>
-            <div class="block__space"></div>
-            <div ng-bind="article.createdDate | date: 'd MMMM y'"></div>
-            {% endraw %}
-        </div>
-        <div class="list list--tags">
-            <a class="list__item" ng-if="article.category" ng-click="setCurrentCategory(article.category)" ng-bind="'blogs.categories.' + article.category | translate"></a>
-        </div>
-        <div class="list__author">
-            <div class="list__author-logo">
-                <img ng-if="article.metaInfo.author.photoUrl" data-src="{% raw %}{{ article.metaInfo.author.photoUrl }}{% endraw %}" title="" style="max-height: 100%; border-radius: 100%;" class="lazyload" />
-                <img ng-if="!article.metaInfo.author.photoUrl" data-src="/themes/assets/logo-mobile.svg" title="" style="max-height: 100%; no-repeat scroll 0 0" class="lazyload" />
-            </div>
-            <div class="list__author-text">
-                <div class="list__author-name" ng-bind="article.metaInfo.author.firstName ? (article.metaInfo.author.firstName + ' ' + article.metaInfo.author.lastName) : article.metaInfo.author || article.author || 'VirtoCommerce'"></div>
-            </div>
+        <div class="list__author-text">
+            <div class="list__author-name" ng-bind="article.metaInfo.author.firstName ? (article.metaInfo.author.firstName + ' ' + article.metaInfo.author.lastName) : article.metaInfo.author || article.author || 'VirtoCommerce'"></div>
         </div>
     </div>
 </div>

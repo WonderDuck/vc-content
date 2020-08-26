@@ -13,9 +13,21 @@
             <a class="list__item" ng-click="setCurrentCategory('{{article.category}}');" data-name="{{article.category}}">{{'blogs.categories.' | append: article.category | t}}</a>
         </div>
         <div class="list__author">
-            <div class="list__author-logo"></div>
+            <div class="list__author-logo">
+                {% if article.meta_fields.author.photoUrl != '' %}
+                    <img data-src="{{article.meta_fields.author.photoUrl}}" title="" style="max-height: 100%; border-radius: 100%;" class="lazyload" />
+                {% else %}
+                    <img data-src="/themes/assets/logo-mobile.svg" title="" style="max-height:100%;no-repeat scroll 0 0" class="lazyload" />
+                {% endif %}
+            </div>
             <div class="list__author-text">
-                <div class="list__author-name">{{ article.author }}</div>
+                <div class="list__author-name">
+                    {% if article.meta_fields.author != '' %}
+                        {{(article.meta_fields.author.firstName | append: ' ') | append: article.meta_fields.author.lastName }}
+                    {% else %}
+                        {{'VirtoCommerce'}}
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
