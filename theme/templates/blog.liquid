@@ -18,17 +18,33 @@
             {% include 'blog-sticked-item' article: sticked_article %}
             {% include 'blog-subscribe' %}
         </div>
+        {% assign articles = blog.articles | where: 'Url', '!=', sticked_article.url %}
+        {% if blog_search.category != nil %}
+            {% assign articles = articles | where: 'Category', '==', blog_search.category %}
+        {% elseif blog_search.tag != nil %}
+            {% assign articles = articles | where: 'Tags', 'contains', blog_search.tag %}
+        {% endif %}
+        {% assign articles = articles | sort_list: 'publishedAt:desc' %}
+        <div class="list list--posts">
+            {% for article in articles %}
+                {% include 'blog-list-item' article: article, style: "single" %}
+                {% if forloop.index == (page_size | minus: 1) %}
+                    {% assign has_more = true %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+            <div class="list__item" ng-repeat="article in articles" ng-if="articles || articles.length" style="display:none;" ng-style="{ 'display': articles || articles.length ? '' : 'none' }">
+                {% include 'blog-list-item-js' %}
+            </div>
+        </div>
         {{ settings.blog.sticked_article_url }}
     </div>
-
-    <div class="posts __responsive container" ng-init="getArticles()" ng-if="articles || articles.length">
-        <div class="list list--posts">
-            {% include 'blog-list-item-js' %}
+    
+    {% if has_more == true %}
+        <div class="more __responsive container" ng-if="!isLastPage" style="display:none;" ng-style="{ 'display': articles || articles.length ? 'block' : 'none' }">
+            <a class="btn btn--lg" style="justify-content: center; width: 100%; margin: 20px 0;" ng-class="{ 'loading': isLoading }" ng-click="getArticles()">Older</a>
         </div>
-    </div>
-    <div class="more __responsive container" ng-if="!isLastPage">
-        <a class="btn btn--lg" style="justify-content: center; width: 100%; margin: 20px 0;" ng-class="{ 'loading': isLoading }" ng-click="getArticles()">Older</a>
-    </div>
+    {% endif %}
 </div>
 <script>
     window.blogName = '{{ blog.handle }}';
